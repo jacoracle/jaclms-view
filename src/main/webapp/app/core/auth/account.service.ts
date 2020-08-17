@@ -44,6 +44,9 @@ export class AccountService {
   }
 
   identity(force?: boolean): Observable<Account | null> {
+    if (!this.isAuthenticated()) {
+      return of(null);
+    }
     if (!this.accountCache$ || force || !this.isAuthenticated()) {
       this.accountCache$ = this.fetch().pipe(
         catchError(() => {

@@ -35,10 +35,13 @@ export class NavbarComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.profileService.getProfileInfo().subscribe(profileInfo => {
-      this.inProduction = profileInfo.inProduction;
-      this.swaggerEnabled = profileInfo.swaggerEnabled;
-    });
+    if(this.isAuthenticated()) {
+      this.profileService.getProfileInfo().subscribe(profileInfo => {
+        console.error("Servicio de profileInfo");
+        this.inProduction = profileInfo.inProduction;
+        this.swaggerEnabled = profileInfo.swaggerEnabled;
+      });
+    }
   }
 
   changeLanguage(languageKey: string): void {
