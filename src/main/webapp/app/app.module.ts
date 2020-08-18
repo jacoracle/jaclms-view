@@ -6,7 +6,6 @@ import { NimbusSharedModule } from 'app/shared/shared.module';
 import { NimbusCoreModule } from 'app/core/core.module';
 import { NimbusAppRoutingModule } from './app-routing.module';
 import { NimbusHomeModule } from './home/home.module';
-import { NimbusEntityModule } from './entities/entity.module';
 // jhipster-needle-angular-add-module-import JHipster will add new module here
 import { MainComponent } from './layouts/main/main.component';
 import { NavbarComponent } from './layouts/navbar/navbar.component';
@@ -22,7 +21,6 @@ import { ErrorComponent } from './layouts/error/error.component';
     NimbusCoreModule,
     NimbusHomeModule,
     // jhipster-needle-angular-add-module JHipster will add new module here
-    NimbusEntityModule,
     NimbusAppRoutingModule,
   ],
   declarations: [MainComponent, NavbarComponent, ErrorComponent, PageRibbonComponent, ActiveMenuDirective, FooterComponent],
