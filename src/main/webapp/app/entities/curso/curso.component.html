@@ -5,5 +5,5 @@
     </h2>
     <jhi-alert-error></jhi-alert-error>
     <jhi-alert></jhi-alert>
-    <div *ngFor="let curso of cursos">Curso</div>
+    <div *ngFor="let curso of cursos" class="curso" [routerLink]="['/visor', curso.id]">{{curso.titulo}}</div>
 </div>

@@ -6,6 +6,7 @@ import { IAsignatura } from 'app/shared/model/asignatura.model';
 import { INumeroGrado } from 'app/shared/model/numero-grado.model';
 import { ModoDistribucion } from 'app/shared/model/enumerations/modo-distribucion.model';
 import { EtapaEditorial } from 'app/shared/model/enumerations/etapa-editorial.model';
+import { INivelesCurso } from './niveles-curso.model';
 
 export interface ICurso {
   id?: number;
@@ -29,6 +30,7 @@ export interface ICurso {
   categoria?: ICategoria;
   asignatura?: IAsignatura;
   numeroGrado?: INumeroGrado;
+  nivelesCurso?: INivelesCurso[];
 }
 
 export class Curso implements ICurso {
@@ -53,6 +55,7 @@ export class Curso implements ICurso {
     public version?: IVersion,
     public categoria?: ICategoria,
     public asignatura?: IAsignatura,
-    public numeroGrado?: INumeroGrado
+    public numeroGrado?: INumeroGrado,
+    public nivelesCurso?: INivelesCurso[]
   ) {}
 }

@@ -1,0 +1,295 @@
+// Colors
+$blue-nimbus-dark: #1a3d82;
+$blue-nimbus-light: #18bafb;
+$blue-darkness: #171a40;
+// Background
+$navbar-light: white;
+$background-color-light: #f9fafb;
+$bg-white: #ffffff;
+$navbar-light: #ffffff;
+$background-color-blue: #101233;
+$background-workspace: #bac4d9;
+$color-workspace: #f9f9f9;
+// Darkmode
+$background-darkmode: #16202c;
+
+$color-darkmode-hover: #24303f;
+$dropdown-darkmode: #1b2838;
+$icon-negative-color: #18bafb;
+$text-negative-color: white;
+$sidebar-header-darkmode: #24303f;
+$workspace-darkmode: #0e161f;
+$border-darkmode: #324358;
+
+// Text
+$text-color: #7a7a7a;
+// A href
+$a-color-nd: #1a3d82;
+$a-color-nd-hover: #3e66b5;
+$a-color-nl: #18bafb;
+$a-color-nl-hover: #10a3de;
+// Buttons
+$main-btn-color: #1a3d82;
+$main-btn-color-hover: #3e66b5;
+$secondary-btn-color: #18bafb;
+$secondary-btn-hover: #10a3de;
+$btn-text-white: white;
+$btn-white-hover: #f4f5f7;
+// Alerts
+$alert-color: #e61a34;
+$alert-hover-color: #bf0f26;
+$succes-color: #4caf50;
+$badge-color: #607d8b;
+// Icons
+$icon-main-color: #1a3d82;
+$icon-secondary-color: #15a9fa;
+$icon-hier: cornflowerblue;
+// Form
+$label-color: #1c2447;
+$input-color: white;
+$input-border-focus: #577ec9;
+$input-border-light: lighten($input-border-focus, 35%);
+$input-border-hover: lighten($input-border-focus, 20%);
+// Window
+$window-header-color: white;
+$window-body-color: #f9f9f9;
+$window-footer-color: white;
+$window-divider-color: #e7e8ed;
+$footer-bg-color: #f4f5f7;
+$border-component: gainsboro;
+// Layout
+// $border-component: #a9bec7;
+$border-component: #d5d5d5;
+// $border-component-hover: #4f7e92;
+$border-component-hover: #afafaf;
+$border-component-selected: #1a3d82;
+$color-sidebar: #ffffff;
+$tool-header: #e2e4e9;
+// Size
+$tablet-width: 768px;
+$desktop-width: 1024px;
+$max-width: 1200px;
+
+// Mixin
+@mixin smartphone {
+  @media (min-width: 0px) and (max-width: 600px) {
+    @content;
+  }
+}
+@mixin smartphone1 {
+  @media (min-width: 601px) and (max-width: 800px) {
+    @content;
+  }
+}
+@mixin tablet {
+  @media (min-width: 801px) and (max-width: 1200px) {
+    @content;
+  }
+}
+
+@mixin covers-xl {
+  @media screen and (min-width: 1240px) {
+    @content;
+  }
+}
+@mixin covers-l {
+  @media (min-width: 1115px) and (max-width: 1239px) {
+    @content;
+  }
+}
+@mixin covers-ml {
+  @media (min-width: 900px) and (max-width: 1114px) {
+    @content;
+  }
+}
+@mixin table {
+  @media (min-width: 0px) and (max-width: 1000px) {
+    @content;
+  }
+}
+
+// Icons
+// 1
+.ni-user:before {
+  content: '\e800';
+}
+// 2
+.ni-lock:before {
+  content: '\e801';
+}
+// 3
+.ni-facebook:before {
+  content: '\e802';
+}
+// 4
+.ni-twitter:before {
+  content: '\e803';
+}
+// 5
+.ni-instagram:before {
+  content: '\e804';
+}
+// 6
+.ni-alert:before {
+  content: '\e805';
+}
+// 7
+.ni-succes:before {
+  content: '\e806';
+}
+// 8
+.ni-settings:before {
+  content: '\e807';
+}
+// 9
+.ni-close:before {
+  content: '\e808';
+}
+// 10
+.ni-arrow:before {
+  content: '\e809';
+}
+// 11
+.ni-info:before {
+  content: '\e80a';
+}
+// 12
+.ni-add:before {
+  content: '\e80b';
+}
+// 13
+.ni-help:before {
+  content: '\e80c';
+}
+// 14
+.ni-support:before {
+  content: '\e80d';
+}
+// 15
+.ni-book:before {
+  content: '\e80e';
+}
+// 16
+.ni-calendar:before {
+  content: '\e80f';
+}
+// 17
+.ni-template:before {
+  content: '\e810';
+}
+// 18
+.ni-delete:before {
+  content: '\e811';
+}
+// 19
+.ni-view:before {
+  content: '\e812';
+}
+// 20
+.ni-edit:before {
+  content: '\e813';
+}
+// 21
+.ni-nimbus:before {
+  content: '\e814';
+}
+// 22
+.ni-drag:before {
+  content: '\e815';
+}
+// 23
+.ni-arrow-right:before {
+  content: '\e816';
+}
+// 24
+.ni-arrow-left:before {
+  content: '\e817';
+}
+// 25
+.ni-desktop:before {
+  content: '\e818';
+}
+// 26
+.ni-smartphone:before {
+  content: '\e819';
+}
+// 27
+.ni-upload:before {
+  content: '\e81a';
+}
+// 28
+.ni-dark:before {
+  content: '\e81b';
+}
+// 29
+.ni-light:before {
+  content: '\e81c';
+}
+// 30
+.ni-admin:before {
+  content: '\e81d';
+}
+// 31
+.ni-tablet:before {
+  content: '\e81e';
+}
+// 32
+.ni-folder:before {
+  content: '\e81f';
+}
+// 33
+.ni-folderopen:before {
+  content: '\e820';
+}
+// 34
+.ni-picture:before {
+  content: '\e821';
+}
+// 35
+.ni-doc:before {
+  content: '\e822';
+}
+// 36
+.ni-file:before {
+  content: '\e823';
+}
+// 37
+.ni-menudots:before {
+  content: '\e824';
+}
+// 38
+.ni-save:before {
+  content: '\e825';
+}
+// 39
+.ni-arrowright:before {
+  content: '\e826';
+}
+// 40
+.ni-arrowleft:before {
+  content: '\e827';
+}
+// 41
+.ni-arrowup:before {
+  content: '\e828';
+}
+// 42
+.ni-edukai:before {
+  content: '\e829';
+}
+// 43
+.ni-mail:before {
+  content: '\e82a';
+}
+// 44
+.ni-translate:before {
+  content: '\e82b';
+}
+// 45
+.ni-menu:before {
+  content: '\e82c';
+}
+// 46
+.ni-play:before {
+  content: '\e82d';
+}

@@ -12,7 +12,8 @@ import { CursoService } from './curso.service';
 
 @Component({
   selector: 'jhi-curso',
-  templateUrl: './curso.component.html'
+  templateUrl: './curso.component.html',
+  styleUrls: ['./curso.component.scss']
 })
 export class CursoComponent implements OnInit, OnDestroy {
   cursos?: ICurso[];
@@ -80,9 +81,9 @@ export class CursoComponent implements OnInit, OnDestroy {
   }
 
   protected onSuccess(data: ICurso[] | null, headers: HttpHeaders, page: number): void {
-      /*
     this.totalItems = Number(headers.get('X-Total-Count'));
     this.page = page;
+    /*
     this.router.navigate(['/curso'], {
       queryParams: {
         page: this.page,

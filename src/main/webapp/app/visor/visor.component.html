@@ -1,0 +1,15 @@
+<div class="row" *ngIf="curso">
+    <div class="row">
+        <h1>{{curso.titulo}}</h1>
+    </div>
+    <div class="row">
+        <div *ngIf="curso.nivelesCurso && curso.nivelesCurso[0] && curso.nivelesCurso[0].nivelJerarquico && curso.nivelesCurso[0].nivelJerarquico.bloquesCurso">
+            <div *ngFor="let bloque of curso.nivelesCurso[0].nivelJerarquico.bloquesCurso">
+                Bloque
+            </div>
+            
+            <jhi-content-block1></jhi-content-block1>
+            
+        </div>
+    </div>
+</div>
