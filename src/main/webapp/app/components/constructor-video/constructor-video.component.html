@@ -2,7 +2,7 @@
 <video class="block-video-file" [src]="videoSrc" (click)="selectVideo()" *ngIf="videoSrc != ''"></video>
 -->
 <img class="img-video" [src]="defaultVideoUrl" (click)="selectVideo()" *ngIf="thumbSrc === ''">
-<img class="img-video" [src]="thumbSrc" (click)="selectVideo()" *ngIf="thumbSrc !== ''">
+<img class="img-video" [src]="thumbSrc" *ngIf="thumbSrc !== ''">
 <!-- <div [hidden]="!showLoader">Cargando</div> -->
 <div [hidden]="!showLoader" class="loader-video">
   <div class="loader2"></div>
