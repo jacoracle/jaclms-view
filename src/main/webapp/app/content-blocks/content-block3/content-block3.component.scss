@@ -1,0 +1,25 @@
+@import './../../../content/scss/variables.scss';
+
+.col-cb-img {
+  position: relative;
+  width: 100%;
+  height: auto;
+}
+.row-cb-img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: 100%;
+  height: auto;
+
+  jhi-constructor-image {
+    position: relative;
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+  }
+}

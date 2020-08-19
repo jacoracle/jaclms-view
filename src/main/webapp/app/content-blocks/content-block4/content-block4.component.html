@@ -1,0 +1,30 @@
+<!-- Bloque de contenido: Texto con imagen-->
+Bloque 4: Texto con imagen
+  <div class="col-cb-text-img" *ngIf="contentBlock && contentBlock.bloqueComponentes && contentBlock.bloqueComponentes.componentes">
+
+    <div *ngFor="let component of orderTextImage(contentBlock.bloqueComponentes.componentes); let index = index;">
+      <div *ngIf="component && component.tipoComponente && component.tipoComponente.nombre === 'text'" class="b-paragraph-text">
+          <div *ngIf="contentBlock && contentBlock.bloqueComponentes.tipoBloqueComponentes">
+              <!--
+              <jhi-visor-text
+                [component]="component"
+                [templateType]="contentBlock.bloqueComponentes.tipoBloqueComponentes"
+                (updateComponent)="onUpdateComponent($event, index)">
+              </jhi-visor-text>
+              -->
+          </div>
+      </div>
+      <div *ngIf="component && component.tipoComponente && component.tipoComponente.nombre === 'image'"  class="cc-image">
+        <!--
+        <jhi-constructor-image 
+          [component]="component"
+          (updateComponent)="onUpdateComponent($event, index)">
+        </jhi-constructor-image>
+        -->
+        <!--
+        <img [src]="imgSrc" alt="">
+        -->
+      </div>
+    </div>
+
+  </div>
