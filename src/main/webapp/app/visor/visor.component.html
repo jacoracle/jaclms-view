@@ -4,12 +4,40 @@
     </div>
     <div class="row">
         <div *ngIf="curso.nivelesCurso && curso.nivelesCurso[0] && curso.nivelesCurso[0].nivelJerarquico && curso.nivelesCurso[0].nivelJerarquico.bloquesCurso">
-            <div *ngFor="let bloque of curso.nivelesCurso[0].nivelJerarquico.bloquesCurso">
-                Bloque
+            <div *ngFor="let block of curso.nivelesCurso[0].nivelJerarquico.bloquesCurso" class="block">
+
+                <div *ngIf="block && block.bloqueComponentes && block.bloqueComponentes.tipoBloqueComponentes">
+                    {{block.bloqueComponentes.tipoBloqueComponentes.nombre}}
+                    <div *ngIf="block!.bloqueComponentes!.tipoBloqueComponentes!.nombre == 'titulo'">
+                        <jhi-content-block1 [contentBlock]="block"></jhi-content-block1>
+                    </div>
+                    <div *ngIf="block!.bloqueComponentes!.tipoBloqueComponentes!.nombre == 'texto'">
+                        <jhi-content-block2 [contentBlock]="block"></jhi-content-block2>
+                    </div>
+                    <div *ngIf="block!.bloqueComponentes!.tipoBloqueComponentes!.nombre == 'imagen'">
+                        <jhi-content-block3 [contentBlock]="block"></jhi-content-block3>
+                    </div>
+                    <div *ngIf="block!.bloqueComponentes!.tipoBloqueComponentes!.nombre == 'imagen_texto'">
+                        <jhi-content-block4 [contentBlock]="block"></jhi-content-block4>
+                    </div>
+                    <div *ngIf="block!.bloqueComponentes!.tipoBloqueComponentes!.nombre == 'video'">
+                        <jhi-content-block5 [contentBlock]="block"></jhi-content-block5>
+                    </div>
+                    <div *ngIf="block!.bloqueComponentes!.tipoBloqueComponentes!.nombre == 'indicacion_video'">
+                        <jhi-content-block6 [contentBlock]="block"></jhi-content-block6>
+                    </div>
+                    <div *ngIf="block!.bloqueComponentes!.tipoBloqueComponentes!.nombre == 'video_envolvente'">
+                        <jhi-content-block7 [contentBlock]="block"></jhi-content-block7>
+                    </div>
+                    <div *ngIf="block!.bloqueComponentes!.tipoBloqueComponentes!.nombre == 'pdf'">
+                        <jhi-content-block8 [contentBlock]="block"></jhi-content-block8>
+                    </div>
+                    <div *ngIf="block!.bloqueComponentes!.tipoBloqueComponentes!.nombre == 'sound'">
+                        <jhi-content-block9 [contentBlock]="block"></jhi-content-block9>
+                    </div>
+                </div>
+
             </div>
-            
-            <jhi-content-block1></jhi-content-block1>
-            
         </div>
     </div>
 </div>
