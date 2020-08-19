@@ -13,8 +13,7 @@ import { FooterComponent } from './layouts/footer/footer.component';
 import { PageRibbonComponent } from './layouts/profiles/page-ribbon.component';
 import { ActiveMenuDirective } from './layouts/navbar/active-menu.directive';
 import { ErrorComponent } from './layouts/error/error.component';
-import { VisorComponent } from './visor/visor.component';
-import { ContentBlock1Component } from './content-blocks/content-block1/content-block1.component';
+import { VisorModule } from './visor/visor.module';
 
 @NgModule({
   imports: [
@@ -24,8 +23,9 @@ import { ContentBlock1Component } from './content-blocks/content-block1/content-
     NimbusHomeModule,
     // jhipster-needle-angular-add-module JHipster will add new module here
     NimbusAppRoutingModule,
+    VisorModule
   ],
-  declarations: [MainComponent, NavbarComponent, ErrorComponent, PageRibbonComponent, ActiveMenuDirective, FooterComponent, VisorComponent, ContentBlock1Component],
+  declarations: [MainComponent, NavbarComponent, ErrorComponent, PageRibbonComponent, ActiveMenuDirective, FooterComponent],
   bootstrap: [MainComponent],
 })
 export class NimbusAppModule {}
