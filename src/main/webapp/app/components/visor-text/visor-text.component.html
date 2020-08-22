@@ -1,0 +1,5 @@
+<div class="final-block-row" *ngIf="component && component.contenido && component.contenido.contenido">
+    <div class="ql-editor" [innerHtml]="component.contenido.contenido" *ngIf="component.contenido.contenido !== ''"></div>
+    <div class="ql-editor" [innerHtml]="exampleContent" *ngIf="component.contenido.contenido === ''"></div>
+</div>
+  
