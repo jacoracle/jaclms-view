@@ -3,6 +3,7 @@ import { ITipoModulo } from './tipo-modulo.model';
 import { IAsignatura } from './asignatura.model';
 import { ITema } from './tema.model';
 import { INumeroGrado } from './numero-grado.model';
+import { INivelesModulo } from './niveles-modulo.model';
 // import { INumeroGrado } from 'app/shared/model/numero-grado.model';
 
 export interface IModulo {
@@ -16,6 +17,7 @@ export interface IModulo {
   descripcion?: string;
   fechaCreacionSys?: Moment;
   numeroGrados?: INumeroGrado[];
+  nivelesModulo?: INivelesModulo;
 }
 
 export class Modulo implements IModulo {
@@ -29,6 +31,7 @@ export class Modulo implements IModulo {
     public titulo?: string,
     public descripcion?: string,
     public fechaCreacionSys?: Moment,
-    public numeroGrados?: INumeroGrado[]
+    public numeroGrados?: INumeroGrado[],
+    public nivelesModulo?: INivelesModulo
   ) {}
 }
