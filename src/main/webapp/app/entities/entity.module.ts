@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { CursoComponent } from './curso/curso.component';
 import { NimbusSharedModule } from './../shared/shared.module';
+import { ModuloComponent } from './modulo/modulo.component';
+import { AgrupadorComponent } from './agrupador/agrupador.component';
 
 @NgModule({
   imports: [
@@ -10,7 +12,7 @@ import { NimbusSharedModule } from './../shared/shared.module';
     ]),
     NimbusSharedModule
   ],
-  declarations: [CursoComponent],
+  declarations: [CursoComponent, ModuloComponent, AgrupadorComponent],
   exports: [CursoComponent]
 })
 export class NimbusEntityModule {}

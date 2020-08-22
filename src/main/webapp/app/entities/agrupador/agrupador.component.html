@@ -1,0 +1,11 @@
+<p>agrupador works!</p>
+<div class="row">
+    <ul>
+        <li *ngFor="let agrupador of agrupadores">
+            <a *ngIf="agrupador.titulo" (click)="selectGrouping(agrupador)">{{agrupador.titulo}}</a>
+        </li>
+    </ul>
+</div>
+<div class="row" *ngIf="agrupador">
+    {{agrupador.titulo}}
+</div>

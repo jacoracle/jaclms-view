@@ -5,6 +5,7 @@
     "menu": {
       "home": "Inicio",
       "courses": "Cursos",
+      "groupings": "Agrupadores",
       "jhipster-needle-menu-add-element": "JHipster will add additional menu entries here (do not translate!)",
       "entities": {
         "main": "Entidades",

@@ -6,8 +6,8 @@ import { DEBUG_INFO_ENABLED } from 'app/app.constants';
 import { Authority } from 'app/shared/constants/authority.constants';
 
 import { UserRouteAccessService } from 'app/core/auth/user-route-access-service';
-import { CursoComponent } from './entities/curso/curso.component';
 import { VisorComponent } from './visor/visor.component';
+import { AgrupadorComponent } from './entities/agrupador/agrupador.component';
 
 const LAYOUT_ROUTES = [navbarRoute, ...errorRoute];
 
@@ -28,8 +28,8 @@ const LAYOUT_ROUTES = [navbarRoute, ...errorRoute];
           loadChildren: () => import('./account/account.module').then(m => m.AccountModule),
         },
         {
-          path: 'courses',
-          component: CursoComponent
+          path: 'groupings',
+          component: AgrupadorComponent
         },
         {
           path: 'visor/:id',
