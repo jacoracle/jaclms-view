@@ -9,6 +9,7 @@ import { ContentBlock6Component } from './content-block6/content-block6.componen
 import { ContentBlock7Component } from './content-block7/content-block7.component';
 import { ContentBlock8Component } from './content-block8/content-block8.component';
 import { ContentBlock9Component } from './content-block9/content-block9.component';
+import { ComponentsModule } from 'app/components/components.module';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,7 @@ import { ContentBlock9Component } from './content-block9/content-block9.componen
     ContentBlock9Component
   ],
   imports: [
-    CommonModule
+    CommonModule, ComponentsModule
   ],
   exports: [
     ContentBlock1Component,

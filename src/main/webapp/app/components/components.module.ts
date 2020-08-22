@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { ConstructorImageComponent } from './constructor-image/constructor-image.component';
 import { ConstructorPdfComponent } from './constructor-pdf/constructor-pdf.component';
 import { ConstructorSoundComponent } from './constructor-sound/constructor-sound.component';
-import { ConstructorTextComponent } from './constructor-text/constructor-text.component';
+import { VisorTextComponent } from './visor-text/visor-text.component';
 import { ConstructorVideoComponent } from './constructor-video/constructor-video.component';
 
 @NgModule({
@@ -11,14 +11,14 @@ import { ConstructorVideoComponent } from './constructor-video/constructor-video
     ConstructorImageComponent,
     ConstructorPdfComponent,
     ConstructorSoundComponent,
-    ConstructorTextComponent,
+    VisorTextComponent,
     ConstructorVideoComponent
   ],
   exports: [
     ConstructorImageComponent,
     ConstructorPdfComponent,
     ConstructorSoundComponent,
-    ConstructorTextComponent,
+    VisorTextComponent,
     ConstructorVideoComponent
   ],
   imports: [
