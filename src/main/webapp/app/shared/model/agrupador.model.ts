@@ -7,7 +7,7 @@ export interface IAgrupador {
     descripcion?: string;
     fecha_inicio?: Moment;
     fecha_fin?: Moment;
-    modulosAgrupador?: IModulosAgrupador;
+    modulos?: IModulosAgrupador[];
 }
 
 export class Agrupador implements IAgrupador {
@@ -17,6 +17,6 @@ export class Agrupador implements IAgrupador {
     public descripcion?: string,
     public fecha_inicio?: Moment,
     public fecha_fin?: Moment,
-    public modulosAgrupador?: IModulosAgrupador
+    public modulos?: IModulosAgrupador[]
   ) {}
 }

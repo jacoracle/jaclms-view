@@ -2,7 +2,7 @@
 <div class="row">
     <ul>
         <li *ngFor="let agrupador of agrupadores">
-            <a *ngIf="agrupador.titulo" (click)="selectGrouping(agrupador)">{{agrupador.titulo}}</a>
+            <a *ngIf="agrupador.titulo" (click)="selectGrouping(agrupador)" [routerLink]="['/visor', agrupador.id]">{{agrupador.titulo}}</a>
         </li>
     </ul>
 </div>

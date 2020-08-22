@@ -1,3 +1,19 @@
+<h1>VISOR</h1>
+<div class="container" *ngIf="agrupador && agrupador.titulo">
+    Título del agrupador: <h2>{{agrupador.titulo}}</h2>
+</div>
+<div class="container" *ngIf="agrupador && agrupador.modulos">
+    <div *ngFor="let modulo of agrupador.modulos">
+        <div *ngIf="modulo && modulo.id" class="modulo-container">
+            <h4>UMAs - Agrupador: {{modulo.id}}</h4>
+            <h5>Orden: {{modulo.orden}}</h5>
+            <div *ngIf="modulo.modulo">
+                <jhi-modulo [modulo]=modulo.modulo></jhi-modulo>
+            </div>
+        </div>
+    </div>
+</div>
+<!--
 <div class="row" *ngIf="curso">
     <div class="row">
         <h1>{{curso.titulo}}</h1>
@@ -41,3 +57,4 @@
         </div>
     </div>
 </div>
+-->

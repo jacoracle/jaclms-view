@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { CursoService } from 'app/entities/curso/curso.service';
-import { ICurso } from 'app/shared/model/curso.model';
+import { AgrupadorService } from 'app/entities/agrupador/agrupador.service';
+import { IAgrupador } from 'app/shared/model/agrupador.model';
 
 @Component({
   selector: 'jhi-visor',
@@ -10,14 +10,14 @@ import { ICurso } from 'app/shared/model/curso.model';
 })
 export class VisorComponent implements OnInit {
 
-  curso?: ICurso;
+  agrupador?: IAgrupador;
 
-  constructor(private route: ActivatedRoute, private cursoService: CursoService) {
+  constructor(private route: ActivatedRoute, private agrupadorService: AgrupadorService) {
     const id = this.route.snapshot.paramMap.get('id') as any;
     if(id) {
-      this.cursoService.find(id).subscribe(response => {
-        if(response.body) {
-          this.curso = response.body;
+      this.agrupadorService.find(id).subscribe(data => {
+        if(data.body) {
+          this.agrupador = data.body;
         }
       });
     }

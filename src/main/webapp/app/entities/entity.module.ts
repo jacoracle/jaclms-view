@@ -13,6 +13,6 @@ import { AgrupadorComponent } from './agrupador/agrupador.component';
     NimbusSharedModule
   ],
   declarations: [CursoComponent, ModuloComponent, AgrupadorComponent],
-  exports: [CursoComponent]
+  exports: [CursoComponent, ModuloComponent]
 })
 export class NimbusEntityModule {}
