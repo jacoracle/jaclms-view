@@ -10,9 +10,6 @@ import { Contenido, IContenido } from 'app/shared/model/contenido.model';
 })
 export class VisorTextComponent {
   exampleContent = "<p>Componente sin texto</p>";
-  editing = false;
-  text = '';
-
   _component?: IComponente;
   @Input()
   set component(componente: IComponente | undefined) {
