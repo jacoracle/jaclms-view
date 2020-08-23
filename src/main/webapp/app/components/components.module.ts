@@ -3,20 +3,20 @@ import { CommonModule } from '@angular/common';
 import { VisorTextComponent } from './visor-text/visor-text.component';
 import { VisorImageComponent } from './visor-image/visor-image.component';
 import { VisorVideoComponent } from './visor-video/visor-video.component';
-import { ConstructorPdfComponent } from './constructor-pdf/constructor-pdf.component';
+import { VisorPdfComponent } from './visor-pdf/visor-pdf.component';
 import { ConstructorSoundComponent } from './constructor-sound/constructor-sound.component';
 
 @NgModule({
   declarations: [
     VisorImageComponent,
-    ConstructorPdfComponent,
+    VisorPdfComponent,
     ConstructorSoundComponent,
     VisorTextComponent,
     VisorVideoComponent
   ],
   exports: [
     VisorImageComponent,
-    ConstructorPdfComponent,
+    VisorPdfComponent,
     ConstructorSoundComponent,
     VisorTextComponent,
     VisorVideoComponent
