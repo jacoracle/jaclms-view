@@ -1,30 +1,14 @@
 <!-- Bloque de contenido: Video con envolvente -->
 Bloque 7: Video con texto
 <div class="col-cb-video-text-color" *ngIf="contentBlock && contentBlock.bloqueComponentes && contentBlock.bloqueComponentes.componentes">
-
-    <div *ngFor="let component of orderVideoText(contentBlock.bloqueComponentes.componentes); let index = index;">
-
-      <div *ngIf="component && component.tipoComponente && component.tipoComponente.nombre === 'video'"  class="cc-video">
-          <!--
-          <jhi-constructor-video
-              [component]="component"
-              (updateComponent)="onUpdateComponent($event, index)">
-          </jhi-constructor-video>
-          -->
-      </div>
-
+    <div *ngFor="let component of contentBlock.bloqueComponentes.componentes; let index = index;">
+        <div *ngIf="component && component.tipoComponente && component.tipoComponente.nombre === 'video'"  class="cc-video">
+            <jhi-visor-video [component]="component"></jhi-visor-video>
+        </div>
         <div *ngIf="component && component.tipoComponente && component.tipoComponente.nombre === 'text'" class="b-paragraph-text">
             <div *ngIf="contentBlock && contentBlock.bloqueComponentes.tipoBloqueComponentes" class="">
-                <!--
-                <jhi-visor-text
-                    [component]="component"
-                    [templateType]="contentBlock.bloqueComponentes.tipoBloqueComponentes"
-                    (updateComponent)="onUpdateComponent($event, index)">
-                </jhi-visor-text>
-                -->
+                <jhi-visor-text [component]="component"></jhi-visor-text>
             </div>
         </div>
-
     </div>
-
 </div>
