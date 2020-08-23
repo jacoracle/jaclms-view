@@ -1,6 +1,5 @@
-import { AfterViewInit, Component, Input, OnDestroy, OnInit, ViewEncapsulation } from '@angular/core';
-import { Componente, IComponente } from 'app/shared/model/componente.model';
-import { Contenido, IContenido } from 'app/shared/model/contenido.model';
+import { Component, Input, ViewEncapsulation } from '@angular/core';
+import { IComponente } from 'app/shared/model/componente.model';
 
 @Component({
   selector: 'jhi-visor-text',
