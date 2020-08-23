@@ -1,25 +1,15 @@
 <!-- Bloque de contenido: Indicación con video -->
 Bloique 6: Texto con video
 <div class="col-cb-video-ins" *ngIf="contentBlock && contentBlock.bloqueComponentes && contentBlock.bloqueComponentes.componentes">
-  <div *ngFor="let component of orderTextVideo(contentBlock.bloqueComponentes.componentes); let index = index;">
+  <div *ngFor="let component of contentBlock.bloqueComponentes.componentes; let index = index;">
     <div *ngIf="component && component.tipoComponente && component.tipoComponente.nombre === 'text'" class="b-instruction-video">
       <div class="icon-instruction-video"><i class="icon ni-info"></i></div>
       <div *ngIf="contentBlock && contentBlock.bloqueComponentes.tipoBloqueComponentes">
-          <!--
-          <jhi-visor-text
-            [component]="component"
-            (updateComponent)="onUpdateComponent($event, index)">
-          </jhi-visor-text>
-          -->
+        <jhi-visor-text [component]="component"></jhi-visor-text>
       </div>
     </div>
     <div *ngIf="component && component.tipoComponente && component.tipoComponente.nombre === 'video'"  class="cc-video video">
-      <!--
-      <jhi-constructor-video
-        [component]="component"
-        (updateComponent)="onUpdateComponent($event, index)">
-      </jhi-constructor-video>
-      -->
+      <jhi-visor-video [component]="component"></jhi-visor-video>
     </div>
   </div>
 </div>
