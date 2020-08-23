@@ -22,4 +22,16 @@ export class MultimediaService {
     });
   }
 
+  /*
+   * Obtiene thumbnail (imagen) de video del servidor.
+   * @param filePath  Dirección donde está almacenado el video.
+   * @returns         Imagen en formato blob.
+   */
+  getVideoThumbnailFile(filePath: string): Observable<HttpResponse<Blob>> {
+    return this.http.get(SERVER_API_URL + 'api/videoFrame?file=' + filePath, {
+      observe: 'response',
+      responseType: 'blob'
+    });
+  }
+
 }
