@@ -1,0 +1,5 @@
+<img class="block-img" [src]="imgSrc" *ngIf="imgSrc != ''">
+<img class="block-img" [src]="defaultImageUrl" *ngIf="imgSrc == ''">
+<div [hidden]="!showLoader" class="loader-img">
+  <div class="loader2"></div>
+</div>
