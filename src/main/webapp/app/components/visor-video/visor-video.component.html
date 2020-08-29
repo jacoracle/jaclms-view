@@ -1,5 +1,8 @@
-<img class="img-video" [src]="defaultVideoUrl" *ngIf="thumbSrc === ''">
-<img class="img-video" [src]="thumbSrc" *ngIf="thumbSrc !== ''">
+<img [src]="defaultSrc" alt="" *ngIf="thumbSrc === '' && videoSrc === ''">
+<img [src]="thumbSrc" alt="" *ngIf="thumbSrc !== '' && videoSrc === ''" (click)="loadVideo()">
+<video [src]="videoSrc" *ngIf="videoSrc !== ''" controls #video (play)="toggleVideo()"></video>
+
 <div [hidden]="!showLoader" class="loader-video">
   <div class="loader2"></div>
+  Cargando...
 </div>
