@@ -2,28 +2,115 @@
 @import '~bootstrap/scss/functions';
 @import '~bootstrap/scss/variables';
 
+@import 'variables.scss';
+
 /* ==============================================================
 Bootstrap tweaks
 ===============================================================*/
+// @charset "UTF-8";
+/*Import font*/
+// Global Styles
 
-body,
+// @font-face {
+//   font-family: 'Open Sans', sans-serif;
+//   src: url('../fonts/Open_Sans/OpenSans-Regular.ttf');
+//   font-weight: 400;
+// }
+// @font-face {
+//   font-family: 'Open Sans', sans-serif;
+//   src: url('../fonts/Open_Sans/OpenSans-Italic.ttf');
+//   font-weight: 400;
+//   font-style: italic;
+// }
+// @font-face {
+//   font-family: 'Open Sans', sans-serif;
+//   src: url('../fonts/Open_Sans/OpenSans-SemiBold.ttf');
+//   font-weight: 600;
+// }
+// @font-face {
+//   font-family: 'Open Sans', sans-serif;
+//   src: url('../fonts/Open_Sans/OpenSans-Bold.ttf');
+//   font-weight: 700;
+// }
+// @font-face {
+//   font-family: 'fontello';
+//   src: url('../fonts/Icons/fontello.eot?55274503');
+//   src: url('../fonts/Icons/fontello.eot?55274503#iefix') format('embedded-opentype'),
+//     url('../fonts/Icons/fontello.woff?55274503') format('woff'), url('../fonts/Icons/fontello.ttf?55274503') format('truetype'),
+//     url('../fonts/Icons/fontello.svg?55274503#fontello') format('svg');
+//   font-weight: normal;
+//   font-style: normal;
+// }
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
+}
+body {
+  font-family: 'Open Sans', sans-serif;
+  background-color: $background-color-light !important;
+  margin: 0 !important;
+}
+a:-webkit-any-link {
+  cursor: pointer;
+  text-decoration: none;
+  color: $blue-nimbus-dark;
+}
+/* Font styles */
 h1,
 h2,
 h3,
+h4,
+h5 {
+  margin: 0;
+  font-family: 'Open Sans', sans-serif;
+}
+h1 {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 38px;
+  font-weight: 600;
+  font-style: normal;
+  color: #283d8e;
+}
+h2 {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 34px;
+  font-weight: 600;
+  font-style: normal;
+  color: #28064d;
+}
+h3 {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 30px;
+  font-weight: 600;
+  font-style: normal;
+  color: #003170;
+}
 h4 {
-  font-weight: 300;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  font-style: normal;
+  color: #4a5161;
 }
-
-/* Increase contrast of links to get 100% on Lighthouse Accessability Audit. Override this color if you want to change the link color, or use a Bootswatch theme */
-a {
-  color: #533f03;
-  font-weight: bold;
+p {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  font-style: normal;
+  color: $text-color;
+  line-height: 24px;
+  @include smartphone {
+    font-size: 13px;
+  }
 }
-
-a:hover {
-  color: #533f03;
+strong {
+  font-weight: 700;
 }
-
 /* override hover color for dropdown-item forced by bootstrap to all a:not([href]):not([tabindex]) elements in _reboot.scss */
 a:not([href]):not([tabindex]):hover.dropdown-item {
   color: $dropdown-link-hover-color;
@@ -193,3 +280,513 @@ ui bootstrap tweaks
 }
 
 /* jhipster-needle-scss-add-main JHipster will add new css style */
+
+
+.nav-bar {
+  position: relative;
+  width: 100%;
+  // height: auto;
+  // position: fixed;
+  // border: 1px solid red;
+}
+
+// Styles
+// btn Login
+.row-btn-login-modal {
+  position: relative;
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+// Buttons
+// Main button style
+.main-btn {
+  position: relative;
+  width: auto;
+  // height: 32px;
+  height: 30px;
+  font-size: 13px;
+  font-weight: 400;
+  color: $btn-text-white;
+  cursor: pointer;
+  text-align: center;
+  border: none;
+  padding-left: 15px;
+  padding-right: 15px;
+  letter-spacing: 1px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 20px 30px rgba(16, 18, 51, 0.1), 0 6px 18px rgba(16, 18, 51, 0.12);
+  // border-radius: 18px;
+  border-radius: 14px;
+  background-color: $main-btn-color;
+  transition: all 0.3s ease;
+  &:hover {
+    background-color: $main-btn-color-hover;
+  }
+  &:focus {
+    outline: none;
+  }
+  &:active {
+    outline: none;
+  }
+}
+.main-btn.btn-color-1 {
+  background-image: linear-gradient(to right, #00ceff, #00b1ff, #00b1ff, #0083c5);
+  box-shadow: 0 20px 30px rgba(16, 18, 51, 0.1), 0 6px 18px rgba(16, 18, 51, 0.12);
+}
+.main-btn.disabled,
+.main-btn:disabled {
+  opacity: 0.7;
+  pointer-events: none;
+  box-shadow: none !important;
+}
+// Secondary button
+.secondary-btn {
+  position: relative;
+  width: auto;
+  height: 32px;
+  font-size: 13px;
+  font-weight: 400;
+  color: #fff;
+  cursor: pointer;
+  text-align: center;
+  border: none;
+  padding-left: 16px;
+  padding-right: 16px;
+  letter-spacing: 1px;
+  background-color: $secondary-btn-color;
+  border-radius: 18px;
+  transition: all 0.3s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 20px 30px rgba(16, 18, 51, 0.1), 0 6px 18px rgba(16, 18, 51, 0.12);
+
+  &:hover {
+    background-color: $secondary-btn-hover;
+  }
+  &:focus {
+    outline: none;
+  }
+  &:active {
+    outline: none;
+  }
+}
+// Status Button
+.btn-status {
+  position: relative;
+  width: auto;
+  height: 30px;
+  font-size: 13px;
+  font-weight: 400;
+  color: #fff;
+  cursor: pointer;
+  text-align: center;
+  border: none;
+  padding-left: 9px;
+  padding-right: 9px;
+  border-radius: 10px;
+  transition: all 0.4s ease-in-out;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &:focus {
+    outline: none;
+  }
+  &:active {
+    outline: none;
+  }
+}
+.btn-status.disabled,
+.btn-status:disabled {
+  opacity: 0.7;
+  pointer-events: none;
+  box-shadow: none;
+}
+
+// Circle button
+.btn-circle {
+  position: relative;
+  width: 38px;
+  height: 38px;
+  background-color: $main-btn-color;
+  border: 0;
+  outline: none;
+  border-radius: 50%;
+  transition: 0.3s;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 20px 30px rgba(26, 61, 130, 0.1), 0 6px 18px rgba(26, 61, 130, 0.12);
+  .icon {
+    color: white;
+  }
+  &:hover {
+    background-color: $main-btn-color-hover;
+  }
+  &:focus {
+    outline: none;
+  }
+  &:active {
+    outline: none;
+  }
+}
+
+// Font Icons
+.icon {
+  position: relative;
+  font-size: 20px;
+  width: auto;
+  height: auto;
+  font-family: 'fontello';
+  font-style: normal;
+  font-weight: normal;
+  speak: none;
+  text-decoration: inherit;
+  color: $icon-main-color;
+  cursor: pointer;
+  transition: 0.3s;
+  user-select: none;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  // text-shadow: 2px 1px 6px rgba(26, 61, 130, 0.3);
+}
+.icon-small {
+  font-size: 20px;
+}
+.icon-medium {
+  font-size: 24px;
+}
+.icon-large {
+  font-size: 30px;
+}
+.icon-xlarge {
+  font-size: 38px;
+}
+.icon-secondary-color {
+  color: $icon-secondary-color;
+}
+.icon-negative {
+  color: white;
+}
+
+*:focus {
+  outline: none;
+}
+
+.line-footer {
+  position: relative;
+  width: 100%;
+  height: auto;
+  min-height: 50px;
+  border-top: 1px solid $window-divider-color;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  p {
+    .icon {
+      color: $text-color;
+      font-size: 16px;
+      line-height: 16px;
+    }
+  }
+}
+
+.modal-backdrop.show {
+  opacity: 0.8;
+}
+.modal-backdrop {
+  background-color: darkgrey;
+}
+.modal-dialog {
+  position: relative;
+  width: 100% !important;
+  height: 100% !important;
+  margin: 0 !important;
+  pointer-events: none;
+}
+.modal-content {
+  position: relative;
+  width: 100% !important;
+  height: 100vh !important;
+  pointer-events: auto;
+  background-color: transparent !important;
+  background-clip: initial !important;
+  border: none !important;
+  border-radius: 0 !important;
+  outline: 0;
+}
+@media only screen and (min-width: 576px) {
+  .modal-dialog {
+    max-width: 100% !important;
+    margin: 0 !important;
+  }
+}
+jhi-login-modal {
+  height: 100%;
+}
+.modal-login-container {
+  position: relative;
+  width: 480px;
+  height: auto;
+  min-height: 526px;
+  margin: 0 auto;
+  background-color: $bg-white;
+  border-radius: 8px;
+  top: 50%;
+  margin-top: -263px;
+  padding-top: 25px;
+  box-shadow: 0 20px 30px rgba(16, 18, 51, 0.1), 0 6px 18px rgba(16, 18, 51, 0.12);
+  @include smartphone {
+    width: 360px;
+    min-height: auto;
+    padding-bottom: 15px;
+  }
+
+  .btn-close-modal-login {
+    position: absolute;
+    top: 12px;
+    right: 15px;
+    width: 35px;
+    height: 35px;
+    border-radius: 100%;
+    background-color: transparent;
+    cursor: pointer;
+    border: 0;
+    outline: none;
+    transition: 0.4s;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .icon {
+      font-size: 30px;
+      cursor: pointer;
+    }
+    &:hover {
+      background-color: $btn-white-hover;
+    }
+  }
+
+  .modal-login-body {
+    position: relative;
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    .row-modal-login-modal {
+      position: relative;
+      width: 90%;
+      height: auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      @include smartphone {
+        width: 84%;
+      }
+
+      .logo-login-modal {
+        position: relative;
+        width: 170px;
+        height: 120px;
+        // background-image: url('../images/logo_login.svg');
+        background-position: center;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        margin-bottom: 10px;
+        margin-top: 10px;
+        background-color: silver;
+        @include smartphone {
+          width: 140px;
+          height: 100px;
+        }
+      }
+
+      .col-form-login {
+        position: relative;
+        width: 340px;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 20px;
+        @include smartphone {
+          width: 100%;
+        }
+
+        form {
+          position: relative;
+          width: 100%;
+          height: auto;
+
+          .form-group {
+            position: relative;
+            width: 100%;
+            height: auto;
+            display: flex;
+            flex-direction: column;
+            margin-top: 10px;
+
+            label {
+              color: $label-color;
+              position: relative;
+              width: auto;
+              height: auto;
+              margin-left: 10px;
+              @include smartphone {
+                font-size: 13px;
+              }
+            }
+            input {
+              position: relative;
+              width: 100%;
+              height: 40px;
+              background-color: $input-color;
+              border: 0;
+              border-radius: 16px;
+              border: 2px solid $input-border-light;
+              outline: none;
+              padding-left: 40px;
+              &:focus {
+                outline: none !important;
+                border-color: $input-border-color;
+                box-shadow: 0 0 10px transparent;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+@media (max-height: 500px) {
+  .modal-login-container {
+    top: 0;
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+}
+.icon-form-login {
+  position: absolute;
+  left: 15px;
+  bottom: 10px;
+}
+.row-modal-l-check {
+  position: relative;
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 15px;
+  .rmlc-1 {
+    position: relative;
+    width: 50%;
+    height: auto;
+    display: flex;
+    justify-content: flex-start;
+
+    .form-check-label {
+      position: relative;
+      width: auto;
+      height: 25px;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      cursor: pointer;
+      &:hover > span {
+        color: $a-color-nd-hover !important;
+      }
+
+      input.form-check-input {
+        position: relative;
+        width: 16px;
+        height: 16px;
+        margin-left: 0;
+        display: flex;
+        align-items: center;
+        top: -2px;
+      }
+      span {
+        position: relative;
+        width: auto;
+        height: auto;
+        color: $a-color-nd;
+        font-weight: 600;
+        font-size: 14px;
+        margin-left: 4px;
+        transition: 0.3s;
+        @include smartphone {
+          font-size: 12px;
+        }
+      }
+    }
+  }
+  .rmlc-2 {
+    position: relative;
+    width: 50%;
+    height: auto;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    font-weight: 700;
+
+    a {
+      position: relative;
+      width: auto;
+      height: auto;
+      font-size: 14px;
+      cursor: pointer;
+      color: $a-color-nd;
+      font-weight: 600;
+      transition: 0.3s;
+      @include smartphone {
+        font-size: 12px;
+      }
+      &:hover {
+        color: $a-color-nd-hover;
+      }
+    }
+  }
+  .row-cfl-register {
+    position: relative;
+    width: 100%;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 25px;
+    p {
+      margin-right: 10px;
+    }
+    a {
+      position: relative;
+      width: auto;
+      height: auto;
+      font-size: 14px;
+      cursor: pointer;
+      color: $a-color-nd;
+      font-weight: 600;
+      transition: 0.3s;
+      &:hover {
+        color: $a-color-nd-hover;
+      }
+      @include smartphone {
+        font-size: 12px;
+      }
+    }
+  }
+}
