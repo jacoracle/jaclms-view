@@ -79,6 +79,13 @@ export class MultimediaService {
     return objectUrl;
   }
 
+  public getAudioFile(filePath: string): Observable<HttpResponse<Blob>> {
+    return this.http.get(SERVER_API_URL + 'api/loadAudio?file=' + filePath, {
+      observe: 'response',
+      responseType: 'blob'
+    });
+  }
+
   getSafeUrl(file: Blob): SafeUrl {
     const path = URL.createObjectURL(file);
     return this.domSanitizer.bypassSecurityTrustUrl(path);

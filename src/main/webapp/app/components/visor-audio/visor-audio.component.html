@@ -1,6 +1,7 @@
-<!--<img class="block-pdf" [src]="pdfSrc" (click)="selectPdf()" *ngIf="!pdfSrc == ''">-->
-<img class="block-pdf" [src]="loadedSoundUrl" *ngIf="this.component && this.component.contenido && this.component.contenido.contenido !== ''" [width]="600" [height]="300"></img>
-<img class="block-pdf" [src]="defaultSoundUrl" *ngIf="this.component && this.component.contenido && this.component.contenido.contenido === ''">
-<div [hidden]="!showLoader" class="loader-sound">
-    <div class="loader2"></div>
+<img [src]="defaultSrc" alt="" *ngIf="audioSrc === ''" (click)="loadAudio()">
+<audio [src]="audioSrc" *ngIf="audioSrc !== ''" controls #audio (play)="toggleAudio()"></audio>
+
+<div [hidden]="!showLoader" class="loader-audio">
+  <div class="loader2"></div>
+  Cargando...
 </div>
