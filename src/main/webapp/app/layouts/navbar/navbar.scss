@@ -1,42 +1,312 @@
-@import '~bootstrap/scss/functions';
-@import '~bootstrap/scss/variables';
+// @import '../../../content/scss/variables.scss';
+@import '../../../content/scss/global.scss';
 
-/* ==========================================================================
-Navbar
-========================================================================== */
+.navbar-nimbus {
+  position: fixed !important;
+  top: 0px;
+  right: 0px;
+  width: 100%;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: $navbar-light;
+  z-index: 99 !important;
+  border-bottom: 1px solid $window-divider-color;
 
-.navbar-version {
-  font-size: 0.65em;
-  color: $navbar-dark-color;
-}
+  .row-nb-nimbus {
+    position: relative;
+    width: 94%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
 
-.profile-image {
-  height: 1.75em;
-  width: 1.75em;
-}
-
-.navbar {
-  padding: 0.2rem 1rem;
-
-  ul.navbar-nav {
-    .nav-item {
-      margin-left: 0.5em;
+    .nb-logo {
+      position: absolute;
+      width: auto;
+      height: 36px;
+      left: 10px;
+      top: 4px;
+      cursor: pointer;
+      display: flex;
+      .nb-imagotipo {
+        position: relative;
+        width: 36px;
+        height: 36px;
+      }
+      .nb-logotipo {
+        position: relative;
+        width: 72px;
+        height: 36px;
+        background-image: url('../../../content/images/logotype-1.svg');
+        background-position: center;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        margin-left: 4px;
+        @include smartphone {
+          display: none;
+        }
+      }
     }
   }
-
-  a.nav-link {
-    font-weight: 400;
+}
+// SVG Logo
+.nbl-1 {
+  fill: $blue-nimbus-dark;
+  animation: nbl-c1 1s ease 3;
+  animation-delay: 0.5s;
+}
+.nbl-2 {
+  fill: $blue-nimbus-light;
+  animation: nbl-c2 1s ease 3;
+  animation-delay: 1s;
+}
+.nbl-3 {
+  fill: #1890d4;
+}
+@keyframes nbl-c1 {
+  // 0%,100%{transform:translate(0)}
+  0% {
+    fill: #1a3d82;
+  }
+  50% {
+    fill: #699ae2;
+  }
+  100% {
+    fill: #1a3d82;
+  }
+}
+@keyframes nbl-c2 {
+  0% {
+    fill: #18bafb;
+  }
+  50% {
+    fill: #63d4f7;
+  }
+  100% {
+    fill: #18bafb;
   }
 }
 
-/* ==========================================================================
-Logo styles
-========================================================================== */
-.logo-img {
-  height: 45px;
-  width: 45px;
-  display: inline-block;
-  vertical-align: middle;
-  background: url('../../../content/images/logo-jhipster.png') no-repeat center center;
-  background-size: contain;
+.li-navbar-home {
+  position: relative;
+  width: auto;
+  height: auto;
+  font-size: 14px;
+  color: blue;
+  cursor: pointer;
+  margin-right: 20px;
+  font-weight: 400;
+  transition: 0.3s;
+  color: $a-color-nd;
+
+  &:hover {
+    color: $a-color-nd-hover;
+  }
 }
+
+// Navbar Nimbus lg
+.navbar-lg {
+  position: relative;
+  top: 0px;
+  height: 43px !important;
+  width: auto !important;
+  padding: 0;
+  margin: 0;
+  box-shadow: none !important;
+  border: 0;
+  background-color: $navbar-light;
+
+  ul.navbar-nav {
+    position: relative;
+    width: auto;
+    height: 100%;
+    display: flex;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+
+    li.nav-item {
+      position: relative;
+      width: auto;
+      height: 100%;
+      margin-right: 20px;
+
+      a.nav-link {
+        position: relative;
+        width: auto;
+        height: 100%;
+        padding: 0;
+        padding-left: 10px;
+        padding-right: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: 0.3s;
+        z-index: 3;
+        background-color: $navbar-light;
+        &:hover .circle-menu {
+          background-color: $btn-white-hover !important;
+        }
+        &:hover .circle-menu-account {
+          background-color: $main-btn-color-hover !important;
+        }
+        &:hover p {
+          color: $a-color-nd-hover;
+        }
+
+        .circle-menu {
+          position: relative;
+          width: 30px;
+          height: 30px;
+          border-radius: 100%;
+          transition: 0.3s;
+          margin-right: 6px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          background-color: transparent;
+        }
+        .circle-menu-account {
+          position: relative;
+          width: 30px;
+          height: 30px;
+          border-radius: 100%;
+          transition: 0.3s;
+          margin-right: 6px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          background-color: $blue-nimbus-dark;
+        }
+
+        p {
+          color: $a-color-nd;
+          font-size: 14px;
+          transition: 0.3s;
+        }
+        .arrow-menu {
+          position: relative;
+          width: 10px;
+          height: 5px;
+          background-image: url('../../../content/images/arrow_user_icn.svg');
+          background-position: center;
+          background-size: 100%;
+          background-repeat: no-repeat;
+          transition: 0.3s;
+          transform: rotate(0deg);
+          margin-left: 10px;
+        }
+      }
+      // Arrow dropdown
+      .dropdown-toggle::after {
+        position: relative;
+        content: '';
+        margin-left: 0;
+        vertical-align: 0;
+        border-top: 0;
+        border-right: 0;
+        border-bottom: 0;
+        border-left: 0;
+        margin-left: 0px;
+      }
+
+      // SubMenu float
+      ul.dropdown-menu {
+        position: absolute;
+        width: 100%;
+        height: auto;
+        min-height: 50px;
+        top: 0px;
+        left: 0px;
+        font-size: 14px;
+        padding: 0;
+        margin: 0;
+        background-color: $navbar-light;
+        padding-top: 4px;
+        padding-bottom: 4px;
+        border-radius: 0px 0px 6px 6px;
+        // box-shadow: 0 0px 32px rgba(33, 36, 66, 0.10), 0 17px 28px rgba(33, 36, 66, 0.10);
+        box-shadow: none;
+        border: 1px solid $window-divider-color;
+        transition: 0.3s;
+        z-index: 2;
+      }
+    }
+  }
+}
+ul.dropdown-menu {
+  .dropdown-item {
+    position: relative;
+    width: 96%;
+    height: auto;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 0;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    transition: 0.3s;
+    margin: 0 auto;
+    margin-top: 4px;
+    color: $a-color-nd !important;
+    background-color: transparent;
+    border-radius: 4px;
+    .icon-submenu {
+      position: relative;
+      width: 25px;
+      height: 25px;
+      border-radius: 100%;
+      transition: 0.4s;
+      background-color: $btn-white-hover;
+    }
+    p {
+      color: $a-color-nd;
+      font-size: 14px;
+      transition: 0.3s;
+      margin-left: 10px;
+    }
+    &:hover {
+      background-color: $btn-white-hover !important;
+    }
+  }
+}
+// Active Menu
+.show {
+  .nav-link {
+    .arrow-menu {
+      transform: rotate(180deg) !important;
+    }
+  }
+}
+
+.show {
+  .nav-link {
+    p {
+      opacity: 0.5;
+    }
+  }
+}
+.show {
+  .nav-link {
+    .circle-menu {
+      background-color: $btn-white-hover !important;
+    }
+  }
+}
+.show {
+  .nav-link {
+    .circle-menu-account {
+      background-color: $main-btn-color-hover !important;
+    }
+  }
+}
+
+// Buttons
+// Buttons
+// Main button style

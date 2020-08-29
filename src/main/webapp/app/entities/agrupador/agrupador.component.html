@@ -1,10 +1,16 @@
-<p>agrupador works!</p>
-<div class="row">
-    <ul>
+
+<div class="row-agrupador">
+  <div class="title-a">Libros</div>
+    <div class="grid-cards">
+      <div class="box-card" *ngFor="let agrupador of agrupadores" (click)="selectGrouping(agrupador)" [routerLink]="['/visor', agrupador.id]">
+        <div class="title-c" *ngIf="agrupador.titulo">{{agrupador.titulo}}</div>
+      </div>
+    </div>
+    <!-- <ul>
         <li *ngFor="let agrupador of agrupadores">
             <a *ngIf="agrupador.titulo" (click)="selectGrouping(agrupador)" [routerLink]="['/visor', agrupador.id]">{{agrupador.titulo}}</a>
         </li>
-    </ul>
+    </ul> -->
 </div>
 <div class="row" *ngIf="agrupador">
     {{agrupador.titulo}}

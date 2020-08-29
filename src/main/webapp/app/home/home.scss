@@ -1,12 +1,13 @@
 /* ==========================================================================
 Main page styles
 ========================================================================== */
+@import '../../content/scss/global.scss';
 
 .hipster {
   display: inline-block;
   width: 347px;
   height: 497px;
-  background: url('../../content/images/jhipster_family_member_2.svg') no-repeat center top;
+  // background: url('../../content/images/jhipster_family_member_2.svg') no-repeat center top;
   background-size: contain;
 }
 
@@ -17,7 +18,195 @@ Main page styles
   only screen and (min-resolution: 192dpi),
   only screen and (min-resolution: 2dppx) {
   .hipster {
-    background: url('../../content/images/jhipster_family_member_2.svg') no-repeat center top;
+    // background: url('../../content/images/jhipster_family_member_2.svg') no-repeat center top;
     background-size: contain;
   }
 }
+
+// Header header-home
+.header-home {
+  position: relative;
+  width: 100%;
+  height: 600px;
+  background-color: #242345;
+  display: flex;
+  overflow: hidden;
+  justify-content: space-between;
+  margin-top: 30px;
+  .col-hh-1 {
+    position: relative;
+    width: 55%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    h2 {
+      position: relative;
+      width: 84%;
+      height: auto;
+      color: white;
+      font-weight: 500;
+      text-align: left;
+      font-size: 52px;
+      z-index: 3;
+    }
+    h4 {
+      position: relative;
+      width: 84%;
+      height: auto;
+      margin-top: 30px;
+      color: white;
+    }
+  }
+  .col-hh-2 {
+    position: relative;
+    width: 395px;
+    height: 100%;
+    background-color: #8dc9e9;
+    background: white;
+    .bg-home  {
+      position: absolute;
+      width: 490px;
+      height: 600px;
+      right: 0;
+      top: 0;
+      background-image: url("../../content/images/bg_home3.png");
+      background-position: center;
+      background-size: 100%;
+      background-repeat: no-repeat;
+    }
+  }
+}
+
+
+.row-plus {
+  position: relative;
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  padding-top: 10px;
+  padding-bottom: 60px;
+  margin-top: 40px;
+  .col-plus {
+    position: relative;
+    width: 100%;
+    max-width: 1280px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    .row-cards {
+      position: relative;
+      width: 100%;
+      height: auto;
+      display: flex;
+      justify-content: center;
+      &:nth-child(2) {
+        margin-top: 40px;
+      }
+    }
+  }
+}
+.project-item {
+  position: relative;
+  width: 240px;
+  height: 260px;
+  line-height: 0;
+  cursor: pointer;
+  border-radius: 0px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(36, 35, 69, 1);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  margin-left: 20px;
+  margin-right: 20px;
+
+  .project-item-content-1 {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 1;
+    z-index: 1;
+    transition: .4s;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 4px;
+    .img-plus {
+      position: relative;
+      width: 90px;
+      height: 90px;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: 100%;
+    }
+    .title {
+      position: relative;
+      width: 90%;
+      height: auto;
+      font-size: 18px;
+      line-height: 18px;
+      text-align: center;
+      color: white;
+      font-weight: 500;
+      margin-top: 20px;
+    }
+  }
+
+  .project-item-content-2 {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(36, 35, 69, .8);
+    opacity: 0;
+    z-index: 2;
+    transition: .4s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    h4 {
+      position: relative;
+      width: 90%;
+      height: auto;
+      color: white;
+      text-align: center;
+      font-size: 18px;
+      line-height: 18px;
+      margin-bottom: 10px;
+    }
+    .p-text {
+      position: relative;
+      width: 90%;
+      color: white;
+      font-size: 13px;
+      line-height: 20px;
+      text-align: center;
+    }
+  }
+  &:hover > .project-item-content-2 {
+    opacity: 1;
+  }
+  &:hover > .project-item-content-1 {
+    opacity: 0;
+  }
+}
+.img-plus-1 {background-image: url("../../content/images/b1.svg");}
+// .img-plus-2 {background-image: url("../img/b2.svg");}
+// .img-plus-3 {background-image: url("../img/b3.svg");}
+// .img-plus-4 {background-image: url("../img/gamification.svg");}
+// .img-plus-5 {background-image: url("../img/gamification.svg");}
+// .img-plus-6 {background-image: url("../img/pg6.png");}
+.pi-bg-1 {background-image: url("../../content/images/t1.png");}
+// .pi-bg-2 {background-image: url("../img/t1.png");}
+// .pi-bg-3 {background-image: url("../img/t1.png");}
+// .pi-bg-4 {background-image: url("../img/t1.png");}
+// .pi-bg-5 {background-image: url("../img/t1.png");}
+// .pi-bg-6 {background-image: url("../img/p6.png");}
