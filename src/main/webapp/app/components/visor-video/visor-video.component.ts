@@ -3,7 +3,7 @@ import { SafeUrl } from '@angular/platform-browser';
 import { Subscription } from 'rxjs';
 import { IComponente } from 'app/shared/model/componente.model';
 import { MultimediaService } from 'app/services/multimedia.service';
-import { VideoPlayingService } from 'app/services/video-playing.service';
+import { MultimediaPlayingService } from 'app/services/multimedia-playing.service';
 
 @Component({
   selector: 'jhi-visor-video',
@@ -32,11 +32,11 @@ export class VisorVideoComponent implements OnDestroy {
   active = false;
   playing = false;
 
-  constructor(private multimediaService: MultimediaService, private videoPlayingService: VideoPlayingService) {
-    this.subscription = this.videoPlayingService.getActive().subscribe(active => {
+  constructor(private multimediaService: MultimediaService, private multimediaPlayingService: MultimediaPlayingService) {
+    this.subscription = this.multimediaPlayingService.getActive().subscribe(active => {
       this.active = active;
     });
-    this.subscription = this.videoPlayingService.getPlaying().subscribe(playing => {
+    this.subscription = this.multimediaPlayingService.getPlaying().subscribe(playing => {
       if(!this.active) {
         this.playing = playing;
         this.pauseVideo();
@@ -73,9 +73,9 @@ export class VisorVideoComponent implements OnDestroy {
   }
 
   public toggleVideo(): void {
-    this.videoPlayingService.setActive(false);
+    this.multimediaPlayingService.setActive(false);
     this.active= true;
-    this.videoPlayingService.setPlaying(false);
+    this.multimediaPlayingService.setPlaying(false);
   }
 
   private pauseVideo(): void {

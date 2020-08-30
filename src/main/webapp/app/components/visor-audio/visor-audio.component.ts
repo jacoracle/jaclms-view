@@ -3,7 +3,7 @@ import { SafeUrl } from '@angular/platform-browser';
 import { Subscription } from 'rxjs';
 import { IComponente } from 'app/shared/model/componente.model';
 import { MultimediaService } from 'app/services/multimedia.service';
-import { AudioPlayingService } from 'app/services/audio-playing.service';
+import { MultimediaPlayingService } from 'app/services/multimedia-playing.service';
 
 @Component({
   selector: 'jhi-visor-audio',
@@ -27,11 +27,11 @@ export class VisorAudioComponent implements OnDestroy {
   active = false;
   playing = false;
 
-  constructor(private multimediaService: MultimediaService, private audioPlayingService: AudioPlayingService) {
-    this.subscription = this.audioPlayingService.getActive().subscribe(active => {
+  constructor(private multimediaService: MultimediaService, private multimediaPlayingService: MultimediaPlayingService) {
+    this.subscription = this.multimediaPlayingService.getActive().subscribe(active => {
       this.active = active;
     });
-    this.subscription = this.audioPlayingService.getPlaying().subscribe(playing => {
+    this.subscription = this.multimediaPlayingService.getPlaying().subscribe(playing => {
       if(!this.active) {
         this.playing = playing;
         this.pauseAudio();
@@ -58,9 +58,9 @@ export class VisorAudioComponent implements OnDestroy {
   }
 
   public toggleAudio(): void {
-    this.audioPlayingService.setActive(false);
+    this.multimediaPlayingService.setActive(false);
     this.active= true;
-    this.audioPlayingService.setPlaying(false);
+    this.multimediaPlayingService.setPlaying(false);
   }
 
   private pauseAudio(): void {

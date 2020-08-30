@@ -4,7 +4,7 @@ import { Subject, Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
-export class VideoPlayingService {
+export class MultimediaPlayingService {
 
   private active = new Subject<boolean>();
   private playing = new Subject<boolean>();
