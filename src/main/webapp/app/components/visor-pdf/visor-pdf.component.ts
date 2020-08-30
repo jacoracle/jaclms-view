@@ -1,9 +1,9 @@
-import { Component, Input, OnDestroy } from '@angular/core';
+import { Component, Input, OnDestroy, ViewChild, ElementRef } from '@angular/core';
+import { SafeUrl } from '@angular/platform-browser';
 import { Subscription } from 'rxjs';
-import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
 import { IComponente } from 'app/shared/model/componente.model';
-import { IContenido, Contenido } from 'app/shared/model/contenido.model';
 import { MultimediaService } from 'app/services/multimedia.service';
+import { PDFModalService } from 'app/services/pdf-modal.service';
 
 @Component({
   selector: 'jhi-visor-pdf',
@@ -11,37 +11,29 @@ import { MultimediaService } from 'app/services/multimedia.service';
   styleUrls: ['./visor-pdf.component.scss']
 })
 export class VisorPdfComponent implements OnDestroy {
-  defaultPdfUrl: SafeUrl = './../../../../content/images/pdf_layout.png';
-  loadedPdfUrl: SafeUrl = './../../../../content/images/pdf_up_layout.png';
-  pdfSrc: SafeUrl = '';
-  pathUrl = '';
+  defaultSrc: SafeUrl = './../../../../content/images/logo-jhipster.png';
+  pdfSrc: SafeUrl = './../../../../content/images/logo-jhipster.png';
   _component?: IComponente;
   @Input()
   set component(componente: IComponente | undefined) {
     this._component = componente;
-    if(this._component) {
-      this.getPdf(this._component);
-    }
-
   }
   get component(): IComponente | undefined {
     return this._component;
-  }   
-  showLoader = true;
-  subscription?: Subscription
+  }  
+  showLoader = false;
+  subscription?: Subscription;
 
-  constructor(private multimediaService: MultimediaService, private domSanitizer: DomSanitizer) { }
+  constructor(private multimediaService: MultimediaService, private pdfModalService: PDFModalService) { }
 
-  public getPdf(component: IComponente): void {
-    if (component && component.contenido && component.contenido.contenido !== '') {
-      this.multimediaService.getPdfPreviewFile(component.contenido.contenido!).subscribe(data => {
-        this.showLoader = false;
-        const pdfPath = URL.createObjectURL(data.body);
-        this.pdfSrc = this.domSanitizer.bypassSecurityTrustResourceUrl(pdfPath);
-      });  
-    }
-    else {
-      this.showLoader = false;
+  public loadPdf(): void {
+    if(this.component && this.component.contenido && this.component.contenido.contenido && this.component.contenido.contenido !== "") {
+      this.multimediaService.getPdfFile(this.component.contenido.contenido).subscribe(data => {
+        if(data.body) {
+          const safeUrl = this.multimediaService.getSafeResourceUrl(data.body);
+          this.pdfModalService.open(safeUrl);
+        }
+      });
     }
   }
 

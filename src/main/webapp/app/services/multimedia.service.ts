@@ -34,7 +34,7 @@ export class MultimediaService {
     });
   }
 
-  getPdfPreviewFile(filePath: string): Observable<HttpResponse<Blob>> {
+  getPdfFile(filePath: string): Observable<HttpResponse<Blob>> {
     return this.http.get(SERVER_API_URL + 'api/loadDocs?file=' + filePath, {
       observe: 'response',
       responseType: 'blob'
@@ -89,6 +89,11 @@ export class MultimediaService {
   getSafeUrl(file: Blob): SafeUrl {
     const path = URL.createObjectURL(file);
     return this.domSanitizer.bypassSecurityTrustUrl(path);
+  }
+
+  getSafeResourceUrl(file: Blob): SafeUrl {
+    const path = URL.createObjectURL(file);
+    return this.domSanitizer.bypassSecurityTrustResourceUrl(path);
   }
 
 }
