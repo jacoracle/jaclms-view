@@ -3,12 +3,10 @@
             (click)="activeModal.dismiss('closed')"><i class="icon ni-close"></i></button>
     <div class="modal-pdf-body">
         <div class="row-modal-pdf-modal">
+            <button (click)="download()">Descargar</button>
             <div class="col-form-pdf" *ngIf="pdfSrc">
                 Prueba
                 <embed [src]="pdfSrc" frameBorder="0" height="100%" width="100%" [type]="typePdf">
-            </div>
-            <div class="col-form-pdf" *ngIf="!pdfSrc">
-                Vacío
             </div>
         </div>
     </div>

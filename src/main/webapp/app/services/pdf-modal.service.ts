@@ -12,13 +12,14 @@ export class PDFModalService {
 
   constructor(private modalService: NgbModal) {}
 
-  open(pdfSrc: SafeUrl): void {
+  open(pdfSrc: SafeUrl, path: string): void {
     if (this.isOpen) {
       return;
     }
     this.isOpen = true;
     const modalRef: NgbModalRef = this.modalService.open(PdfModalComponent);
     modalRef.componentInstance.pdfSrc = pdfSrc;
+    modalRef.componentInstance.path = path;
     modalRef.result.finally(() => (this.isOpen = false));
   }
   

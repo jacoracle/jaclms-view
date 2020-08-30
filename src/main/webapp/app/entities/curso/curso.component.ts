@@ -47,7 +47,7 @@ export class CursoComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit(): void {
-    this.activatedRoute.data.subscribe(data => {
+    this.activatedRoute.data.subscribe(() => {
       this.page = 1;
       this.ascending = true;
       this.predicate = "";

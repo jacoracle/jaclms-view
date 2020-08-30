@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common'; 
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { SafeUrl } from '@angular/platform-browser';
+import { MultimediaService } from 'app/services/multimedia.service';
+import * as fileSaver from 'file-saver';
 
 @Component({
   selector: 'jhi-pdf-modal',
@@ -11,8 +12,28 @@ import { SafeUrl } from '@angular/platform-browser';
 export class PdfModalComponent {
 
   pdfSrc?: SafeUrl;
+  path?: string;
   typePdf = 'application/pdf';
 
-  constructor(public activeModal: NgbActiveModal) {}
+  constructor(public activeModal: NgbActiveModal, private multimediaService: MultimediaService) {}
+
+  download(): void {
+    if(this.path)
+    this.multimediaService.getPdfFile(this.path).subscribe(data => {
+      this.saveToFileSystem(data);
+    })
+  }
+
+  private saveToFileSystem(response: any): void {
+    console.error(response);
+    /*
+    const contentDispositionHeader: string = response.headers.get('Content-Disposition');
+    const parts: string[] = contentDispositionHeader.split(';');
+    const filename = parts[1].split('=')[1];
+    */
+    const filename = "archivo";
+    const blob = new Blob([response.body], { type: 'application/pdf' });
+    fileSaver.saveAs(blob, filename);
+  }
 
 }

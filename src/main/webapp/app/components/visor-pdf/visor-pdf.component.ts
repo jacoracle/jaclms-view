@@ -1,4 +1,4 @@
-import { Component, Input, OnDestroy, ViewChild, ElementRef } from '@angular/core';
+import { Component, Input, OnDestroy } from '@angular/core';
 import { SafeUrl } from '@angular/platform-browser';
 import { Subscription } from 'rxjs';
 import { IComponente } from 'app/shared/model/componente.model';
@@ -31,7 +31,7 @@ export class VisorPdfComponent implements OnDestroy {
       this.multimediaService.getPdfFile(this.component.contenido.contenido).subscribe(data => {
         if(data.body) {
           const safeUrl = this.multimediaService.getSafeResourceUrl(data.body);
-          this.pdfModalService.open(safeUrl);
+          this.pdfModalService.open(safeUrl, this.component!.contenido!.contenido!);
         }
       });
     }
