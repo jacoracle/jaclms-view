@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { IPais } from 'app/shared/model/pais.model';
 import { HttpResponse, HttpClient } from '@angular/common/http';
 import { createRequestOption } from 'app/shared/util/request-util';
 import { SERVER_API_URL } from 'app/app.constants';

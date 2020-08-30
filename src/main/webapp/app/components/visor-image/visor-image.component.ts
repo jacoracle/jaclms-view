@@ -2,7 +2,6 @@ import { Component, OnDestroy, Input } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { SafeUrl, DomSanitizer } from '@angular/platform-browser';
 import { IComponente } from 'app/shared/model/componente.model';
-import { FileUploadService } from 'app/services/file-upload.service';
 import { MultimediaService } from 'app/services/multimedia.service';
 
 @Component({

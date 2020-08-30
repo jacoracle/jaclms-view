@@ -1,6 +1,5 @@
-import { AfterContentInit, Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { BloquesCurso } from 'app/shared/model/bloques-curso.model';
-import { ITargetScroll, TargetScroll } from 'app/shared/model/target-scroll.model';
 
 @Component({
   selector: 'jhi-content-block8',

@@ -1,5 +1,4 @@
-import { Component, Input, AfterContentInit } from '@angular/core';
-import { IComponente } from 'app/shared/model/componente.model';
+import { Component, Input } from '@angular/core';
 import { BloquesCurso } from 'app/shared/model/bloques-curso.model';
 
 @Component({
