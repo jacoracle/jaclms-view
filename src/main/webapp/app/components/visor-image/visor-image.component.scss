@@ -5,11 +5,8 @@ img.block-img {
   width: 100%;
   max-width: 980px;
   height: auto;
-  border: 1px dashed $blue-nimbus-light;
+  // border: 1px dashed $blue-nimbus-light;
   transition: 0.3s;
-  &:hover {
-    border: 1px solid $blue-nimbus-dark;
-  }
 }
 
 // Loader

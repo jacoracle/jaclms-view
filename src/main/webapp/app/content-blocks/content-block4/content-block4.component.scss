@@ -7,9 +7,6 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  @include smartphone {
-    background-color: red;
-  }
 }
 
 .col-cb-text-img > div {
@@ -24,12 +21,9 @@
   // border: 1px solid blue;
 }
 .col-cb-text-img > div:nth-child(1) > .b-paragraph-text {
-  cursor: pointer;
-  border: 1px dashed $blue-nimbus-light;
+  // cursor: pointer;
+  // border: 1px dashed $blue-nimbus-light;
   transition: 0.3s;
-  &:hover {
-    border: 1px solid $blue-nimbus-light;
-  }
 }
 .col-cb-text-img > div:nth-child(2) > .cc-image {
   position: relative;
@@ -43,11 +37,8 @@
     width: 100%;
     max-width: 500px;
     height: auto;
-    border: 1px dashed $blue-nimbus-light;
+    // border: 1px dashed $blue-nimbus-light;
     transition: 0.3s;
-    cursor: pointer;
-    &:hover {
-      border: 1px solid $blue-nimbus-light;
-    }
+    // cursor: pointer;
   }
 }

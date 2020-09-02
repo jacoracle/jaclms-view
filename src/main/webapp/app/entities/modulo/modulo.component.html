@@ -1,11 +1,11 @@
 <div class="container" *ngIf="modulo">
     <div class="row" *ngIf="modulo.id">
-        <h4>UMA: {{modulo.id}}</h4>
+        <!-- <h4>UMA: {{modulo.id}}</h4> -->
     </div>
-    
+
     <div class="row" *ngIf="modulo && modulo.nivelesModulo && modulo.nivelesModulo.nivelJerarquico">
         <div *ngFor="let block of modulo.nivelesModulo.nivelJerarquico.bloquesCurso" class="container block-container">
-            <div *ngIf="block && block.bloqueComponentes && block.bloqueComponentes.tipoBloqueComponentes">                
+            <div *ngIf="block && block.bloqueComponentes && block.bloqueComponentes.tipoBloqueComponentes">
                 <div *ngIf="block!.bloqueComponentes!.tipoBloqueComponentes!.nombre == 'titulo'">
                     <jhi-content-block1 [contentBlock]="block"></jhi-content-block1>
                 </div>
@@ -17,7 +17,7 @@
                 </div>
                 <div *ngIf="block!.bloqueComponentes!.tipoBloqueComponentes!.nombre == 'imagen_texto'">
                     <jhi-content-block4 [contentBlock]="block"></jhi-content-block4>
-                </div>            
+                </div>
                 <div *ngIf="block!.bloqueComponentes!.tipoBloqueComponentes!.nombre == 'video'">
                     <jhi-content-block5 [contentBlock]="block"></jhi-content-block5>
                 </div>
