@@ -188,6 +188,7 @@ Generic styles
   position: relative;
   width: 100%;
   height: calc(100vh - 85px);
+  overflow-y: auto;
 }
 .footerHome {
   position: relative;
@@ -607,7 +608,7 @@ jhi-login-modal {
         background-repeat: no-repeat;
         margin-bottom: 10px;
         margin-top: 10px;
-        // background-color: silver;
+        background-color: silver;
         @include smartphone {
           width: 140px;
           height: 100px;
@@ -760,32 +761,32 @@ jhi-login-modal {
       }
     }
   }
-  .row-cfl-register {
+}
+.row-cfl-register {
+  position: relative;
+  width: 100%;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 25px;
+  p {
+    margin-right: 10px;
+  }
+  a {
     position: relative;
-    width: 100%;
+    width: auto;
     height: auto;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 25px;
-    p {
-      margin-right: 10px;
+    font-size: 14px;
+    cursor: pointer;
+    color: $a-color-nd;
+    font-weight: 600;
+    transition: 0.3s;
+    &:hover {
+      color: $a-color-nd-hover;
     }
-    a {
-      position: relative;
-      width: auto;
-      height: auto;
-      font-size: 14px;
-      cursor: pointer;
-      color: $a-color-nd;
-      font-weight: 600;
-      transition: 0.3s;
-      &:hover {
-        color: $a-color-nd-hover;
-      }
-      @include smartphone {
-        font-size: 12px;
-      }
+    @include smartphone {
+      font-size: 12px;
     }
   }
 }

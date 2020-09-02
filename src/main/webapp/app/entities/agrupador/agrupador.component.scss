@@ -1,3 +1,4 @@
+@import '../../../content/scss/global.scss';
 .row-agrupador {
   position: relative;
   width: 100%;
@@ -23,39 +24,46 @@
   display: grid;
   -webkit-box-pack: center;
   justify-content: center;
-  grid-template-columns: repeat(auto-fill, 210px);
+  grid-template-columns: repeat(auto-fill, 240px);
   // grid-gap: 20px;
-  grid-gap: 25px;
-  margin-top: 20px;
+  grid-gap: 30px;
+  margin-top: 30px;
 }
 .box-card {
   position: relative;
-  width: 210px;
-  height: 140px;
+  width: 240px;
+  height: 200px;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  flex-direction: column;
   cursor: pointer;
-  background-color: white;
-  border-radius: 8px;
-  border: 4px solid #eaedf4;
-  transition: border 0.5s;
-  box-shadow: 0 20px 30px rgba(0, 18, 51, 0.1), 0 6px 18px rgba(16, 18, 51, 0.12);
-  background-image: url('../../../content/images/right_empty.svg');
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: 60%;
-  &:hover {
-    border: 4px solid #18bafb;
+
+  .img-cover-box {
+    position: relative;
+    width: 240px;
+    height: 160px;
+    background-image: url('../../../content/images/right_empty.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 40%;
+    background-color: white;
+    border-radius: 6px;
+    border: 2px solid #eaedf4;
+    transition: border 0.5s;
+    box-shadow: $shadowBlock;
+    &:hover {
+      border: 2px solid #18bafb;
+    }
   }
   .title-c {
     position: relative;
-    width: 80%;
+    width: 92%;
     height: auto;
-    font-size: 16px;
-    text-align: center;
+    font-size: 14px;
+    text-align: left;
     font-weight: 600;
-    color: #2196f3;
+    margin: 0 auto;
+    margin-top: 8px;
+    // color: #2196f3;
   }
 }
 .cursor-drag {
@@ -169,5 +177,147 @@
   }
   &:active {
     transform: scale(0.96);
+  }
+}
+
+
+// Home
+.row-home {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-color: $window-body-color;
+  display: flex;
+}
+.sidebar-home {
+  position: relative;
+  width: 70px;
+  height: 100%;
+  background-color: $blue-darkness
+  // border-right: 1px solid $window-divider-color;
+}
+.main-content-one {
+  position: relative;
+  width: calc(100% - 490px);
+  height: 100%;
+  overflow-y: auto;
+}
+.main-content-two {
+  position: relative;
+  width: 420px;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .content-two {
+    position: relative;
+    width: 88%;
+    height: 92%;
+    background-color: white;
+    border-radius: 10px;
+    overflow: auto;
+    display: flex;
+    flex-direction: column;
+    box-shadow: $shadowBlock;
+  }
+}
+.text-h {
+  position: absolute;
+  width: 300px;
+  height: auto;
+  left: 6%;
+  top: 10%;
+
+  button {
+    margin-top: 20px;
+  }
+}
+.img-user-home {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  background-color: $background-workspace;
+  border-radius: 50%;
+  margin: 0 auto;
+  margin-top: 20px;
+}
+.name-user-home {
+  position: relative;
+  width: 90%;
+  height: auto;
+  margin: 0 auto;
+  margin-top: 10px;
+  text-align: center;
+  font-size: 22px;
+}
+.row-ct-home-gam {
+  position: relative;
+  width: 80%;
+  height: 20px;
+  border-radius: 10px;
+  margin: 0 auto;
+  margin-top: 30px;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+  .stars {
+    position: relative;
+    width: auto;
+    height: 30px;
+    display: flex;
+    img {
+      position: relative;
+      width: 30px;
+      height: 30px;
+      margin-left: 8px;
+    }
+  }
+  .coins {
+    position: relative;
+    width: auto;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    margin-right: 10px;
+    img {
+      position: relative;
+      width: 30px;
+      height: 30px;
+    }
+    span {
+      margin-left: 10px;
+      font-size: 16px;
+      font-weight: 600;
+      color: $blue-nimbus-dark;
+    }
+  }
+}
+.row-ct-home {
+  position: relative;
+  width: 86%;
+  height: auto;
+  min-height: 30px;
+  border-radius: 10px;
+  background-color: $footer-bg-color;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  margin-top: 20px;
+  padding-left: 10px;
+  h4 {
+    position: relative;
+    width: 90%;
+    height: auto;
+    font-size: 14px;
+    font-weight: 600;
+  }
+  p {
+    position: relative;
+    width: 90%;
+    height: auto;
+    margin-top: 15px;
   }
 }
