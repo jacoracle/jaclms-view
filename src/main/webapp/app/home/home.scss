@@ -34,6 +34,7 @@ Main page styles
     background-image: url("../../content/images/hedaer-home.png");
     background-position: bottom;
     background-size: 100%;
+    background-repeat: no-repeat;
   }
   .row-options-home {
     position: relative;
@@ -52,6 +53,33 @@ Main page styles
       background-color: white;
       border-radius: 10px;
       box-shadow: $shadowBlock;
+      display: flex;
+      flex-direction: column;
+      .oh-img {
+        position: relative;
+        width: 50px;
+        height: 50px;
+        background-image: url("../../content/images/module_cover.png");
+        background-position: center;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        margin-top: 20px;
+        margin-left: 8%;
+      }
+      h4 {
+        position: relative;
+        width: 82%;
+        height: auto;
+        margin: 0 auto;
+        margin-top: 20px;
+      }
+      p {
+        position: relative;
+        width: 82%;
+        height: auto;
+        margin: 0 auto;
+        margin-top: 10px;
+      }
     }
   }
 }
@@ -83,5 +111,94 @@ Main page styles
 
   button {
     margin-top: 20px;
+  }
+}
+.img-user-home {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  background-color: $background-workspace;
+  border-radius: 50%;
+  margin: 0 auto;
+  margin-top: 20px;
+}
+.name-user-home {
+  position: relative;
+  width: 90%;
+  height: auto;
+  margin: 0 auto;
+  margin-top: 10px;
+  text-align: center;
+  font-size: 22px;
+}
+.row-ct-home-gam {
+  position: relative;
+  width: 80%;
+  height: 20px;
+  border-radius: 10px;
+  margin: 0 auto;
+  margin-top: 30px;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+  .stars {
+    position: relative;
+    width: auto;
+    height: 30px;
+    display: flex;
+    img {
+      position: relative;
+      width: 30px;
+      height: 30px;
+      margin-left: 8px;
+    }
+  }
+  .coins {
+    position: relative;
+    width: auto;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    margin-right: 10px;
+    img {
+      position: relative;
+      width: 30px;
+      height: 30px;
+    }
+    span {
+      margin-left: 10px;
+      font-size: 16px;
+      font-weight: 600;
+      color: $blue-nimbus-dark;
+    }
+  }
+}
+.row-ct-home {
+  position: relative;
+  width: 86%;
+  height: auto;
+  min-height: 30px;
+  border-radius: 10px;
+  background-color: $footer-bg-color;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  margin-top: 20px;
+  padding-left: 10px;
+  h4 {
+    position: relative;
+    width: 90%;
+    height: auto;
+    font-size: 14px;
+    font-weight: 600;
+  }
+  p {
+    position: relative;
+    width: 90%;
+    height: auto;
+    margin-top: 15px;
   }
 }
