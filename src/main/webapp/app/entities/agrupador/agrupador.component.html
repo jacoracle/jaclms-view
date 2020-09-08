@@ -3,32 +3,30 @@
 
   <div class="main-content-one">
     <div class="header-groups">
-
-      <div class="row-agrupador">
-        <div class="title-a">Libros</div>
-          <div class="grid-cards">
-            <div class="box-card" *ngFor="let agrupador of agrupadores" (click)="selectGrouping(agrupador)" [routerLink]="['/visor', agrupador.id]">
-              <div class="img-cover-box"></div>
-              <div class="title-c" *ngIf="agrupador.titulo">{{agrupador.titulo}}</div>
-            </div>
-          </div>
-          <!-- <ul>
-              <li *ngFor="let agrupador of agrupadores">
-                  <a *ngIf="agrupador.titulo" (click)="selectGrouping(agrupador)" [routerLink]="['/visor', agrupador.id]">{{agrupador.titulo}}</a>
-              </li>
-          </ul> -->
-      </div>
-      <div class="row" *ngIf="agrupador">
-          {{agrupador.titulo}}
-      </div>
-
-
+      <div class="title-a">Libros</div>
     </div>
+    <div class="row-agrupador">
+        <div class="grid-cards">
+          <div class="box-card" *ngFor="let agrupador of agrupadores" (click)="selectGrouping(agrupador)" [routerLink]="['/visor', agrupador.id]">
+            <div class="img-cover-box"></div>
+            <div class="title-c" *ngIf="agrupador.titulo">{{agrupador.titulo}}</div>
+          </div>
+        </div>
+        <!-- <ul>
+            <li *ngFor="let agrupador of agrupadores">
+                <a *ngIf="agrupador.titulo" (click)="selectGrouping(agrupador)" [routerLink]="['/visor', agrupador.id]">{{agrupador.titulo}}</a>
+            </li>
+        </ul> -->
+    </div>
+    <!-- <div class="row" *ngIf="agrupador">
+        {{agrupador.titulo}}
+    </div> -->
   </div>
 
   <div class="main-content-two">
+    <div class="header-mc-two"></div>
     <div class="content-two">
-      <div class="img-user-home"></div>
+      <div class="img-user-home"> <i class="icon ni-user"></i></div>
       <h3 class="name-user-home">Hola, Admin</h3>
       <div class="row-ct-home-gam">
         <div class="stars">
