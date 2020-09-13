@@ -6,6 +6,7 @@
     <div class="row" *ngIf="modulo && modulo.nivelesModulo && modulo.nivelesModulo.nivelJerarquico">
         <div *ngFor="let block of modulo.nivelesModulo.nivelJerarquico.bloquesCurso" class="container block-container">
             <div *ngIf="block && block.bloqueComponentes && block.bloqueComponentes.tipoBloqueComponentes">
+                <!--
                 <div *ngIf="block!.bloqueComponentes!.tipoBloqueComponentes!.nombre == 'titulo'">
                     <jhi-content-block1 [contentBlock]="block"></jhi-content-block1>
                 </div>
@@ -32,6 +33,10 @@
                 </div>
                 <div *ngIf="block!.bloqueComponentes!.tipoBloqueComponentes!.nombre == 'sound'">
                     <jhi-content-block9 [contentBlock]="block"></jhi-content-block9>
+                </div>
+                -->
+                <div *ngIf="block!.bloqueComponentes!.tipoBloqueComponentes!.nombre == 'actividad'">
+                    <jhi-content-block10 [contentBlock]="block"></jhi-content-block10>
                 </div>
             </div>
 

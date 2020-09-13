@@ -1,0 +1,10 @@
+.respuesta {
+    border: 1px black solid;
+    margin: 5px;
+}
+.seleccionada {
+    background-color: blue;
+}
+.disabled {
+    pointer-events: none;
+}

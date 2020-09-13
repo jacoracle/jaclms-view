@@ -1,0 +1,10 @@
+<div *ngIf="component && component.actividadesInteractivas" class="ia-container">
+    <div *ngFor="let activity of component.actividadesInteractivas">
+        <div *ngIf="activity.tipoActividadInteractiva && activity.tipoActividadInteractiva.tipoActividad">
+            <div *ngIf="activity.tipoActividadInteractiva.tipoActividad === 'pregunta'">
+                <jhi-question [activity]="activity"></jhi-question>
+            </div>
+        </div>
+    </div>
+</div>
+

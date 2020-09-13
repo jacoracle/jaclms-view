@@ -10,6 +10,7 @@ import { ContentBlock7Component } from './content-block7/content-block7.componen
 import { ContentBlock8Component } from './content-block8/content-block8.component';
 import { ContentBlock9Component } from './content-block9/content-block9.component';
 import { ComponentsModule } from 'app/components/components.module';
+import { ContentBlock10Component } from './content-block10/content-block10.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { ComponentsModule } from 'app/components/components.module';
     ContentBlock6Component,
     ContentBlock7Component,
     ContentBlock8Component,
-    ContentBlock9Component
+    ContentBlock9Component,
+    ContentBlock10Component
   ],
   imports: [
     CommonModule, ComponentsModule
@@ -35,7 +37,8 @@ import { ComponentsModule } from 'app/components/components.module';
     ContentBlock6Component,
     ContentBlock7Component,
     ContentBlock8Component,
-    ContentBlock9Component
+    ContentBlock9Component,
+    ContentBlock10Component
   ]
 })
 export class ContentBlocksModule { }
