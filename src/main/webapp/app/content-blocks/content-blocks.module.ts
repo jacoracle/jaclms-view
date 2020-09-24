@@ -15,6 +15,8 @@ import { ContentBlock11Component } from './content-block11/content-block11.compo
 import { ContentBlock12Component } from './content-block12/content-block12.component';
 import { ContentBlock13Component } from './content-block13/content-block13.component';
 import { ContentBlock14Component } from './content-block14/content-block14.component';
+import { ContentBlock17Component } from './content-block17/content-block17.component';
+import { ContentBlock18Component } from './content-block18/content-block18.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +33,9 @@ import { ContentBlock14Component } from './content-block14/content-block14.compo
     ContentBlock11Component,
     ContentBlock12Component,
     ContentBlock13Component,
-    ContentBlock14Component
+    ContentBlock14Component,
+    ContentBlock17Component,
+    ContentBlock18Component
   ],
   imports: [
     CommonModule, ComponentsModule
