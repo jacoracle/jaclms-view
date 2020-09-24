@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { IActividadInterativa } from 'app/shared/model/actividad-interactiva.model';
+import { mixArray } from './../../shared/utilities'
 
 @Component({
   selector: 'jhi-question',
@@ -24,6 +25,7 @@ export class QuestionComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    this.mixOptions();
   }
 
   selectAnswer(pregunta: any, respuesta: any): void {
@@ -83,6 +85,13 @@ export class QuestionComponent implements OnInit {
       }
     }
     return pending;
+  }
+
+  mixOptions(): void {
+    const preguntas = this.activity?.contenido.preguntas;
+    for(let i = 0; i < preguntas.length; i++) {
+      preguntas[i].respuestas = mixArray(preguntas[i].respuestas);
+    }
   }
 
 }
