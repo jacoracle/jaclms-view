@@ -11,6 +11,10 @@ import { ContentBlock8Component } from './content-block8/content-block8.componen
 import { ContentBlock9Component } from './content-block9/content-block9.component';
 import { ComponentsModule } from 'app/components/components.module';
 import { ContentBlock10Component } from './content-block10/content-block10.component';
+import { ContentBlock11Component } from './content-block11/content-block11.component';
+import { ContentBlock12Component } from './content-block12/content-block12.component';
+import { ContentBlock13Component } from './content-block13/content-block13.component';
+import { ContentBlock14Component } from './content-block14/content-block14.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +27,11 @@ import { ContentBlock10Component } from './content-block10/content-block10.compo
     ContentBlock7Component,
     ContentBlock8Component,
     ContentBlock9Component,
-    ContentBlock10Component
+    ContentBlock10Component,
+    ContentBlock11Component,
+    ContentBlock12Component,
+    ContentBlock13Component,
+    ContentBlock14Component
   ],
   imports: [
     CommonModule, ComponentsModule
@@ -38,7 +46,9 @@ import { ContentBlock10Component } from './content-block10/content-block10.compo
     ContentBlock7Component,
     ContentBlock8Component,
     ContentBlock9Component,
-    ContentBlock10Component
+    ContentBlock10Component,
+    ContentBlock11Component,
+    ContentBlock12Component
   ]
 })
 export class ContentBlocksModule { }

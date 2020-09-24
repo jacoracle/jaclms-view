@@ -6,7 +6,7 @@
     <div class="row" *ngIf="modulo && modulo.nivelesModulo && modulo.nivelesModulo.nivelJerarquico">
         <div *ngFor="let block of modulo.nivelesModulo.nivelJerarquico.bloquesCurso" class="container block-container">
             <div *ngIf="block && block.bloqueComponentes && block.bloqueComponentes.tipoBloqueComponentes">
-                <!--
+                <b>Bloque: {{block!.bloqueComponentes!.tipoBloqueComponentes!.nombre}}</b>
                 <div *ngIf="block!.bloqueComponentes!.tipoBloqueComponentes!.nombre == 'titulo'">
                     <jhi-content-block1 [contentBlock]="block"></jhi-content-block1>
                 </div>
@@ -34,9 +34,14 @@
                 <div *ngIf="block!.bloqueComponentes!.tipoBloqueComponentes!.nombre == 'sound'">
                     <jhi-content-block9 [contentBlock]="block"></jhi-content-block9>
                 </div>
-                -->
-                <div *ngIf="block!.bloqueComponentes!.tipoBloqueComponentes!.nombre == 'actividad'">
+                <div *ngIf="block!.bloqueComponentes!.tipoBloqueComponentes!.nombre == 'activity_question_text'">
                     <jhi-content-block10 [contentBlock]="block"></jhi-content-block10>
+                </div>
+                <div *ngIf="block!.bloqueComponentes!.tipoBloqueComponentes!.nombre == 'cabecera'">
+                    <jhi-content-block11 [contentBlock]="block"></jhi-content-block11>
+                </div>
+                <div *ngIf="block!.bloqueComponentes!.tipoBloqueComponentes!.nombre == 'colapsable'">
+                    <jhi-content-block12 [contentBlock]="block"></jhi-content-block11>
                 </div>
             </div>
 
