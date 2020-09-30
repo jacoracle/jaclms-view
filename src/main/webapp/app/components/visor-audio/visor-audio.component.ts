@@ -11,7 +11,7 @@ import { MultimediaPlayingService } from 'app/services/multimedia-playing.servic
   styleUrls: ['./visor-audio.component.scss']
 })
 export class VisorAudioComponent implements OnDestroy {
-  defaultSrc: SafeUrl = './../../../../content/images/logo-jhipster.png';
+  defaultSrc: SafeUrl = './../../../../content/images/icon_audio.svg';
   audioSrc: SafeUrl = '';
   _component?: IComponente;
   @Input()
@@ -20,7 +20,7 @@ export class VisorAudioComponent implements OnDestroy {
   }
   get component(): IComponente | undefined {
     return this._component;
-  }  
+  }
   showLoader = false;
   subscription?: Subscription;
   @ViewChild('audio') audio?: ElementRef;

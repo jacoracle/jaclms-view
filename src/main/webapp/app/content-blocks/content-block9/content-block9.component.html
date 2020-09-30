@@ -2,8 +2,14 @@
 Bloque 9: Audio
 <div class="col-cb-audio" *ngIf="contentBlock && contentBlock.bloqueComponentes">
     <div class="b-audio" *ngFor="let component of contentBlock.bloqueComponentes.componentes!; let index = index;">
-        <div *ngIf="contentBlock.bloqueComponentes.tipoBloqueComponentes">
+        <div *ngIf="contentBlock.bloqueComponentes.tipoBloqueComponentes" class="row-audio-circle">
             <jhi-visor-audio [component]="component"></jhi-visor-audio>
         </div>
+        <div class="row-audio-text">
+          <div class="secondary-btn"><i class="icon ni-play"></i>Abrir reproductor</div>
+        </div>
+    </div>
+    <div class="b-audio-bottom">
+      <div class="title-audio">Título de audio</div>
     </div>
 </div>

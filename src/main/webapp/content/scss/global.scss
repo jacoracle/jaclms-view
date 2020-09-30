@@ -269,24 +269,24 @@ Custom alerts for notification
 /* ==========================================================================
 entity detail page css
 ========================================================================== */
-.row.jh-entity-details > {
-  dd {
-    margin-bottom: 15px;
-  }
-}
+// .row.jh-entity-details > {
+//   dd {
+//     margin-bottom: 15px;
+//   }
+// }
 
-@media screen and (min-width: 768px) {
-  .row.jh-entity-details > {
-    dt {
-      margin-bottom: 15px;
-    }
-    dd {
-      border-bottom: 1px solid #eee;
-      padding-left: 180px;
-      margin-left: 0;
-    }
-  }
-}
+// @media screen and (min-width: 768px) {
+//   .row.jh-entity-details > {
+//     dt {
+//       margin-bottom: 15px;
+//     }
+//     dd {
+//       border-bottom: 1px solid #eee;
+//       padding-left: 180px;
+//       margin-left: 0;
+//     }
+//   }
+// }
 
 /* ==========================================================================
 ui bootstrap tweaks
@@ -827,6 +827,22 @@ jhi-login-modal {
       position: relative;
       width: 260px;
       height: 260px;
+    }
+  }
+}
+// Audio
+.row-audio-circle {
+  jhi-visor-audio {
+    img {
+      position: relative;
+      width: 65px;
+      height: 65px;
+    }
+    audio {
+      position: relative;
+      top: 96px;
+      z-index: 10;
+      filter: invert(1);
     }
   }
 }
