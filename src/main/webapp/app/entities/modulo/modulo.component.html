@@ -5,42 +5,54 @@
     <div class="row-ccb" *ngIf="modulo && modulo.nivelesModulo && modulo.nivelesModulo.nivelJerarquico">
         <div class="row-ccb1" *ngFor="let block of modulo.nivelesModulo.nivelJerarquico.bloquesCurso">
             <div class="row-ccb2" *ngIf="block && block.bloqueComponentes && block.bloqueComponentes.tipoBloqueComponentes">
-                <div *ngIf="block!.bloqueComponentes!.tipoBloqueComponentes!.nombre == 'titulo'" class="standard-container">
+                <div *ngIf="block!.bloqueComponentes!.tipoBloqueComponentes!.nombre === 'titulo'" class="standard-container">
                     <jhi-content-block1 [contentBlock]="block"></jhi-content-block1>
                 </div>
-                <div *ngIf="block!.bloqueComponentes!.tipoBloqueComponentes!.nombre == 'texto'" class="standard-container">
+                <div *ngIf="block!.bloqueComponentes!.tipoBloqueComponentes!.nombre === 'texto'" class="standard-container">
                     <jhi-content-block2 [contentBlock]="block"></jhi-content-block2>
                 </div>
-                <div *ngIf="block!.bloqueComponentes!.tipoBloqueComponentes!.nombre == 'imagen'" class="standard-container">
+                <div *ngIf="block!.bloqueComponentes!.tipoBloqueComponentes!.nombre === 'imagen'" class="standard-container">
                     <jhi-content-block3 [contentBlock]="block"></jhi-content-block3>
                 </div>
-                <div *ngIf="block!.bloqueComponentes!.tipoBloqueComponentes!.nombre == 'imagen_texto'" class="standard-container">
+                <div *ngIf="block!.bloqueComponentes!.tipoBloqueComponentes!.nombre === 'imagen_texto'" class="standard-container">
                     <jhi-content-block4 [contentBlock]="block"></jhi-content-block4>
                 </div>
-                <div *ngIf="block!.bloqueComponentes!.tipoBloqueComponentes!.nombre == 'video'" class="standard-container">
+                <div *ngIf="block!.bloqueComponentes!.tipoBloqueComponentes!.nombre === 'video'" class="standard-container">
                     <jhi-content-block5 [contentBlock]="block"></jhi-content-block5>
                 </div>
-                <div *ngIf="block!.bloqueComponentes!.tipoBloqueComponentes!.nombre == 'indicacion_video'" class="standard-container">
+                <div *ngIf="block!.bloqueComponentes!.tipoBloqueComponentes!.nombre === 'indicacion_video'" class="standard-container">
                     <jhi-content-block6 [contentBlock]="block"></jhi-content-block6>
                 </div>
-                <div *ngIf="block!.bloqueComponentes!.tipoBloqueComponentes!.nombre == 'video_envolvente'" class="standard-container">
+                <div *ngIf="block!.bloqueComponentes!.tipoBloqueComponentes!.nombre === 'video_envolvente'" class="standard-container">
                     <jhi-content-block7 [contentBlock]="block"></jhi-content-block7>
                 </div>
-                <div *ngIf="block!.bloqueComponentes!.tipoBloqueComponentes!.nombre == 'pdf'" class="standard-container">
+                <div *ngIf="block!.bloqueComponentes!.tipoBloqueComponentes!.nombre === 'pdf'" class="standard-container">
                     <jhi-content-block8 [contentBlock]="block"></jhi-content-block8>
                 </div>
-                <div *ngIf="block!.bloqueComponentes!.tipoBloqueComponentes!.nombre == 'sound'" class="standard-container">
+                <div *ngIf="block!.bloqueComponentes!.tipoBloqueComponentes!.nombre === 'sound'" class="standard-container">
                     <jhi-content-block9 [contentBlock]="block"></jhi-content-block9>
                 </div>
-                <div *ngIf="block!.bloqueComponentes!.tipoBloqueComponentes!.nombre == 'activity_question_text'">
+                <div *ngIf="block!.bloqueComponentes!.tipoBloqueComponentes!.nombre === 'activity_question_text'">
                     <jhi-content-block10 [contentBlock]="block"></jhi-content-block10>
                 </div>
-                <div *ngIf="block!.bloqueComponentes!.tipoBloqueComponentes!.nombre == 'cabecera'">
+                <div *ngIf="block!.bloqueComponentes!.tipoBloqueComponentes!.nombre === 'cabecera'">
                     <jhi-content-block11 [contentBlock]="block"></jhi-content-block11>
                 </div>
-                <div *ngIf="block!.bloqueComponentes!.tipoBloqueComponentes!.nombre == 'colapsable'">
-                    <jhi-content-block12 [contentBlock]="block"></jhi-content-block11>
+                <div *ngIf="block!.bloqueComponentes!.tipoBloqueComponentes!.nombre === 'colapsable'">
+                    <jhi-content-block12 [contentBlock]="block"></jhi-content-block12>
                 </div>
+                <div *ngIf="block!.bloqueComponentes!.tipoBloqueComponentes!.nombre === 'tip'">
+                    <jhi-content-block14 [contentBlock]="block"></jhi-content-block14>
+                </div>
+                <!--
+                <div *ngIf="block!.bloqueComponentes!.tipoBloqueComponentes!.nombre === 'colapsable'">
+                    <jhi-content-block12 [contentBlock]="block"></jhi-content-block12>
+                </div>
+                <div *ngIf="block!.bloqueComponentes!.tipoBloqueComponentes!.nombre === 'colapsable'">
+                    <jhi-content-block12 [contentBlock]="block"></jhi-content-block12>
+                </div>
+                -->
+                
             </div>
 
         </div>

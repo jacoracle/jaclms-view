@@ -1,7 +1,7 @@
 <!-- <h1>VISOR</h1> -->
 <div class="header-book" *ngIf="agrupador && agrupador.titulo">
     <!-- <h3>Agrupador: {{agrupador.titulo}}</h3> -->
-    <button routerLink="/groupings" class="main-btn">Regresar</button>
+    <button (click)="return()" class="main-btn">Regresar</button>
     <h3>{{agrupador.titulo}}</h3>
 </div>
 <div class="container-book" *ngIf="agrupador && agrupador.modulos">

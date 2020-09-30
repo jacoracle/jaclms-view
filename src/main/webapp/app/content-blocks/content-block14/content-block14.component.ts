@@ -10,6 +10,7 @@ export class ContentBlock14Component implements OnInit {
 
   imgSrc = './../../../../content/images/cover_upload.png';
   @Input() contentBlock?: BloquesCurso;
+  open = false;
 
   constructor() { }
 
