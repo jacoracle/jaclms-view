@@ -1,10 +1,11 @@
 <img [src]="defaultSrc" alt="" *ngIf="thumbSrc === '' && videoSrc === ''">
-<img [src]="thumbSrc" alt="" *ngIf="thumbSrc !== '' && videoSrc === ''" (click)="loadVideo()">
-<div *ngIf="videoSrc !== ''">
+<img [src]="thumbSrc" alt="" *ngIf="thumbSrc !== '' && videoSrc === ''" class="im-video">
+
+<div class="row-btn" (click)="loadVideo()"><div class="main-btn"><i class="icon ni-play"></i>Abrir reproductor</div></div>
+<div *ngIf="videoSrc !== ''" class="video-position">
   <video [src]="videoSrc" controls #video (play)="toggleVideo()"></video>
 </div>
 
 <div [hidden]="!showLoader" class="loader-video">
   <div class="loader2"></div>
-  Cargando...
 </div>
