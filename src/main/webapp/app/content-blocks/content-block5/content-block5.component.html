@@ -1,7 +1,14 @@
 <!-- Bloque de contenido: Video-->
 Bloque 5: Video
 <div class="col-cb-video" *ngIf="contentBlock && contentBlock.bloqueComponentes && contentBlock.bloqueComponentes.componentes">
+  <div class="row-video">
+    <div class="row-video-title">
+      <h5><div class="icon-video"></div>Video</h5>
+      <h4>Título de Recurso</h4>
+      <div class="row-btn"><div class="main-btn"><i class="icon ni-play"></i>Abrir reproductor</div></div>
+    </div>
     <div class="cc-video" *ngFor="let component of contentBlock.bloqueComponentes.componentes; let index = index;">
         <jhi-visor-video [component]="component" class="jhi-c-video"></jhi-visor-video>
     </div>
+  </div>
 </div>

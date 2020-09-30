@@ -10,6 +10,10 @@
   background-color: #aac9d8;
   overflow: hidden;
   border-radius: 6px;
+  background-image: url("../../../content/images/bg_pdf.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100%;
   .b-pdf {
     position: relative;
     width: 96%;
@@ -26,7 +30,6 @@
     .pdf-text-row {
       position: relative;
       width: 35%;
-      // background-color: red;
       height: auto;
       margin-left: 2%;
       display: flex;
