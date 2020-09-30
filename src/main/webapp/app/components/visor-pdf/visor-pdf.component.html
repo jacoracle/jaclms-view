@@ -1,7 +1,8 @@
 <img [src]="defaultSrc" alt="" *ngIf="!(this.component && this.component.contenido && this.component.contenido.contenido && this.component.contenido.contenido !== '')">
-<img [src]="pdfSrc" *ngIf="this.component && this.component.contenido && this.component.contenido.contenido && this.component.contenido.contenido !== ''" (click)="loadPdf()">
+<img [src]="pdfSrc" *ngIf="this.component && this.component.contenido && this.component.contenido.contenido && this.component.contenido.contenido !== ''" class="pdf-component-img">
+
+<div class="main-btn btn-pdf-component" (click)="loadPdf()"><i class="icon ni-view"></i>Ver</div>
 
 <div [hidden]="!showLoader" class="loader-pdf">
   <div class="loader2"></div>
-  Cargando...
 </div>
