@@ -20,6 +20,18 @@ export class ModuloComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    let numerador = 0;
+    const bloques = this._modulo?.nivelesModulo?.nivelJerarquico?.bloquesCurso;
+    if(bloques) {
+      for(let i = 0; i < bloques.length; i++) {
+        if(bloques[i].bloqueComponentes?.tipoBloqueComponentes?.nombre === 'numeracion_actividad') {
+          numerador++;
+          bloques[i].numeracion = numerador;
+        }
+        
+      }
+    }
+
   }
 
 }

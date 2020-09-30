@@ -8,6 +8,7 @@ export interface IBloquesCurso {
   mostrar?: number;
   indicadorOriginal?: number;
   nivelJerarquico?: INivelJerarquico;
+  numeracion?: number;
 }
 
 export class BloquesCurso implements IBloquesCurso {
@@ -17,6 +18,7 @@ export class BloquesCurso implements IBloquesCurso {
     public orden?: number,
     public mostrar?: number,
     public indicadorOriginal?: number,
-    public nivelJerarquico?: INivelJerarquico
+    public nivelJerarquico?: INivelJerarquico,
+    public numeracion?: number
   ) {}
 }
