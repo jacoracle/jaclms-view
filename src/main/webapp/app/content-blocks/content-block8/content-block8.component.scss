@@ -3,13 +3,49 @@
 .col-cb-pdf {
   position: relative;
   width: 100%;
-  height: auto;
+  height: 300px;
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: #aac9d8;
+  overflow: hidden;
+  border-radius: 6px;
   .b-pdf {
     position: relative;
-    width: 100%;
+    width: 96%;
     height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    .pdf-img {
+      position: relative;
+      width: auto;
+      height: 260px;
+    }
+    .pdf-text-row {
+      position: relative;
+      width: 35%;
+      // background-color: red;
+      height: auto;
+      margin-left: 2%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      h4 {
+        position: relative;
+        width: 100%;
+        height: auto;
+        font-weight: 600;
+        font-size: 30px;
+        text-align: center;
+      }
+      .main-btn {
+        margin-top: 25px;
+        i {
+          color: white;
+        }
+      }
+    }
   }
 }

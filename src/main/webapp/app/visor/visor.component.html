@@ -4,7 +4,7 @@
     <button routerLink="/groupings" class="main-btn">Regresar</button>
     <h3>{{agrupador.titulo}}</h3>
 </div>
-<div class="container" *ngIf="agrupador && agrupador.modulos">
+<div class="container-book" *ngIf="agrupador && agrupador.modulos">
     <div *ngFor="let modulo of agrupador.modulos">
         <div *ngIf="modulo && modulo.id" class="modulo-container">
             <div *ngIf="modulo.modulo">

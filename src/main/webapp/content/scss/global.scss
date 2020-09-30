@@ -50,7 +50,8 @@ Bootstrap tweaks
 }
 body {
   font-family: 'Open Sans', sans-serif;
-  background-color: $background-color-light !important;
+  // background-color: $background-color-light !important;
+  background-color: #f6f8fb !important;
   margin: 0 !important;
 }
 a:-webkit-any-link {
@@ -348,6 +349,9 @@ ui bootstrap tweaks
   }
   &:active {
     outline: none;
+  }
+  i {
+    margin-right: 8px;
   }
 }
 .main-btn.btn-color-1 {
@@ -785,4 +789,44 @@ jhi-login-modal {
 .container-fluid {
   padding-left: 0;
   padding-right: 0;
+}
+.container-components-book {
+  position: relative;
+  width: 100%;
+  height: auto;
+  .row-ccb {
+    position: relative;
+    width: 100%;
+    height: auto;
+    .row-ccb1 {
+      position: relative;
+      width: 100%;
+      height: auto;
+      .row-ccb2 {
+        position: relative;
+        width: 100%;
+        height: auto;
+        display: flex;
+        justify-content: center;
+      }
+    }
+  }
+}
+.standard-container {
+  position: relative;
+  width: 96%;
+  max-width: 1300px;
+  height: auto;
+  margin-top: 20px;
+  border: 1px solid $window-divider-color;
+}
+// PDF
+.pdf-img {
+  jhi-visor-pdf {
+    img {
+      position: relative;
+      width: 260px;
+      height: 260px;
+    }
+  }
 }

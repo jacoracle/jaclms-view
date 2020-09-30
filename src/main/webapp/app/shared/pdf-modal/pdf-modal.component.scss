@@ -2,17 +2,28 @@
 
 .modal-pdf-container {
   position: relative;
-  width: 90%;
-  height: 90vh;
+  width: 94%;
+  height: 92vh;
   margin: 0 auto;
   background-color: $bg-white;
   border-radius: 4px;
-  top: 5%;
+  top: 4%;
   box-shadow: 0 20px 30px rgba(16, 18, 51, 0.1), 0 6px 18px rgba(16, 18, 51, 0.12);
   @include smartphone {
     width: 360px;
     min-height: auto;
     padding-bottom: 15px;
+  }
+
+  .main-btn {
+    position: absolute;
+    top: 11px;
+    right: 100px;
+    z-index: 10;
+    i {
+      color: white;
+      transform: rotate(180deg);
+    }
   }
 
   .btn-close-modal-pdf {
@@ -82,4 +93,15 @@
       }
     }
   }
+}
+.name-pdf {
+  position: absolute;
+  width: 100px;
+  height: auto;
+  font-size: 15px;
+  font-weight: 400;
+  color: $blue-darkness;
+  top: 15px;
+  left: 3%;
+  z-index: 10;
 }

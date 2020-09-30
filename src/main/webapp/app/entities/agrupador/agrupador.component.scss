@@ -38,10 +38,10 @@
     background-position: center;
     background-size: 40%;
     background-color: white;
-    border-radius: 4px;
-    // border: 2px solid #eaedf4;
+    border-radius: 6px;
+    border: 1px solid $border-light;
     transition: border 0.5s;
-    box-shadow: $shadowBlock;
+    // box-shadow: $shadowBlock;
     &:hover {
       // border: 2px solid #18bafb;
     }
@@ -235,7 +235,8 @@
     overflow: auto;
     display: flex;
     flex-direction: column;
-    box-shadow: $shadowBlock;
+    // box-shadow: $shadowBlock;
+    border: 1px solid $border-light;
     z-index: 2;
   }
 }

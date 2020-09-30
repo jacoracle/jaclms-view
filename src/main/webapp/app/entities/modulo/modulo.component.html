@@ -1,36 +1,35 @@
-<div class="container" *ngIf="modulo">
+<div class="container-components-book" *ngIf="modulo">
     <div class="row" *ngIf="modulo.id">
         <!-- <h4>UMA: {{modulo.id}}</h4> -->
     </div>
-
-    <div class="row" *ngIf="modulo && modulo.nivelesModulo && modulo.nivelesModulo.nivelJerarquico">
-        <div *ngFor="let block of modulo.nivelesModulo.nivelJerarquico.bloquesCurso" class="container block-container">
-            <div *ngIf="block && block.bloqueComponentes && block.bloqueComponentes.tipoBloqueComponentes">
-                <div *ngIf="block!.bloqueComponentes!.tipoBloqueComponentes!.nombre == 'titulo'">
+    <div class="row-ccb" *ngIf="modulo && modulo.nivelesModulo && modulo.nivelesModulo.nivelJerarquico">
+        <div class="row-ccb1" *ngFor="let block of modulo.nivelesModulo.nivelJerarquico.bloquesCurso">
+            <div class="row-ccb2" *ngIf="block && block.bloqueComponentes && block.bloqueComponentes.tipoBloqueComponentes">
+                <div *ngIf="block!.bloqueComponentes!.tipoBloqueComponentes!.nombre == 'titulo'" class="standard-container">
                     <jhi-content-block1 [contentBlock]="block"></jhi-content-block1>
                 </div>
-                <div *ngIf="block!.bloqueComponentes!.tipoBloqueComponentes!.nombre == 'texto'">
+                <div *ngIf="block!.bloqueComponentes!.tipoBloqueComponentes!.nombre == 'texto'" class="standard-container">
                     <jhi-content-block2 [contentBlock]="block"></jhi-content-block2>
                 </div>
-                <div *ngIf="block!.bloqueComponentes!.tipoBloqueComponentes!.nombre == 'imagen'">
+                <div *ngIf="block!.bloqueComponentes!.tipoBloqueComponentes!.nombre == 'imagen'" class="standard-container">
                     <jhi-content-block3 [contentBlock]="block"></jhi-content-block3>
                 </div>
-                <div *ngIf="block!.bloqueComponentes!.tipoBloqueComponentes!.nombre == 'imagen_texto'">
+                <div *ngIf="block!.bloqueComponentes!.tipoBloqueComponentes!.nombre == 'imagen_texto'" class="standard-container">
                     <jhi-content-block4 [contentBlock]="block"></jhi-content-block4>
                 </div>
-                <div *ngIf="block!.bloqueComponentes!.tipoBloqueComponentes!.nombre == 'video'">
+                <div *ngIf="block!.bloqueComponentes!.tipoBloqueComponentes!.nombre == 'video'" class="standard-container">
                     <jhi-content-block5 [contentBlock]="block"></jhi-content-block5>
                 </div>
-                <div *ngIf="block!.bloqueComponentes!.tipoBloqueComponentes!.nombre == 'indicacion_video'">
+                <div *ngIf="block!.bloqueComponentes!.tipoBloqueComponentes!.nombre == 'indicacion_video'" class="standard-container">
                     <jhi-content-block6 [contentBlock]="block"></jhi-content-block6>
                 </div>
-                <div *ngIf="block!.bloqueComponentes!.tipoBloqueComponentes!.nombre == 'video_envolvente'">
+                <div *ngIf="block!.bloqueComponentes!.tipoBloqueComponentes!.nombre == 'video_envolvente'" class="standard-container">
                     <jhi-content-block7 [contentBlock]="block"></jhi-content-block7>
                 </div>
-                <div *ngIf="block!.bloqueComponentes!.tipoBloqueComponentes!.nombre == 'pdf'">
+                <div *ngIf="block!.bloqueComponentes!.tipoBloqueComponentes!.nombre == 'pdf'" class="standard-container">
                     <jhi-content-block8 [contentBlock]="block"></jhi-content-block8>
                 </div>
-                <div *ngIf="block!.bloqueComponentes!.tipoBloqueComponentes!.nombre == 'sound'">
+                <div *ngIf="block!.bloqueComponentes!.tipoBloqueComponentes!.nombre == 'sound'" class="standard-container">
                     <jhi-content-block9 [contentBlock]="block"></jhi-content-block9>
                 </div>
             </div>

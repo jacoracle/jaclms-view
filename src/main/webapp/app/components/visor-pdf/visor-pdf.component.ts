@@ -11,8 +11,8 @@ import { PDFModalService } from 'app/services/pdf-modal.service';
   styleUrls: ['./visor-pdf.component.scss']
 })
 export class VisorPdfComponent implements OnDestroy {
-  defaultSrc: SafeUrl = './../../../../content/images/logo-jhipster.png';
-  pdfSrc: SafeUrl = './../../../../content/images/logo-jhipster.png';
+  defaultSrc: SafeUrl = './../../../../content/images/pdf_img.png';
+  pdfSrc: SafeUrl = './../../../../content/images/pdf_img.png';
   _component?: IComponente;
   @Input()
   set component(componente: IComponente | undefined) {
@@ -20,7 +20,7 @@ export class VisorPdfComponent implements OnDestroy {
   }
   get component(): IComponente | undefined {
     return this._component;
-  }  
+  }
   showLoader = false;
   subscription?: Subscription;
 

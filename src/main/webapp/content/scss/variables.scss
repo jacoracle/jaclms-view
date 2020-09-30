@@ -34,7 +34,7 @@ $main-btn-color-hover: #3e66b5;
 $secondary-btn-color: #18bafb;
 $secondary-btn-hover: #10a3de;
 $btn-text-white: white;
-$btn-white-hover: #f4f5f7;
+$btn-white-hover: #e9ebef;
 // Alerts
 $alert-color: #e61a34;
 $alert-hover-color: #bf0f26;
@@ -72,6 +72,9 @@ $max-width: 1200px;
 
 $shadowBlock: 0 11px 34px rgba(0, 20, 35, 0.03), 0 16px 24px rgba(16, 18, 51, 0.02);
 $shadow: 0 20px 30px rgba(0, 18, 51, 0.1), 0 6px 18px rgba(16, 18, 51, 0.12);
+
+// Light
+$border-light: #dde1ea;
 
 // Mixin
 @mixin smartphone {

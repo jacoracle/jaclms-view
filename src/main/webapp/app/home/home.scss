@@ -1,7 +1,8 @@
 /* ==========================================================================
 Main page styles
 ========================================================================== */
-@import '../../content/scss/global.scss';
+// @import '../../content/scss/global.scss';
+@import '../../content/scss/variables.scss';
 .row-home {
   position: relative;
   width: 100%;
@@ -13,8 +14,8 @@ Main page styles
   position: relative;
   width: 70px;
   height: 100%;
-  background-color: $blue-darkness
-  // border-right: 1px solid $window-divider-color;
+  background-color: white;
+  border-right: 1px solid $window-divider-color;
 }
 .main-content-one {
   position: relative;
@@ -27,8 +28,9 @@ Main page styles
     max-width: 1200px;
     height: 440px;
     background-color: white;
-    border-radius: 10px;
-    box-shadow: $shadowBlock;
+    border-radius: 6px;
+    // box-shadow: $shadowBlock;
+    border: 1px solid $window-divider-color;
     margin: 0 auto;
     margin-top: 30px;
     background-image: url("../../content/images/hedaer-home.png");
@@ -51,8 +53,9 @@ Main page styles
       width: 30%;
       height: 160px;
       background-color: white;
-      border-radius: 10px;
-      box-shadow: $shadowBlock;
+      border-radius: 6px;
+      border: 1px solid $window-divider-color;
+      // box-shadow: $shadowBlock;
       display: flex;
       flex-direction: column;
       .oh-img {
@@ -95,11 +98,12 @@ Main page styles
     width: 88%;
     height: 92%;
     background-color: white;
-    border-radius: 10px;
+    border-radius: 6px;
     overflow: auto;
     display: flex;
     flex-direction: column;
-    box-shadow: $shadowBlock;
+    // box-shadow: $shadowBlock;
+    border: 1px solid $window-divider-color;
   }
 }
 .text-h {
