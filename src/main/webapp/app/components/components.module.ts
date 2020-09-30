@@ -5,6 +5,8 @@ import { VisorImageComponent } from './visor-image/visor-image.component';
 import { VisorVideoComponent } from './visor-video/visor-video.component';
 import { VisorPdfComponent } from './visor-pdf/visor-pdf.component';
 import { VisorAudioComponent } from './visor-audio/visor-audio.component';
+import { VisorInteractiveActivityComponent } from './visor-interactive-activity/visor-interactive-activity.component';
+import { InteractiveActivitiesModule } from 'app/interactive-activities/interactive-activities.module';
 
 @NgModule({
   declarations: [
@@ -12,17 +14,20 @@ import { VisorAudioComponent } from './visor-audio/visor-audio.component';
     VisorPdfComponent,
     VisorAudioComponent,
     VisorTextComponent,
-    VisorVideoComponent
+    VisorVideoComponent,
+    VisorInteractiveActivityComponent
   ],
   exports: [
     VisorImageComponent,
     VisorPdfComponent,
     VisorAudioComponent,
     VisorTextComponent,
-    VisorVideoComponent
+    VisorVideoComponent,
+    VisorInteractiveActivityComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    InteractiveActivitiesModule
   ]
 })
 export class ComponentsModule { }

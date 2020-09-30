@@ -1,6 +1,7 @@
 import { IBloqueComponentes } from './bloque-componentes.model';
 import { ITipoComponente } from './tipo-componente.model';
 import { IContenido } from './contenido.model';
+import { IActividadInterativa } from './actividad-interactiva.model';
 
 export interface IComponente {
   id?: number;
@@ -9,6 +10,7 @@ export interface IComponente {
   tipoComponente?: ITipoComponente;
   bloqueComponente?: IBloqueComponentes;
   orden?: number;
+  actividadesInteractivas?: IActividadInterativa[];
 }
 
 export class Componente implements IComponente {
@@ -18,6 +20,7 @@ export class Componente implements IComponente {
     public version?: number,
     public tipoComponente?: ITipoComponente,
     public bloqueComponente?: IBloqueComponentes,
-    public orden?: number
+    public orden?: number,
+    public actividadesInteractivas?: IActividadInterativa[]
   ) {}
 }

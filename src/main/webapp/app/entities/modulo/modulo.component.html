@@ -32,6 +32,15 @@
                 <div *ngIf="block!.bloqueComponentes!.tipoBloqueComponentes!.nombre == 'sound'" class="standard-container">
                     <jhi-content-block9 [contentBlock]="block"></jhi-content-block9>
                 </div>
+                <div *ngIf="block!.bloqueComponentes!.tipoBloqueComponentes!.nombre == 'activity_question_text'">
+                    <jhi-content-block10 [contentBlock]="block"></jhi-content-block10>
+                </div>
+                <div *ngIf="block!.bloqueComponentes!.tipoBloqueComponentes!.nombre == 'cabecera'">
+                    <jhi-content-block11 [contentBlock]="block"></jhi-content-block11>
+                </div>
+                <div *ngIf="block!.bloqueComponentes!.tipoBloqueComponentes!.nombre == 'colapsable'">
+                    <jhi-content-block12 [contentBlock]="block"></jhi-content-block11>
+                </div>
             </div>
 
         </div>
