@@ -52,7 +52,11 @@ import { ContentBlock18Component } from './content-block18/content-block18.compo
     ContentBlock9Component,
     ContentBlock10Component,
     ContentBlock11Component,
-    ContentBlock12Component
+    ContentBlock12Component,
+    ContentBlock13Component,
+    ContentBlock14Component,
+    ContentBlock17Component,
+    ContentBlock18Component
   ]
 })
 export class ContentBlocksModule { }
