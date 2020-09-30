@@ -10,13 +10,9 @@
   width: 100%;
   height: auto;
   cursor: pointer;
-  border: 1px dashed $blue-nimbus-light;
   transition: 0.3s;
   margin-bottom: 30px;
   padding-left: 50px;
-  &:hover {
-    border: 1px solid $blue-nimbus-light;
-  }
 }
 
 .icon-instruction-video {
@@ -34,4 +30,9 @@
   .icon {
     color: white;
   }
+}
+.cc-video {
+  position: relative;
+  width: 100%;
+  height: auto;
 }

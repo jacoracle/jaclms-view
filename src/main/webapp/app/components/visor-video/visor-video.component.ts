@@ -21,11 +21,11 @@ export class VisorVideoComponent implements OnDestroy {
     this._component = componente;
     if(this._component && this._component.contenido && this._component.contenido.contenido && this._component.contenido.contenido !== "") {
       this.getThumbnail(this._component.contenido.contenido);
-    } 
+    }
   }
   get component(): IComponente | undefined {
     return this._component;
-  }  
+  }
   showLoader = false;
   subscription?: Subscription;
   @ViewChild('video') video?: ElementRef;
@@ -50,7 +50,7 @@ export class VisorVideoComponent implements OnDestroy {
       if(data.body) {
         this.thumbSrc = this.multimediaService.getSafeUrl(data.body);
         this.showLoader = false;
-      }      
+      }
     });
   }
 

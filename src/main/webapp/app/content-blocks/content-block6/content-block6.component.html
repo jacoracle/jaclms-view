@@ -1,5 +1,5 @@
 <!-- Bloque de contenido: Indicación con video -->
-Bloique 6: Texto con video
+<!-- Bloique 6: Texto con video -->
 <div class="col-cb-video-ins" *ngIf="contentBlock && contentBlock.bloqueComponentes && contentBlock.bloqueComponentes.componentes">
   <div *ngFor="let component of contentBlock.bloqueComponentes.componentes; let index = index;">
     <div *ngIf="component && component.tipoComponente && component.tipoComponente.nombre === 'text'" class="b-instruction-video">
@@ -8,7 +8,7 @@ Bloique 6: Texto con video
         <jhi-visor-text [component]="component"></jhi-visor-text>
       </div>
     </div>
-    <div *ngIf="component && component.tipoComponente && component.tipoComponente.nombre === 'video'"  class="cc-video video">
+    <div *ngIf="component && component.tipoComponente && component.tipoComponente.nombre === 'video'"  class="cc-video">
       <jhi-visor-video [component]="component"></jhi-visor-video>
     </div>
   </div>

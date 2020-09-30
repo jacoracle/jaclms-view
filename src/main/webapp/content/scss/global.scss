@@ -383,6 +383,10 @@ ui bootstrap tweaks
   display: flex;
   justify-content: center;
   align-items: center;
+  i {
+    margin-right: 8px;
+    color: white;
+  }
 
   &:hover {
     background-color: $secondary-btn-hover;
@@ -821,16 +825,6 @@ jhi-login-modal {
   margin-top: 20px;
   border: 1px solid $window-divider-color;
 }
-// PDF
-// .pdf-img {
-//   jhi-visor-pdf {
-//     img {
-//       position: relative;
-//       width: 260px;
-//       height: 260px;
-//     }
-//   }
-// }
 // Audio
 .row-audio-circle {
   jhi-visor-audio {
