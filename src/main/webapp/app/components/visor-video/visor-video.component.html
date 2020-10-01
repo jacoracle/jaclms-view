@@ -1,4 +1,6 @@
-<img [src]="defaultSrc" alt="" *ngIf="thumbSrc === '' && videoSrc === ''">
+<div class="emty-video-cover">
+  <img [src]="defaultSrc" alt="" *ngIf="thumbSrc === '' && videoSrc === ''">
+</div>
 <img [src]="thumbSrc" alt="" *ngIf="thumbSrc !== '' && videoSrc === ''" class="im-video">
 
 <div class="row-btn" (click)="loadVideo()"><div class="main-btn"><i class="icon ni-play"></i>Abrir reproductor</div></div>

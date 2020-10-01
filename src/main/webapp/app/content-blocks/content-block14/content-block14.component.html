@@ -1,22 +1,24 @@
 <!-- Bloque 14: Tip -->
-<style>
-  .hidden-tip {
-    display: none;
-  }
-</style>
-<div class="col-cb-text-img" *ngIf="contentBlock && contentBlock.bloqueComponentes && contentBlock.bloqueComponentes.componentes">
-    <div *ngFor="let component of contentBlock.bloqueComponentes.componentes; let index = index;">
-      <div *ngIf="component && component.tipoComponente && component.tipoComponente.nombre === 'text'" class="b-paragraph-text">
-          <div *ngIf="contentBlock && contentBlock.bloqueComponentes.tipoBloqueComponentes">
-            <div (click)="open = false" [ngClass]="{'hidden-tip': !open}">
-              <jhi-visor-text [component]="component"></jhi-visor-text>
-            </div>
+<div class="container-tip" *ngIf="contentBlock && contentBlock.bloqueComponentes && contentBlock.bloqueComponentes.componentes">
+    <div *ngFor="let component of contentBlock.bloqueComponentes.componentes; let index = index;" class="row-container-tip">
+
+      <div *ngIf="component && component.tipoComponente && component.tipoComponente.nombre === 'text'" class="block-txt-tip" (click)="open = false" [ngClass]="{'hidden-tip': open}">
+        <div class="btn-close-tip"> <i class="icon ni-close"></i></div>
+        <div *ngIf="contentBlock && contentBlock.bloqueComponentes.tipoBloqueComponentes" class="txt-tip-row-vs">
+          <div>
+            <jhi-visor-text [component]="component"></jhi-visor-text>
           </div>
+        </div>
       </div>
-      <div *ngIf="component && component.tipoComponente && component.tipoComponente.nombre === 'image'" class="cc-image">
-        <div (click)="open = true">
+
+      <div *ngIf="component && component.tipoComponente && component.tipoComponente.nombre === 'image'" class="block-img-tip" [ngClass]="{'action-tip': open}" (click)="open = true">
+        <div class="row-title-tip">
+          <h3>TIP</h3>
+        </div>
+        <div class="row-tip-image">
           <jhi-visor-image [component]="component"></jhi-visor-image>
         </div>
       </div>
+
     </div>
-  </div>
+</div>

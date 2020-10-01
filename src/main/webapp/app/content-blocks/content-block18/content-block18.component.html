@@ -1,4 +1,15 @@
 <!-- Bloque 18: Numeración -->
-<div *ngIf="contentBlock && contentBlock.numeracion">
+<!-- <div *ngIf="contentBlock && contentBlock.numeracion">
     <span>Numeración {{contentBlock.numeracion}}</span>
-</div>
+</div> -->
+<section class="container-activity-numeration" *ngIf="contentBlock && contentBlock.numeracion">
+  <div class="content-numeration">
+    <div class="graphic-numeration">
+      <div class="gn-circle"></div>
+      <div class="gn-circle"></div>
+      <div class="gn-circle"></div>
+      <span>{{contentBlock.numeracion}}</span>
+    </div>
+    <h4>Actividad</h4>
+  </div>
+</section>
