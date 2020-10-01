@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import './vendor';
 import { NimbusSharedModule } from 'app/shared/shared.module';
@@ -18,6 +19,7 @@ import { VisorModule } from './visor/visor.module';
 @NgModule({
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     NimbusSharedModule,
     NimbusCoreModule,
     NimbusHomeModule,

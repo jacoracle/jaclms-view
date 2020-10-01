@@ -1,13 +1,20 @@
-<!-- Bloque 12: Cabecera -->
+<!-- Bloque 12: Colapsable -->
 <div class="col-cb-text-img" *ngIf="contentBlock && contentBlock.bloqueComponentes && contentBlock.bloqueComponentes.componentes">
-  <div *ngFor="let component of contentBlock.bloqueComponentes.componentes; let index = index;">
-    <div *ngIf="component && component.tipoComponente && component.tipoComponente.nombre === 'text'" class="b-paragraph-text">
-        <div *ngIf="contentBlock && contentBlock.bloqueComponentes.tipoBloqueComponentes">
-          <jhi-visor-text [component]="component"></jhi-visor-text>
-        </div>
-    </div>
-    <div *ngIf="component && component.tipoComponente && component.tipoComponente.nombre === 'image'"  class="cc-image">
-      <jhi-visor-image [component]="component"></jhi-visor-image>
-    </div>
+  <div *ngIf="contentBlock.bloqueComponentes.componentes[0] && contentBlock.bloqueComponentes.componentes[1]">
+    <mat-accordion>
+      <mat-expansion-panel>
+          <mat-expansion-panel-header class="disable_ripple">
+              <mat-panel-title>
+                <jhi-visor-text [component]="contentBlock.bloqueComponentes.componentes[0]"></jhi-visor-text>
+              </mat-panel-title>
+          </mat-expansion-panel-header>
+          <div class="accordion-text">
+    
+              <div class="block-header-txt">
+                <jhi-visor-text [component]="contentBlock.bloqueComponentes.componentes[1]"></jhi-visor-text>
+              </div>
+          </div>
+      </mat-expansion-panel>
+    </mat-accordion>
   </div>
 </div>

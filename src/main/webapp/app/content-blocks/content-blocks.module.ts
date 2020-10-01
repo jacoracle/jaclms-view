@@ -17,6 +17,7 @@ import { ContentBlock13Component } from './content-block13/content-block13.compo
 import { ContentBlock14Component } from './content-block14/content-block14.component';
 import { ContentBlock17Component } from './content-block17/content-block17.component';
 import { ContentBlock18Component } from './content-block18/content-block18.component';
+import { AngularMaterialModule } from './../shared/angular-material/angular-material.module';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,7 @@ import { ContentBlock18Component } from './content-block18/content-block18.compo
     ContentBlock18Component
   ],
   imports: [
-    CommonModule, ComponentsModule
+    CommonModule, ComponentsModule, AngularMaterialModule
   ],
   exports: [
     ContentBlock1Component,
