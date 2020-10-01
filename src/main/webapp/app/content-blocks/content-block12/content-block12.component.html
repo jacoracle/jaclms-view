@@ -1,7 +1,7 @@
 <!-- Bloque 12: Colapsable -->
-<div class="col-cb-text-img" *ngIf="contentBlock && contentBlock.bloqueComponentes && contentBlock.bloqueComponentes.componentes">
+<div class="row-accordion-vs" *ngIf="contentBlock && contentBlock.bloqueComponentes && contentBlock.bloqueComponentes.componentes">
   <div *ngIf="contentBlock.bloqueComponentes.componentes[0] && contentBlock.bloqueComponentes.componentes[1]">
-    <mat-accordion>
+    <mat-accordion class="mat-test">
       <mat-expansion-panel>
           <mat-expansion-panel-header class="disable_ripple">
               <mat-panel-title>
@@ -9,7 +9,6 @@
               </mat-panel-title>
           </mat-expansion-panel-header>
           <div class="accordion-text">
-    
               <div class="block-header-txt">
                 <jhi-visor-text [component]="contentBlock.bloqueComponentes.componentes[1]"></jhi-visor-text>
               </div>

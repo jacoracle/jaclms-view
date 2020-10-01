@@ -40,10 +40,9 @@
     background-color: white;
     border-radius: 6px;
     border: 1px solid $border-light;
-    transition: border 0.5s;
-    // box-shadow: $shadowBlock;
+    transition: border 0.3s;
     &:hover {
-      // border: 2px solid #18bafb;
+      border: 1px solid #18bafb;
     }
   }
   .title-c {

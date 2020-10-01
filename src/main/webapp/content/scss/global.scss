@@ -856,7 +856,28 @@ jhi-login-modal {
 //     background-color: aqua;
 //   }
 // }
+// Content-block-12 Colapsable
 
+.mat-test {
+  .mat-expansion-panel {
+    .mat-expansion-panel-header {
+      .mat-expansion-indicator {
+        position: relative;
+        width: 40px;
+        height: 40px;
+        background-color: white;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: .3s;
+        &:hover {
+          background-color: #e7e8ed;
+        }
+      }
+    }
+  }
+}
 
 // Loader
 .loader2 {
