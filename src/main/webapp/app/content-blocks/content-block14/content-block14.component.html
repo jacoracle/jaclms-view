@@ -11,11 +11,11 @@
         </div>
       </div>
 
-      <div *ngIf="component && component.tipoComponente && component.tipoComponente.nombre === 'image'" class="block-img-tip" [ngClass]="{'action-tip': open}">
+      <div *ngIf="component && component.tipoComponente && component.tipoComponente.nombre === 'image'" class="block-img-tip" [ngClass]="{'action-tip': open}" (click)="open = true">
         <div class="row-title-tip">
           <h3>TIP</h3>
         </div>
-        <div (click)="open = true" class="row-tip-image">
+        <div class="row-tip-image">
           <jhi-visor-image [component]="component"></jhi-visor-image>
         </div>
       </div>
