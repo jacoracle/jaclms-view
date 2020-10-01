@@ -1,6 +1,7 @@
 <!-- Bloque 17: Indicador -->
-<div class="col-cb-text-img" *ngIf="contentBlock && contentBlock.bloqueComponentes && contentBlock.bloqueComponentes.componentes">
+<!-- <div class="col-cb-text-img" *ngIf="contentBlock && contentBlock.bloqueComponentes && contentBlock.bloqueComponentes.componentes">
     <div *ngFor="let component of contentBlock.bloqueComponentes.componentes; let index = index;">
+
         <div *ngIf="component && component.tipoComponente && component.tipoComponente.nombre === 'text'" class="b-paragraph-text">
             <div *ngIf="contentBlock && contentBlock.bloqueComponentes.tipoBloqueComponentes">
                 <jhi-visor-text [component]="component"></jhi-visor-text>
@@ -9,5 +10,25 @@
         <div *ngIf="component && component.tipoComponente && component.tipoComponente.nombre === 'image'"  class="cc-image">
             <jhi-visor-image [component]="component"></jhi-visor-image>
         </div>
+
+    </div>
+</div> -->
+
+
+<div class="constructor-container-indicator" *ngIf="contentBlock && contentBlock.bloqueComponentes && contentBlock.bloqueComponentes.componentes">
+    <div class="line-indicator"></div>
+    <div *ngFor="let component of contentBlock.bloqueComponentes.componentes; let index = index;">
+
+        <div *ngIf="component && component.tipoComponente && component.tipoComponente.nombre === 'image'"  class="block-indicator-img">
+            <jhi-visor-image [component]="component" class="indicator-img"></jhi-visor-image>
+        </div>
+
+        <div *ngIf="component && component.tipoComponente && component.tipoComponente.nombre === 'text'">
+            <div *ngIf="contentBlock && contentBlock.bloqueComponentes.tipoBloqueComponentes" class="block-indicator-txt">
+              <div class="underline-indicator"></div>
+                <jhi-visor-text [component]="component"></jhi-visor-text>
+            </div>
+        </div>
+
     </div>
 </div>
