@@ -18,6 +18,7 @@ export class VisorComponent implements OnInit {
       this.agrupadorService.find(id).subscribe(data => {
         if(data.body) {
           this.agrupador = data.body;
+          this.calculateNumeration();
         }
       });
     }
@@ -28,6 +29,25 @@ export class VisorComponent implements OnInit {
 
   return(): void {
     this.router.navigate(['/groupings']);
+  }
+
+  calculateNumeration(): void {
+    let numerador = 0;
+    if(this.agrupador && this.agrupador.modulos) {
+      const umas = this.agrupador.modulos;
+      for(let j = 0; j < umas.length; j++) {
+        const uma = umas[j];
+        if(uma.modulo && uma.modulo.nivelesModulo && uma.modulo.nivelesModulo.nivelJerarquico && uma.modulo.nivelesModulo.nivelJerarquico.bloquesCurso) {
+          const bloques = uma.modulo.nivelesModulo.nivelJerarquico.bloquesCurso
+          for(let i = 0; i < bloques.length; i++) {
+            if(bloques[i].bloqueComponentes?.tipoBloqueComponentes?.nombre === 'numeracion_actividad') {
+              numerador++;
+              bloques[i].numeracion = numerador;
+            }
+          }
+        }
+      }
+    }
   }
   
 
