@@ -1,7 +1,7 @@
 <!-- Bloque de contenido: Imagen-->
 <!-- Bloque 3: Imagen -->
-<div class="col-cb-img" *ngIf="contentBlock && contentBlock.bloqueComponentes && contentBlock.bloqueComponentes.componentes">
-    <div class="row-cb-img" *ngFor="let component of contentBlock.bloqueComponentes.componentes; let index = index;">
+<div class="row-image-full" *ngIf="contentBlock && contentBlock.bloqueComponentes && contentBlock.bloqueComponentes.componentes">
+    <div class="col-image-full" *ngFor="let component of contentBlock.bloqueComponentes.componentes; let index = index;">
         <jhi-visor-image [component]="component"></jhi-visor-image>
     </div>
 </div>

@@ -1,25 +1,23 @@
 @import './../../../content/scss/variables.scss';
 
-.col-cb-img {
+.row-image-full {
   position: relative;
   width: 100%;
   height: auto;
+  display: flex;
+  justify-content: center;
 }
-.row-cb-img {
+.col-image-full {
+  position: relative;
+  width: 100%;
+  min-height: 300px;
+  height: auto;
   display: flex;
   justify-content: center;
   align-items: center;
-  position: relative;
-  width: 100%;
-  height: auto;
+  transition: .3s;
 
-  jhi-constructor-image {
-    position: relative;
-    width: 100%;
-    height: auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
+  jhi-visor-image {
+
   }
 }
