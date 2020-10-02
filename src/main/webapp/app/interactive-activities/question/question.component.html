@@ -3,13 +3,13 @@
       <div class="row-question-a-vs">
         <span *ngIf="pregunta && pregunta.pregunta;">{{pregunta.pregunta}}</span>
       </div>
-        <!-- <br> -->
         <!-- <b *ngIf="activity && activity.tipoActividadInteractiva && activity.tipoActividadInteractiva.opcion">
             Respuesta {{activity.tipoActividadInteractiva.opcion}}
         </b> -->
         <!-- <b>Marcada: {{pregunta.marcada}}</b> -->
         <div *ngIf="pregunta && pregunta.respuestas;">
-            <div *ngFor="let respuesta of pregunta.respuestas" [ngClass]="{'disabled': calificada, 'seleccionada': respuesta.seleccionada}" (click)="selectAnswer(pregunta, respuesta)">
+            <div *ngFor="let respuesta of pregunta.respuestas" [ngClass]="{'disabled': calificada, 'seleccionada': respuesta.seleccionada}" (click)="selectAnswer(pregunta, respuesta)" class="answer-bg">
+              <div class="bg-answer-animated"></div>
                 <div *ngIf="respuesta && respuesta.respuesta" class="respuesta">
                     <span>{{respuesta.respuesta}}</span>
                     <!-- <b>{{respuesta.correcta}}</b> -->
@@ -20,5 +20,16 @@
     <div class="row-btn-activity-score-vs">
       <button class="main-btn" *ngIf="!calificada" (click)="score(activity)">Calificar</button>
     </div>
-    <h1 *ngIf="calificada">Calificación: {{activityScore}}</h1>
+    <div class="row-score-vs" *ngIf="calificada">
+      <div class="window-score-vs">
+        <div class="socore-img-vs"></div>
+        <div class="row-score-title-vs">
+          <h3>Tu resultado:</h3>
+        </div>
+        <div class="score-mumber-vs">
+          {{activityScore}}
+        </div>
+      </div>
+    </div>
+
 </div>

@@ -1,3 +1,4 @@
+@import '../../../content/scss/variables.scss';
 .respuesta {
   position: relative;
   width: 70%;
@@ -7,10 +8,8 @@
   border-radius: 40px;
   display: flex;
   align-items: center;
-  margin-top: 25px;
-  margin-bottom: 25px;
-  margin-left: 4%;
-  transition: .3s;
+  margin-left: 3%;
+  transition: .3s all ease;
   cursor: pointer;
   &:hover {
     background-color: #dadbe0;
@@ -22,8 +21,38 @@
     margin-left: 5%;
   }
 }
+.answer-bg {
+  position: relative;
+  width: 100%;
+  height: auto;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-top: 10px;
+  transition: .3s all ease;
+  background-color: white;
+}
+.bg-answer-animated {
+  position: absolute;
+  width: 0;
+  height: 100%;
+  left: 0;
+  top: 0;
+  background-color: $input-border-hover;
+}
 .seleccionada {
-    background-color: blue;
+
+    .bg-answer-animated {
+      animation: loadbar .3s ease-out 1;
+      // animation-delay: 1s;
+      animation-fill-mode: forwards;
+    }
+    .respuesta {
+      background-color: white;
+      &:hover {
+        background-color: #f5f6f9;
+      }
+    }
+
 }
 .disabled {
     pointer-events: none;
@@ -31,12 +60,13 @@
 .row-btn-activity-score-vs {
   position: relative;
   width: 100%;
-  height: 70px;
+  height: 80px;
   display: flex;
   justify-content: center;
   align-items: center;
-  border-top: 1px solid #1a3d82;
   margin-top: 20px;
+  background-color: $window-divider-color;
+  border-radius: 0 0 10px 10px;
   .main-btn {
     height: 42px;
     padding-left: 30px;
@@ -60,5 +90,74 @@
     font-size: 32px;
     font-weight: 600;
     color: #23497b;
+  }
+}
+@-webkit-keyframes loadbar {
+    from {width: 0%;}
+    to {width: 100%;}
+}
+.row-score-vs {
+  position: relative;
+  width: 100%;
+  height: 300px;
+  margin-top: -70px;
+  background-color: $window-divider-color;
+  border-radius: 0 0 10px 10px;
+
+  .window-score-vs {
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    top: -30px;
+    left: 50%;
+    margin-left: -200px;
+    background-color: #0b51fe;
+    border-radius: 20px;
+    // border: 1px solid $input-border-hover;
+    z-index: 5;
+    box-shadow: $shadow1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-image: url("../../../content/images/score_pattern.svg");
+    background-position: 50% 100%;
+    background-repeat: no-repeat;
+    background-size: 100%;
+
+    .socore-img-vs {
+      position: relative;
+      width: 200px;
+      height: 200px;
+      // background-color: rgba(255,255,255,.5);
+      background-color: #4275ff;
+      border-radius: 50%;
+      background-image: url("../../../content/images/score_img.svg");
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: 100%;
+    }
+    .row-score-title-vs {
+      position: relative;
+      width: 80%;
+      height: auto;
+      margin-top: 25px;
+      h3 {
+        font-size: 22px;
+        color: white;
+        font-weight: 600;
+        text-align: center;
+      }
+    }
+    .score-mumber-vs {
+      position: relative;
+      width: 80%;
+      height: auto;
+      text-align: center;
+      font-size: 42px;
+      color: white;
+      font-weight: 700;
+      margin-top: 10px;
+    }
   }
 }
