@@ -808,6 +808,14 @@ jhi-login-modal {
     }
   }
 }
+// CB 14 Texto con imagen
+.text-img-image-vs {
+  jhi-visor-image {
+    img {
+      min-height: 300px;
+    }
+  }
+}
 // Cabecera Header 11
 .row-header-vs-img {
   position: absolute;

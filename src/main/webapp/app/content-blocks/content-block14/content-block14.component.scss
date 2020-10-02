@@ -83,7 +83,6 @@
 .block-txt-tip {
   position: relative;
   width: 70%;
-  // height: auto;
   height: 210px;
   background-color: white;
   border-radius: 10px;
@@ -115,6 +114,8 @@
   .txt-tip-row-vs {
     position: relative;
     width: 92%;
+    height: 170px;
+    overflow: auto;
   }
 }
 .hidden-tip {
