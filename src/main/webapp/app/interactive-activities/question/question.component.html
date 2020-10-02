@@ -1,20 +1,24 @@
 <div *ngIf="activity && activity.contenido && activity.contenido.preguntas">
-    <div *ngFor="let pregunta of activity.contenido && activity.contenido.preguntas">
+    <div *ngFor="let pregunta of activity.contenido && activity.contenido.preguntas" class="row-act-question-vs">
+      <div class="row-question-a-vs">
         <span *ngIf="pregunta && pregunta.pregunta;">{{pregunta.pregunta}}</span>
-        <br>
-        <b *ngIf="activity && activity.tipoActividadInteractiva && activity.tipoActividadInteractiva.opcion">
+      </div>
+        <!-- <br> -->
+        <!-- <b *ngIf="activity && activity.tipoActividadInteractiva && activity.tipoActividadInteractiva.opcion">
             Respuesta {{activity.tipoActividadInteractiva.opcion}}
-        </b>
-        <b>Marcada: {{pregunta.marcada}}</b>
+        </b> -->
+        <!-- <b>Marcada: {{pregunta.marcada}}</b> -->
         <div *ngIf="pregunta && pregunta.respuestas;">
             <div *ngFor="let respuesta of pregunta.respuestas" [ngClass]="{'disabled': calificada, 'seleccionada': respuesta.seleccionada}" (click)="selectAnswer(pregunta, respuesta)">
                 <div *ngIf="respuesta && respuesta.respuesta" class="respuesta">
                     <span>{{respuesta.respuesta}}</span>
-                    <b>{{respuesta.correcta}}</b>
+                    <!-- <b>{{respuesta.correcta}}</b> -->
                 </div>
             </div>
         </div>
     </div>
-    <button *ngIf="!calificada" (click)="score(activity)">Calificar</button>
+    <div class="row-btn-activity-score-vs">
+      <button class="main-btn" *ngIf="!calificada" (click)="score(activity)">Calificar</button>
+    </div>
     <h1 *ngIf="calificada">Calificación: {{activityScore}}</h1>
 </div>

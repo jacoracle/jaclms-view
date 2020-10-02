@@ -1,6 +1,6 @@
 <!-- Bloque de contenido: Acti idad interactiva-->
-Bloque 10: Actividad interactiva
-<div class="col-cb-audio" *ngIf="contentBlock && contentBlock.bloqueComponentes">
+<!-- Bloque 10: Actividad interactiva -->
+<div class="row-activity-vs" *ngIf="contentBlock && contentBlock.bloqueComponentes">
     <div class="b-audio" *ngFor="let component of contentBlock.bloqueComponentes.componentes!; let index = index;">
         <div *ngIf="component.tipoComponente && component.tipoComponente.nombre === 'text'">
             <jhi-visor-text [component]="component"></jhi-visor-text>
