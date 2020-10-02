@@ -1,0 +1,42 @@
+.row-header-vs {
+  position: relative;
+  width: 100%;
+  height: 500px;
+  .col-header-vs {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+
+    .row-header-vs-img {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      left: 0;
+      top: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      jhi-visor-image {
+      }
+    }
+  }
+  .col-header-vs:nth-child(2) {
+    z-index: 2;
+  }
+}
+
+
+.row-header-vs-text {
+  position: relative;
+  width: 60%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
