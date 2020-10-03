@@ -13,7 +13,8 @@
                 'correct': calificada && respuesta.seleccionada && respuesta.correcta, 
                 'incorrect': calificada && respuesta.seleccionada && !respuesta.correcta, 
                 'missed': calificada && !respuesta.seleccionada && respuesta.correcta
-              }"></div>
+              }">
+              <div class="icon-img-answer"></div></div>
                 <div *ngIf="respuesta && respuesta.respuesta" class="respuesta">
                     <span>{{respuesta.respuesta}}</span>
                     <!-- <b>{{respuesta.correcta}}</b> -->

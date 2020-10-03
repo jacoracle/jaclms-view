@@ -1,9 +1,9 @@
 @import '../../../content/scss/variables.scss';
 .respuesta {
   position: relative;
-  width: 70%;
+  width: 80%;
   height: auto;
-  min-height: 55px;
+  min-height: 50px;
   background-color: #e9ebef;
   border-radius: 40px;
   display: flex;
@@ -15,7 +15,7 @@
     background-color: #dadbe0;
   }
   span {
-    font-size: 19px;
+    font-size: 18px;
     font-weight: 600;
     color: #123269;
     margin-left: 5%;
@@ -25,8 +25,8 @@
   position: relative;
   width: 100%;
   height: auto;
-  padding-top: 10px;
-  padding-bottom: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
   margin-top: 10px;
   transition: .3s all ease;
   background-color: white;
@@ -87,7 +87,7 @@
   padding-top: 15px;
   padding-bottom: 15px;
   span {
-    font-size: 32px;
+    font-size: 26px;
     font-weight: 600;
     color: #23497b;
   }
@@ -103,6 +103,7 @@
   margin-top: -70px;
   background-color: $window-divider-color;
   border-radius: 0 0 10px 10px;
+  margin-bottom: 100px;
 
   .window-score-vs {
     position: absolute;
@@ -161,14 +162,37 @@
     }
   }
 }
-
+.icon-img-answer {
+  position: absolute;
+  top: 10px;
+  right: 3%;
+  width: 40px;
+  height: 40px;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 50%;
+}
 .correct {
-  
-  background-color: green;
+  // background-color: mediumseagreen;
+  background-color: $succes-color;
+  .icon-img-answer {
+    display: flex;
+    background-color: #62c502;
+    background-image: url("../../../content/images/correct.svg");
+  }
 }
 
 .incorrect {
-  background-color: red;
+  background-color: $alert-hover-color;
+  .icon-img-answer {
+    display: flex;
+    background-color: $alert-color;
+    background-image: url("../../../content/images/incorrect.svg");
+  }
 }
 
 .missed {
