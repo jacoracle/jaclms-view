@@ -9,7 +9,9 @@
         <!-- <b>Marcada: {{pregunta.marcada}}</b> -->
         <div *ngIf="pregunta && pregunta.respuestas;">
             <div *ngFor="let respuesta of pregunta.respuestas" [ngClass]="{'disabled': calificada, 'seleccionada': respuesta.seleccionada}" (click)="selectAnswer(pregunta, respuesta)" class="answer-bg">
-              <div class="bg-answer-animated" [ngClass]="{'correct': calificada && respuesta.seleccionada && respuesta.correcta, 'incorrect': calificada && respuesta.seleccionada && !respuesta.correcta}"></div>
+              <div class="bg-answer-animated" [ngClass]="{'correct': calificada && respuesta.seleccionada && respuesta.correcta, 'incorrect': calificada && respuesta.seleccionada && !respuesta.correcta}">
+                <div class="icon-img-answer"></div>
+              </div>
                 <div *ngIf="respuesta && respuesta.respuesta" class="respuesta">
                     <span>{{respuesta.respuesta}}</span>
                     <!-- <b>{{respuesta.correcta}}</b> -->
