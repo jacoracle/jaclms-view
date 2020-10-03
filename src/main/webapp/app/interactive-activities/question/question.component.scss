@@ -185,7 +185,6 @@
     background-image: url("../../../content/images/correct.svg");
   }
 }
-
 .incorrect {
   background-color: $alert-hover-color;
   .icon-img-answer {
@@ -194,7 +193,7 @@
     background-image: url("../../../content/images/incorrect.svg");
   }
 }
-
 .missed {
-  border: solid 1px blue;
+  background-color: $succes-color;
+  width: 15px;
 }
