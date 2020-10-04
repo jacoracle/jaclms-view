@@ -60,7 +60,7 @@ export class QuestionComponent implements OnInit {
       for(let i = 0; i < activity.contenido.preguntas.length; i++) {
         sum += this.scoreQuestion(activity.contenido.preguntas[i]);
       }
-      this.activityScore = (sum * 10) / (activity.contenido.preguntas.length * 10);
+      this.activityScore = parseFloat(((sum * 10) / (activity.contenido.preguntas.length * 10)).toFixed(1));
       this.calificada = true;
     }
   }
