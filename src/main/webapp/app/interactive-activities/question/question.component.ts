@@ -34,7 +34,7 @@ export class QuestionComponent implements OnInit {
       this.updateMarcada(pregunta);
       return;
     }
-    if(this.activity?.tipoActividadInteractiva?.opcion === 'unica') {
+    if(pregunta.tipoPregunta !== 'multiple' && pregunta.tipoPregunta !== 'Respuesta múltiple') {
       for(let i = 0; i < pregunta.respuestas.length; i++) {
         pregunta.respuestas[i].seleccionada = false;
       }
