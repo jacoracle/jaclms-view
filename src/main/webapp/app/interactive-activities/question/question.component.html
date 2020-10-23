@@ -3,6 +3,21 @@
       <div class="row-question-a-vs">
         <span *ngIf="pregunta && pregunta.pregunta;">{{pregunta.pregunta}}</span>
       </div>
+      <!-- Recurso -->
+      <div *ngIf="pregunta.tipoRecurso && pregunta.tipoRecurso !== ''">
+        <div *ngIf="pregunta.tipoRecurso === 'Video'">
+          PREGUNTA CON RECURSO VIDEO
+          <jhi-video-resource [path]="pregunta.path"></jhi-video-resource>
+        </div>
+        <div *ngIf="pregunta.tipoRecurso === 'Audio'">
+          PREGUNTA CON RECURSO AUDIO
+        </div>
+        <div *ngIf="pregunta.tipoRecurso === 'Imagen'">
+          PREGUNTA CON RECURSO IMAGEN
+        </div>
+      </div>
+      <!-- Recurso termina -->
+      <div></div>
         <!-- <b *ngIf="activity && activity.tipoActividadInteractiva && activity.tipoActividadInteractiva.opcion">
             Respuesta {{activity.tipoActividadInteractiva.opcion}}
         </b> -->

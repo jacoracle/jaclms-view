@@ -1,0 +1,6 @@
+<div>
+    <img [src]="defaultUrl" *ngIf="!loadedThumbnail && !showLoader">
+    <img [src]="thumbSrc" *ngIf="loadedThumbnail && !loadedVideo && !showLoader" (click)="loadVideo()">
+    <video [src]="videoSrc" controls *ngIf="loadedVideo" #video (play)="toggleVideo()"></video>
+    <div class="loader" *ngIf="showLoader"></div>
+</div>
