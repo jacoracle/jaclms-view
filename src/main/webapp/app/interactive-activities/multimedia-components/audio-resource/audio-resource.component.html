@@ -1,5 +1,5 @@
 <div>
-    <img [src]="defaultUrl" *ngIf="!loadedAudio && !showLoader" (click)="loadAudio()">
+    <img [src]="defaultUrl" *ngIf="!loadedAudio && !showLoader" (click)="loadAudio()" style="width: 100px; height: 100px;">
     <audio [src]="audioSrc" controls *ngIf="loadedAudio" #audio (play)="toggleAudio()"></audio>
     <div class="loader" *ngIf="showLoader"></div>
 </div>

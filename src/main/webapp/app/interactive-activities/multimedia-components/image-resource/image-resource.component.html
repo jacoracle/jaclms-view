@@ -1,0 +1,5 @@
+<div>
+    <img [src]="defaultUrl" *ngIf="!loadedImage && !showLoader" style="width: 100px; height: 100px;">
+    <img [src]="imageSrc" *ngIf="loadedImage && !showLoader">
+    <div class="loader" *ngIf="showLoader"></div>
+</div>

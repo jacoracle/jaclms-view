@@ -15,7 +15,6 @@ export class QuestionComponent implements OnInit {
   @Input()
   set activity(activity: IActividadInterativa | undefined) {
     this._activity = activity;
-    console.error(this._activity);
   }
   get activity(): IActividadInterativa | undefined{
     return this._activity;

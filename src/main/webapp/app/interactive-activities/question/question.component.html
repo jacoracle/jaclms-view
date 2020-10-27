@@ -12,7 +12,7 @@
           <jhi-audio-resource [path]="pregunta.path"></jhi-audio-resource>
         </div>
         <div *ngIf="pregunta.tipoRecurso === 'Imagen'">
-          PREGUNTA CON RECURSO IMAGEN
+          <jhi-image-resource [path]="pregunta.path"></jhi-image-resource>
         </div>
       </div>
       <!-- Recurso termina -->
@@ -34,9 +34,11 @@
                   <span>{{respuesta.respuesta}}</span>
               </div>
               <div *ngIf="pregunta.tipoRespuestas === 'Audio' && respuesta && respuesta.path">
-                Respuesta de audio
                 <jhi-audio-resource [path]="respuesta.path"></jhi-audio-resource>
-            </div>
+              </div>
+              <div *ngIf="pregunta.tipoRespuestas === 'Imagen' && respuesta && respuesta.path">
+                <jhi-image-resource [path]="respuesta.path"></jhi-image-resource>
+              </div>
             </div>
         </div>
     </div>
