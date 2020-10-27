@@ -68,6 +68,7 @@ export class VideoResourceComponent implements OnDestroy {
           this.videoSrc = this.multimediaService.getSafeUrl(data.body);
           this.loadedVideo = true;
           this.showLoader = false;
+          this.playVideo();
         }
       })
     }
@@ -89,6 +90,15 @@ export class VideoResourceComponent implements OnDestroy {
     if(this.video) {
       this.video.nativeElement.pause();
     }
+  }
+
+  private playVideo(): void {
+    setTimeout(() => {
+      if(this.video) {
+        this.video.nativeElement.play();
+        this.toggleVideo();
+      }
+    }, 1000);
   }
 
 }

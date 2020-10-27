@@ -48,6 +48,7 @@ export class AudioResourceComponent implements OnDestroy {
           this.audioSrc = this.multimediaService.getSafeUrl(data.body);
           this.loadedAudio = true;
           this.showLoader = false;
+          this.playAudio();
         }
       })
     }
@@ -69,6 +70,15 @@ export class AudioResourceComponent implements OnDestroy {
     if(this.audio) {
       this.audio.nativeElement.pause();
     }
+  }
+
+  private playAudio(): void {
+    setTimeout(() => {
+      if(this.audio) {
+        this.audio.nativeElement.play();
+        this.toggleAudio();
+      }
+    }, 1000);
   }
 
 }
