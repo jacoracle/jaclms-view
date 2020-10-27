@@ -61,6 +61,7 @@ export class VisorVideoComponent implements OnDestroy {
         if(data.body) {
           this.videoSrc = this.multimediaService.getSafeUrl(data.body);
           this.showLoader = false;
+          this.playVideo();
         }
       });
     }
@@ -82,5 +83,14 @@ export class VisorVideoComponent implements OnDestroy {
     if(this.video) {
       this.video.nativeElement.pause();
     }
+  }
+
+  private playVideo(): void {
+    setTimeout(() => {
+      if(this.video) {
+        this.video.nativeElement.play();
+        this.toggleVideo();
+      }
+    }, 1000);
   }
 }

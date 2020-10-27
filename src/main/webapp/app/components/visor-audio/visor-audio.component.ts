@@ -46,6 +46,7 @@ export class VisorAudioComponent implements OnDestroy {
         if(data.body) {
           this.audioSrc = this.multimediaService.getSafeUrl(data.body);
           this.showLoader = false;
+          this.playAudio();
         }
       });
     }
@@ -67,5 +68,14 @@ export class VisorAudioComponent implements OnDestroy {
     if(this.audio) {
       this.audio.nativeElement.pause();
     }
+  }
+
+  private playAudio(): void {
+    setTimeout(() => {
+      if(this.audio) {
+        this.audio.nativeElement.play();
+        this.toggleAudio();
+      }
+    }, 1000);
   }
 }
