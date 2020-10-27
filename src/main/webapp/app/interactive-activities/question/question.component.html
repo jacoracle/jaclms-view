@@ -6,11 +6,10 @@
       <!-- Recurso -->
       <div *ngIf="pregunta.tipoRecurso && pregunta.tipoRecurso !== ''">
         <div *ngIf="pregunta.tipoRecurso === 'Video'">
-          PREGUNTA CON RECURSO VIDEO
           <jhi-video-resource [path]="pregunta.path"></jhi-video-resource>
         </div>
         <div *ngIf="pregunta.tipoRecurso === 'Audio'">
-          PREGUNTA CON RECURSO AUDIO
+          <jhi-audio-resource [path]="pregunta.path"></jhi-audio-resource>
         </div>
         <div *ngIf="pregunta.tipoRecurso === 'Imagen'">
           PREGUNTA CON RECURSO IMAGEN
@@ -22,18 +21,22 @@
             Respuesta {{activity.tipoActividadInteractiva.opcion}}
         </b> -->
         <!-- <b>Marcada: {{pregunta.marcada}}</b> -->
-        <div *ngIf="pregunta && pregunta.respuestas;">
+        <div *ngIf="pregunta && pregunta.respuestas">
             <div *ngFor="let respuesta of pregunta.respuestas" [ngClass]="{'disabled': calificada, 'seleccionada': respuesta.seleccionada}" (click)="selectAnswer(pregunta, respuesta)" class="answer-bg">
               <div class="bg-answer-animated" [ngClass]="{
                 'correct': calificada && respuesta.seleccionada && respuesta.correcta, 
                 'incorrect': calificada && respuesta.seleccionada && !respuesta.correcta, 
                 'missed': calificada && !respuesta.seleccionada && respuesta.correcta
               }">
-              <div class="icon-img-answer"></div></div>
-                <div *ngIf="respuesta && respuesta.respuesta" class="respuesta">
-                    <span>{{respuesta.respuesta}}</span>
-                    <!-- <b>{{respuesta.correcta}}</b> -->
-                </div>
+                <div class="icon-img-answer"></div>
+              </div>
+              <div *ngIf="pregunta.tipoRespuestas === 'Texto' && respuesta && respuesta.respuesta" class="respuesta">
+                  <span>{{respuesta.respuesta}}</span>
+              </div>
+              <div *ngIf="pregunta.tipoRespuestas === 'Audio' && respuesta && respuesta.path">
+                Respuesta de audio
+                <jhi-audio-resource [path]="respuesta.path"></jhi-audio-resource>
+            </div>
             </div>
         </div>
     </div>

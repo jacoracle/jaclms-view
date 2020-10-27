@@ -1,1 +1,5 @@
-<p>audio-resource works!</p>
+<div>
+    <img [src]="defaultUrl" *ngIf="!loadedAudio && !showLoader" (click)="loadAudio()">
+    <audio [src]="audioSrc" controls *ngIf="loadedAudio" #audio (play)="toggleAudio()"></audio>
+    <div class="loader" *ngIf="showLoader"></div>
+</div>
