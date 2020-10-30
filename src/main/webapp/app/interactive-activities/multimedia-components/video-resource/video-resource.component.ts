@@ -1,38 +1,39 @@
 import { Component, Input, OnDestroy, ViewChild, ElementRef } from '@angular/core';
-import { SafeUrl } from '@angular/platform-browser';
+import { MultimediaService } from './../../../services/multimedia.service';
 import { Subscription } from 'rxjs';
-import { IComponente } from 'app/shared/model/componente.model';
-import { MultimediaService } from 'app/services/multimedia.service';
+import { SafeUrl } from '@angular/platform-browser';
 import { MultimediaPlayingService } from 'app/services/multimedia-playing.service';
 
 @Component({
-  selector: 'jhi-visor-video',
-  templateUrl: './visor-video.component.html',
-  styleUrls: ['./visor-video.component.scss']
+  selector: 'jhi-video-resource',
+  templateUrl: './video-resource.component.html',
+  styleUrls: ['./video-resource.component.scss']
 })
-export class VisorVideoComponent implements OnDestroy {
+export class VideoResourceComponent implements OnDestroy {
 
-  defaultSrc: SafeUrl = './../../../../content/images/logo-jhipster.png';
-  thumbSrc: SafeUrl = '';
-  videoSrc: SafeUrl = '';
-  _component?: IComponente;
+  _path?: string;
   @Input()
-  set component(componente: IComponente | undefined) {
-    this._component = componente;
-    if(this._component && this._component.contenido && this._component.contenido.contenido && this._component.contenido.contenido !== "") {
-      this.getThumbnail(this._component.contenido.contenido);
+  set path(path: string | undefined) {
+    this._path = path;
+    if(this.path) {
+      this.getThumbnail(path);
     }
   }
-  get component(): IComponente | undefined {
-    return this._component;
+  get path(): string | undefined {
+    return this._path;
   }
-  showLoader = false;
+  defaultUrl = "./../../../content/images/logo_login.svg";
+  thumbSrc?: SafeUrl;
+  videoSrc?: SafeUrl;
   subscription?: Subscription;
+  showLoader = false;
+  loadedThumbnail = false;
+  loadedVideo = false;
   @ViewChild('video') video?: ElementRef;
   active = false;
   playing = false;
 
-  constructor(private multimediaService: MultimediaService, private multimediaPlayingService: MultimediaPlayingService) {
+  constructor(private multimediaService: MultimediaService, private multimediaPlayingService: MultimediaPlayingService) { 
     this.subscription = this.multimediaPlayingService.getActive().subscribe(active => {
       this.active = active;
     });
@@ -44,26 +45,32 @@ export class VisorVideoComponent implements OnDestroy {
     });
   }
 
-  private getThumbnail(path: string): void {
+  getThumbnail(path: string | undefined): void {
+    if(!path || path === '') {
+      return;
+    }
     this.showLoader = true;
-    this.multimediaService.getVideoThumbnailFile(path).subscribe(data => {
+    this.subscription = this.multimediaService.getVideoThumbnailFile(path).subscribe(data => {
+      this.showLoader = true;
       if(data.body) {
         this.thumbSrc = this.multimediaService.getSafeUrl(data.body);
+        this.loadedThumbnail = true;
         this.showLoader = false;
       }
     });
   }
 
-  public loadVideo(): void {
-    this.showLoader = true;
-    if(this.component && this.component.contenido && this.component.contenido.contenido && this.component.contenido.contenido !== "") {
-      this.multimediaService.getVideoFile(this.component.contenido.contenido).subscribe(data=> {
+  loadVideo(): void {
+    if(this.path) {
+      this.showLoader = true;
+      this.subscription = this.multimediaService.getVideoFile(this.path).subscribe(data => {
         if(data.body) {
           this.videoSrc = this.multimediaService.getSafeUrl(data.body);
+          this.loadedVideo = true;
           this.showLoader = false;
           this.playVideo();
         }
-      });
+      })
     }
   }
 
@@ -93,4 +100,5 @@ export class VisorVideoComponent implements OnDestroy {
       }
     }, 1000);
   }
+
 }

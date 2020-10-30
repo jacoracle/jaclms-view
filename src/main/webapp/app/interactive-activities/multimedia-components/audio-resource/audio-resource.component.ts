@@ -1,33 +1,34 @@
 import { Component, Input, OnDestroy, ViewChild, ElementRef } from '@angular/core';
-import { SafeUrl } from '@angular/platform-browser';
+import { MultimediaService } from './../../../services/multimedia.service';
 import { Subscription } from 'rxjs';
-import { IComponente } from 'app/shared/model/componente.model';
-import { MultimediaService } from 'app/services/multimedia.service';
+import { SafeUrl } from '@angular/platform-browser';
 import { MultimediaPlayingService } from 'app/services/multimedia-playing.service';
 
 @Component({
-  selector: 'jhi-visor-audio',
-  templateUrl: './visor-audio.component.html',
-  styleUrls: ['./visor-audio.component.scss']
+  selector: 'jhi-audio-resource',
+  templateUrl: './audio-resource.component.html',
+  styleUrls: ['./audio-resource.component.scss']
 })
-export class VisorAudioComponent implements OnDestroy {
-  defaultSrc: SafeUrl = './../../../../content/images/icon_audio.svg';
-  audioSrc: SafeUrl = '';
-  _component?: IComponente;
+export class AudioResourceComponent implements OnDestroy {
+
+  _path?: string;
   @Input()
-  set component(componente: IComponente | undefined) {
-    this._component = componente;
+  set path(path: string | undefined) {
+    this._path = path;
   }
-  get component(): IComponente | undefined {
-    return this._component;
+  get path(): string | undefined {
+    return this._path;
   }
-  showLoader = false;
+  defaultUrl = "./../../../content/images/logo_login.svg";
+  audioSrc?: SafeUrl;
   subscription?: Subscription;
+  showLoader = false;
+  loadedAudio = false;
   @ViewChild('audio') audio?: ElementRef;
   active = false;
   playing = false;
 
-  constructor(private multimediaService: MultimediaService, private multimediaPlayingService: MultimediaPlayingService) {
+  constructor(private multimediaService: MultimediaService, private multimediaPlayingService: MultimediaPlayingService) { 
     this.subscription = this.multimediaPlayingService.getActive().subscribe(active => {
       this.active = active;
     });
@@ -39,16 +40,17 @@ export class VisorAudioComponent implements OnDestroy {
     });
   }
 
-  public loadAudio(): void {
-    this.showLoader = true;
-    if(this.component && this.component.contenido && this.component.contenido.contenido && this.component.contenido.contenido !== "") {
-      this.multimediaService.getAudioFile(this.component.contenido.contenido).subscribe(data=> {
+  loadAudio(): void {
+    if(this.path) {
+      this.showLoader = true;
+      this.subscription = this.multimediaService.getAudioFile(this.path).subscribe(data => {
         if(data.body) {
           this.audioSrc = this.multimediaService.getSafeUrl(data.body);
+          this.loadedAudio = true;
           this.showLoader = false;
           this.playAudio();
         }
-      });
+      })
     }
   }
 
@@ -78,4 +80,5 @@ export class VisorAudioComponent implements OnDestroy {
       }
     }, 1000);
   }
+
 }
