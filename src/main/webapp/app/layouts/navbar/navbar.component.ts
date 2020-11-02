@@ -37,7 +37,6 @@ export class NavbarComponent implements OnInit {
   ngOnInit(): void {
     if(this.isAuthenticated()) {
       this.profileService.getProfileInfo().subscribe(profileInfo => {
-        console.error("Servicio de profileInfo");
         this.inProduction = profileInfo.inProduction;
         this.swaggerEnabled = profileInfo.swaggerEnabled;
       });

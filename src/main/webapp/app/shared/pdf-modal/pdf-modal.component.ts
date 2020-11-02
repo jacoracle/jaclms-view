@@ -25,7 +25,6 @@ export class PdfModalComponent {
   }
 
   private saveToFileSystem(response: any): void {
-    console.error(response);
     /*
     const contentDispositionHeader: string = response.headers.get('Content-Disposition');
     const parts: string[] = contentDispositionHeader.split(';');
