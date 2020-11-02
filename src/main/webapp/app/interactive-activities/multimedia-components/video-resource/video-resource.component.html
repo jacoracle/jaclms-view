@@ -1,6 +1,11 @@
-<div>
-    <img [src]="defaultUrl" *ngIf="!loadedThumbnail && !showLoader" style="width: 100px; height: 100px;">
-    <img [src]="thumbSrc" *ngIf="loadedThumbnail && !loadedVideo && !showLoader" (click)="loadVideo()">
+<div class="video-resource-question">
+    <img [src]="defaultUrl" *ngIf="!loadedThumbnail && !showLoader" class="image-no-video">
+    <div class="overlay-resource" (click)="loadVideo()" *ngIf="loadedThumbnail && !loadedVideo && !showLoader">
+      <div class="overlay-r"></div>
+      <img [src]="thumbSrc">
+    </div>
     <video [src]="videoSrc" controls *ngIf="loadedVideo" #video (play)="toggleVideo()"></video>
-    <div class="loader" *ngIf="showLoader"></div>
+    <div class="loader-resource" *ngIf="showLoader">
+      <div class="loader"></div>
+    </div>
 </div>

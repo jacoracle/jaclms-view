@@ -1,4 +1,24 @@
-img {
-    width: 100px;
-    height: 100px;
+.image-resource-question {
+  position: relative;
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  img {
+    position: relative;
+    width: 400px;
+    height: auto;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: .4s;
+    background-color: white;
+    &:hover {
+      filter: brightness(80%);
+    }
+  }
+  .image-no-image {
+    position: relative;
+    background-color: white;
+    border: 1px solid #a8b5bb;
+  }
 }

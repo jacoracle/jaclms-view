@@ -22,7 +22,7 @@ export class VideoResourceComponent implements OnDestroy {
   get path(): string | undefined {
     return this._path;
   }
-  defaultUrl = "./../../../content/images/logo_login.svg";
+  defaultUrl = "./../../../content/images/video_not.svg";
   thumbSrc?: SafeUrl;
   videoSrc?: SafeUrl;
   subscription?: Subscription;
@@ -33,7 +33,7 @@ export class VideoResourceComponent implements OnDestroy {
   active = false;
   playing = false;
 
-  constructor(private multimediaService: MultimediaService, private multimediaPlayingService: MultimediaPlayingService) { 
+  constructor(private multimediaService: MultimediaService, private multimediaPlayingService: MultimediaPlayingService) {
     this.subscription = this.multimediaPlayingService.getActive().subscribe(active => {
       this.active = active;
     });

@@ -21,7 +21,7 @@ export class ImageResourceComponent implements OnDestroy {
   get path(): string | undefined {
     return this._path;
   }
-  defaultUrl = "./../../../content/images/logo_login.svg";
+  defaultUrl = "./../../../content/images/image_not.svg";
   imageSrc?: SafeUrl;
   subscription?: Subscription;
   showLoader = false;

@@ -1,0 +1,17 @@
+@import 'variables.scss';
+.recurso-p-imagen {
+  position: relative;
+  width: 100%;
+  height: auto;
+  .image-resource-question {
+    img {
+      position: relative;
+      width: 500px !important;
+      height: auto;
+      border-radius: 8px;
+      cursor: default !important;
+      pointer-events: none !important;
+      // border: 3px solid red;
+    }
+  }
+}

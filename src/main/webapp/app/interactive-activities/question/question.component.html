@@ -4,28 +4,28 @@
         <span *ngIf="pregunta && pregunta.pregunta;">{{pregunta.pregunta}}</span>
       </div>
       <!-- Recurso -->
-      <div *ngIf="pregunta.tipoRecurso && pregunta.tipoRecurso !== ''">
-        <div *ngIf="pregunta.tipoRecurso === 'Video'">
+      <div *ngIf="pregunta.tipoRecurso && pregunta.tipoRecurso !== ''" class="row-recurso">
+        <div *ngIf="pregunta.tipoRecurso === 'Video'" class="recurso-p-video">
           <jhi-video-resource [path]="pregunta.path"></jhi-video-resource>
         </div>
-        <div *ngIf="pregunta.tipoRecurso === 'Audio'">
+        <div *ngIf="pregunta.tipoRecurso === 'Audio'" class="recurso-p-audio">
           <jhi-audio-resource [path]="pregunta.path"></jhi-audio-resource>
         </div>
-        <div *ngIf="pregunta.tipoRecurso === 'Imagen'">
+        <div *ngIf="pregunta.tipoRecurso === 'Imagen'" class="recurso-p-imagen">
           <jhi-image-resource [path]="pregunta.path"></jhi-image-resource>
         </div>
       </div>
       <!-- Recurso termina -->
-      <div></div>
+      <!-- <div></div> -->
         <!-- <b *ngIf="activity && activity.tipoActividadInteractiva && activity.tipoActividadInteractiva.opcion">
             Respuesta {{activity.tipoActividadInteractiva.opcion}}
         </b> -->
         <!-- <b>Marcada: {{pregunta.marcada}}</b> -->
-        <div *ngIf="pregunta && pregunta.respuestas">
+        <div *ngIf="pregunta && pregunta.respuestas" class="row-answer">
             <div *ngFor="let respuesta of pregunta.respuestas" [ngClass]="{'disabled': calificada, 'seleccionada': respuesta.seleccionada}" (click)="selectAnswer(pregunta, respuesta)" class="answer-bg">
               <div class="bg-answer-animated" [ngClass]="{
-                'correct': calificada && respuesta.seleccionada && respuesta.correcta, 
-                'incorrect': calificada && respuesta.seleccionada && !respuesta.correcta, 
+                'correct': calificada && respuesta.seleccionada && respuesta.correcta,
+                'incorrect': calificada && respuesta.seleccionada && !respuesta.correcta,
                 'missed': calificada && !respuesta.seleccionada && respuesta.correcta
               }">
                 <div class="icon-img-answer"></div>

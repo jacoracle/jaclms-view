@@ -1,0 +1,40 @@
+.audio-resource-question {
+  position: relative;
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+
+  .audio-preview {
+    position: relative;
+    width: 300px;
+    height: 55px;
+    border-radius: 30px;
+    background-color: black;
+    background-image: url("../../../../content/images/play_icon.svg");
+    background-size: 30px;
+    background-position: center;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    transition: .3s;
+    &:hover {
+      background-color: #313030;
+    }
+  }
+}
+.loader-resource {
+  position: relative;
+  width: 300px;
+  height: 55px;
+  // background-color: #09113e;
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 30px;
+}
+.audio-resource-question {
+  audio {
+  filter: invert(1);
+  }
+}
