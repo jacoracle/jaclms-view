@@ -1,7 +1,8 @@
 <div *ngIf="activity && activity.contenido && activity.contenido.preguntas">
     <div *ngFor="let pregunta of activity.contenido && activity.contenido.preguntas" class="row-act-question-vs">
       <div class="row-question-a-vs">
-        <span *ngIf="pregunta && pregunta.pregunta;">{{pregunta.pregunta}}</span>
+        <span *ngIf="pregunta && pregunta.pregunta && pregunta.pregunta !== ''">{{pregunta.pregunta}}</span>
+        <span *ngIf="pregunta && (!pregunta.pregunta || pregunta.pregunta === '')">Pregunta</span>
       </div>
       <!-- Recurso -->
       <div *ngIf="pregunta.tipoRecurso && pregunta.tipoRecurso !== ''" class="row-recurso">
@@ -32,6 +33,9 @@
               </div>
               <div *ngIf="pregunta.tipoRespuestas === 'Texto' && respuesta && respuesta.respuesta" class="respuesta">
                   <span>{{respuesta.respuesta}}</span>
+              </div>
+              <div *ngIf="pregunta.tipoRespuestas === 'Texto' && respuesta && (!respuesta.respuesta || respuesta.respuesta === '')" class="respuesta">
+                <span>Respuesta</span>
               </div>
               <div *ngIf="pregunta.tipoRespuestas === 'Audio' && respuesta && respuesta.path">
                 <jhi-audio-resource [path]="respuesta.path"></jhi-audio-resource>
