@@ -181,14 +181,20 @@
 }
 .sidebar-home {
   position: relative;
-  width: 70px;
+  width: 60px;
   height: 100%;
-  background-color: white;
+  background-color: $blue-darkness;
 }
 .main-content-one {
   position: relative;
   width: calc(100% - 490px);
   height: 100%;
+  @include smartphone {
+    width: 90%;
+  }
+  @include smartphone1 {
+    width: 90%;
+  }
   .header-groups {
     position: relative;
     width: 100%;
@@ -215,6 +221,12 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  @include smartphone {
+    display: none;
+  }
+  @include smartphone1 {
+    display: none;
+  }
   .header-mc-two {
     position: absolute;
     width: 100%;
