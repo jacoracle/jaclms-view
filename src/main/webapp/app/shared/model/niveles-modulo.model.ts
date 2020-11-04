@@ -5,12 +5,12 @@ import { NivelJerarquico } from './nivel-jerarquico.model';
 
 export interface INivelesModulo {
   id?: number;
-  nivelJerarquico?: NivelJerarquico;
+  nivelModulo?: NivelJerarquico;
   orden?: number;
 }
 
 export class NivelesModulo implements INivelesModulo {
   public id?: number;
-  public nivelJerarquico?: NivelJerarquico;
+  public nivelModulo?: NivelJerarquico;
   public orden?: number;
 }

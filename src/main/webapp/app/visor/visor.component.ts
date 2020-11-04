@@ -37,8 +37,8 @@ export class VisorComponent implements OnInit {
       const umas = this.agrupador.modulos;
       for(let j = 0; j < umas.length; j++) {
         const uma = umas[j];
-        if(uma.modulo && uma.modulo.nivelesModulo && uma.modulo.nivelesModulo.nivelJerarquico && uma.modulo.nivelesModulo.nivelJerarquico.bloquesCurso) {
-          const bloques = uma.modulo.nivelesModulo.nivelJerarquico.bloquesCurso
+        if(uma.modulo && uma.modulo.nivelesModulo && uma.modulo.nivelesModulo.nivelModulo && uma.modulo.nivelesModulo.nivelModulo.bloquesCurso) {
+          const bloques = uma.modulo.nivelesModulo.nivelModulo.bloquesCurso
           for(let i = 0; i < bloques.length; i++) {
             if(bloques[i].bloqueComponentes?.tipoBloqueComponentes?.nombre === 'numeracion_actividad') {
               numerador++;

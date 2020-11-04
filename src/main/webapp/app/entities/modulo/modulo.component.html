@@ -2,8 +2,8 @@
     <div class="row" *ngIf="modulo.id">
         <!-- <h4>UMA: {{modulo.id}}</h4> -->
     </div>
-    <div class="row-ccb" *ngIf="modulo && modulo.nivelesModulo && modulo.nivelesModulo.nivelJerarquico">
-        <div class="row-ccb1" *ngFor="let block of modulo.nivelesModulo.nivelJerarquico.bloquesCurso">
+    <div class="row-ccb" *ngIf="modulo && modulo.nivelesModulo && modulo.nivelesModulo.nivelModulo">
+        <div class="row-ccb1" *ngFor="let block of modulo.nivelesModulo.nivelModulo.bloquesCurso">
             <div class="row-ccb2" *ngIf="block && block.bloqueComponentes && block.bloqueComponentes.tipoBloqueComponentes">
                 <div *ngIf="block!.bloqueComponentes!.tipoBloqueComponentes!.nombre === 'titulo'" class="standard-container">
                     <jhi-content-block1 [contentBlock]="block"></jhi-content-block1>
