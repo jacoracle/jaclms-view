@@ -1,5 +1,5 @@
 @import '../../../content/scss/variables.scss';
-.constructor-container-indicator {
+.row-cb17 {
   position: relative;
   width: 100%;
   height: auto;
@@ -8,12 +8,18 @@
   justify-content: center;
   justify-content: flex-end;
   align-items: center;
+  @include smartphone {
+    width: 90%;
+    margin: 0 auto;
+  }
   .line-indicator {
     position: absolute;
-    width: calc(100% - 300px);
+    // width: calc(100% - 300px);
+    width: 100%;
     height: 2px;
     background-color: $input-border-light;
     left: 0;
+    z-index: 2;
   }
   .block-indicator-img {
     position: relative;
@@ -41,4 +47,11 @@
       background-color: #deca16;
     }
   }
+}
+.col-indicator {
+  position: relative;
+  width: auto;
+  height: auto;
+  background-color: #f6f8fb;
+  z-index: 3;
 }

@@ -1,40 +1,59 @@
-@import './../../../content/scss/variables.scss';
-// Block 4 -Paragraph text with image
-.col-cb-text-img {
+@import '../../../content/scss/variables.scss';
+// Block 4 Texto con imagen
+.row-cb4-text-img {
   position: relative;
   width: 100%;
   height: auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  @include smartphone {
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    width: 90%;
+    margin: 0 auto;
+  }
 }
-
-.col-cb-text-img > div {
+.col-cb4-text-img {
   position: relative;
-  width: 48%;
   height: auto;
+  &:nth-child(1) {
+    width: 50%;
+    @include smartphone {
+      width: 100%;
+    }
+  }
+  &:nth-child(2) {
+    width: 48%;
+    @include smartphone {
+      width: 100%;
+      margin-top: 25px;
+    }
+  }
 }
-.col-cb-text-img > div:nth-child(1) {
+.col-cb4-text {
+  position: relative;
+  width: 100%;
+  height: auto;
+  @include smartphone {
+  }
 }
-.col-cb-text-img > div:nth-child(2) {
-}
-.col-cb-text-img > div:nth-child(1) > .b-paragraph-text {
-  transition: 0.3s;
-}
-.col-cb-text-img > div:nth-child(2) > .cc-image {
+.col-cb4-image {
   position: relative;
   width: 100%;
   height: auto;
   display: flex;
   justify-content: flex-end;
   align-items: center;
+  overflow: hidden;
+  border-radius: $border-radius-image;
+  @include smartphone {
+  }
   img {
     position: relative;
     width: 100%;
     max-width: 500px;
     height: auto;
-    // border: 1px dashed $blue-nimbus-light;
-    transition: 0.3s;
-    // cursor: pointer;
   }
 }

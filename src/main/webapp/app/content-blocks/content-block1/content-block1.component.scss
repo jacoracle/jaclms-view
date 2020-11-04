@@ -1,21 +1,33 @@
-@import './../../../content/scss/variables.scss';
-
-.col-cb-title {
+@import '../../../content/scss/variables.scss';
+// Block 1 Título
+.row-cb1-title {
   position: relative;
   width: 100%;
   height: auto;
   display: flex;
   justify-content: center;
   align-items: center;
-  h2 {
-    position: relative;
-    width: auto;
-    max-width: 800px;
-    font-family: 'Open Sans', sans-serif;
-    font-size: 34px;
-    font-weight: 600;
-    font-style: normal;
-    color: $blue-nimbus-dark;
-    text-align: center;
+  @include smartphone {
   }
 }
+.col-cb1-text {
+  position: relative;
+  width: 100%;
+  height: auto;
+  @include smartphone {
+    width: 90%;
+    margin:  0 auto;
+  }
+}
+
+// h1 {
+//   position: relative;
+//   width: auto;
+//   max-width: 800px;
+//   font-family: 'Open Sans', sans-serif;
+//   font-size: 34px;
+//   font-weight: 600;
+//   font-style: normal;
+//   color: $blue-nimbus-dark;
+//   text-align: center;
+// }
