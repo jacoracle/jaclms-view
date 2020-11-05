@@ -21,9 +21,23 @@
     max-height: 500px;
     background-color: black;
   }
+  // .image-no-video {
+  //   position: relative;
+  //   background-color: $bg-color-image;
+  // }
   .image-no-video {
     position: relative;
+    width: 100%;
+    height: 100%;
     background-color: $bg-color-image;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    img {
+      position: relative;
+      width: 80px !important;
+      height: 80px !important;
+    }
   }
 }
 .loader-resource {

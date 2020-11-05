@@ -46,17 +46,20 @@
             </div>
         </div>
     </div>
-    <div class="row-btn-activity-score-vs">
-      <button class="main-btn" *ngIf="!calificada" (click)="score(activity)">Calificar</button>
+    <div class="row-btn-activity-score-vs" *ngIf="!calificada">
+      <button class="main-btn"  (click)="score(activity)">Calificar</button>
     </div>
+
     <div class="row-score-vs" *ngIf="calificada">
       <div class="window-score-vs">
         <div class="socore-img-vs"></div>
-        <div class="row-score-title-vs">
-          <h3>Tu resultado:</h3>
-        </div>
-        <div class="score-mumber-vs">
-          {{activityScore}}
+        <div class="score-text">
+          <div class="row-score-title-vs">
+            <h3>Tu resultado:</h3>
+          </div>
+          <div class="score-mumber-vs">
+            {{activityScore}}
+          </div>
         </div>
       </div>
     </div>
