@@ -1,5 +1,7 @@
 <div class="image-resource-question">
-    <img [src]="defaultUrl" *ngIf="!loadedImage && !showLoader" class="image-no-image">
+  <div class="image-no-image" *ngIf="!loadedImage && !showLoader">
+    <img [src]="defaultUrl">
+  </div>
     <img [src]="imageSrc" *ngIf="loadedImage && !showLoader">
     <div class="loader-resource" *ngIf="showLoader">
       <div class="loader"></div>

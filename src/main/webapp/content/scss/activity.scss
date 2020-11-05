@@ -16,6 +16,10 @@
         width: 300px;
         height: 300px;
         margin: 0 auto;
+        @include smartphone {
+          width: 190px;
+          height: 190px;
+        }
         img {
           width: auto !important;
           height: 100% !important;
@@ -35,7 +39,15 @@
     width: 600px !important;
     margin: 0 auto;
     cursor: default !important;
+    @include smartphone {
+      width: 420px !important;
+    }
     img {
     }
+  }
+}
+.recurso-p-imagen {
+  .image-no-image {
+    height: 360px !important;
   }
 }

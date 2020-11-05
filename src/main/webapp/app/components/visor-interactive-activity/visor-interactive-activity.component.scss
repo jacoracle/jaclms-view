@@ -1,11 +1,14 @@
+@import '../../../content/scss/variables.scss';
 .ia-container {
   position: relative;
-  width: 80%;
+  width: 82%;
   height: auto;
   margin: 0 auto;
-  margin-top: 20px;
+  margin-top: 25px;
   background-color: white;
   border-radius: 10px;
-  padding-top: 20px;
-  // padding-bottom: 20px;
+  padding-top: 10px;
+  @include smartphone {
+    width: 98%;
+  }
 }

@@ -16,12 +16,19 @@
     height: auto;
     cursor: pointer;
     transition: .4s;
-    background-color: white;
   }
   .image-no-image {
     position: relative;
     width: 100%;
-    height: auto;
+    height: 100%;
     background-color: $bg-color-image;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    img {
+      position: relative;
+      width: 80px !important;
+      height: 80px !important;
+    }
   }
 }
