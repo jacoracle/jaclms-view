@@ -31,10 +31,10 @@
               }">
                 <div class="icon-img-answer"></div>
               </div>
-              <div *ngIf="pregunta.tipoRespuestas === 'Texto' && respuesta && respuesta.respuesta" class="respuesta">
+              <div *ngIf="(pregunta.tipoRespuestas !== 'Audio' && pregunta.tipoRespuestas !== 'Imagen') && respuesta && respuesta.respuesta" class="respuesta">
                   <span>{{respuesta.respuesta}}</span>
               </div>
-              <div *ngIf="pregunta.tipoRespuestas === 'Texto' && respuesta && (!respuesta.respuesta || respuesta.respuesta === '')" class="respuesta">
+              <div *ngIf="(pregunta.tipoRespuestas !== 'Audio' && pregunta.tipoRespuestas !== 'Imagen') && respuesta && (!respuesta.respuesta || respuesta.respuesta === '')" class="respuesta">
                 <span>Respuesta</span>
               </div>
               <div *ngIf="pregunta.tipoRespuestas === 'Audio' && respuesta">
