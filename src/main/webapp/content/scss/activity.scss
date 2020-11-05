@@ -1,17 +1,41 @@
 @import 'variables.scss';
+// Componente Imagen
+.answer-bg {
+  &:hover {
+    cursor: pointer !important;
+    border: 1px solid $blue-nimbus-dark !important;
+  }
+  &:hover > div > jhi-image-resource > .image-resource-question > img {
+    filter: brightness(80%);
+  }
+}
+.answer-bg {
+  div {
+    jhi-image-resource {
+      .image-resource-question {
+        width: 300px;
+        height: 300px;
+        margin: 0 auto;
+        img {
+          width: auto !important;
+          height: 100% !important;
+        }
+      }
+    }
+  }
+}
+// .recurso-p-imagen {
+//   jhi-image-resource {
+//
+//   }
+// }
+
 .recurso-p-imagen {
-  position: relative;
-  width: 100%;
-  height: auto;
   .image-resource-question {
+    width: 600px !important;
+    margin: 0 auto;
+    cursor: default !important;
     img {
-      position: relative;
-      width: 500px !important;
-      height: auto;
-      border-radius: 8px;
-      cursor: default !important;
-      pointer-events: none !important;
-      // border: 3px solid red;
     }
   }
 }
