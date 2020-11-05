@@ -1,13 +1,17 @@
-@import './../../../content/scss/variables.scss';
+@import '../../../content/scss/variables.scss';
 
 .col-cb-text {
   position: relative;
   width: 100%;
   height: auto;
   display: flex;
-  p {
+  .cb-text {
     position: relative;
-    width: auto;
+    width: 100%;
     height: auto;
+    @include smartphone {
+      margin: 0 auto;
+      width: 90%;
+    }
   }
 }

@@ -37,10 +37,10 @@
               <div *ngIf="pregunta.tipoRespuestas === 'Texto' && respuesta && (!respuesta.respuesta || respuesta.respuesta === '')" class="respuesta">
                 <span>Respuesta</span>
               </div>
-              <div *ngIf="pregunta.tipoRespuestas === 'Audio' && respuesta && respuesta.path">
+              <div *ngIf="pregunta.tipoRespuestas === 'Audio' && respuesta">
                 <jhi-audio-resource [path]="respuesta.path"></jhi-audio-resource>
               </div>
-              <div *ngIf="pregunta.tipoRespuestas === 'Imagen' && respuesta && respuesta.path">
+              <div *ngIf="pregunta.tipoRespuestas === 'Imagen' && respuesta">
                 <jhi-image-resource [path]="respuesta.path"></jhi-image-resource>
               </div>
             </div>

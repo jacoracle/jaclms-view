@@ -1,24 +1,27 @@
+@import '../../../../content/scss/variables.scss';
 .image-resource-question {
   position: relative;
   width: 100%;
-  height: auto;
+  height: 100%;
+  border-radius: $border-radius-image;
+  overflow: hidden;
+  background-color: $bg-color-image;
   display: flex;
   justify-content: center;
+  align-items: center;
+
   img {
     position: relative;
-    width: 400px;
+    width: 100%;
     height: auto;
-    border-radius: 8px;
     cursor: pointer;
     transition: .4s;
     background-color: white;
-    &:hover {
-      filter: brightness(80%);
-    }
   }
   .image-no-image {
     position: relative;
-    background-color: white;
-    border: 1px solid #a8b5bb;
+    width: 100%;
+    height: auto;
+    background-color: $bg-color-image;
   }
 }

@@ -1,16 +1,17 @@
-<!-- Bloque de contenido: Texto con imagen-->
 <!-- Bloque 4: Texto con imagen -->
-  <div class="col-cb-text-img" *ngIf="contentBlock && contentBlock.bloqueComponentes && contentBlock.bloqueComponentes.componentes">
+<div class="row-cb4-text-img" *ngIf="contentBlock && contentBlock.bloqueComponentes && contentBlock.bloqueComponentes.componentes">
 
-    <div *ngFor="let component of contentBlock.bloqueComponentes.componentes; let index = index;">
-      <div *ngIf="component && component.tipoComponente && component.tipoComponente.nombre === 'text'" class="b-paragraph-text">
-          <div *ngIf="contentBlock && contentBlock.bloqueComponentes.tipoBloqueComponentes">
-            <jhi-visor-text [component]="component"></jhi-visor-text>
-          </div>
+  <div *ngFor="let component of contentBlock.bloqueComponentes.componentes; let index = index;" class="col-cb4-text-img">
+
+    <div *ngIf="component && component.tipoComponente && component.tipoComponente.nombre === 'text'" class="col-cb4-text">
+      <div *ngIf="contentBlock && contentBlock.bloqueComponentes.tipoBloqueComponentes">
+        <jhi-visor-text [component]="component"></jhi-visor-text>
       </div>
-      <div *ngIf="component && component.tipoComponente && component.tipoComponente.nombre === 'image'"  class="cc-image text-img-image-vs">
-        <jhi-visor-image [component]="component"></jhi-visor-image>
-      </div>
+    </div>
+    <div *ngIf="component && component.tipoComponente && component.tipoComponente.nombre === 'image'"  class="col-cb4-image">
+      <jhi-visor-image [component]="component"></jhi-visor-image>
     </div>
 
   </div>
+
+</div>

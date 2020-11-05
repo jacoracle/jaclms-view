@@ -1,7 +1,7 @@
 <!-- Bloque 17: Indicador -->
-<div class="constructor-container-indicator" *ngIf="contentBlock && contentBlock.bloqueComponentes && contentBlock.bloqueComponentes.componentes">
+<div class="row-cb17" *ngIf="contentBlock && contentBlock.bloqueComponentes && contentBlock.bloqueComponentes.componentes">
     <div class="line-indicator"></div>
-    <div *ngFor="let component of contentBlock.bloqueComponentes.componentes; let index = index;">
+    <div *ngFor="let component of contentBlock.bloqueComponentes.componentes; let index = index;" class="col-indicator">
 
         <div *ngIf="component && component.tipoComponente && component.tipoComponente.nombre === 'image'"  class="block-indicator-img">
             <jhi-visor-image [component]="component" class="indicator-img"></jhi-visor-image>
