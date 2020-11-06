@@ -1,8 +1,8 @@
 <div class="audio-resource-question">
-  <div class="audio-preview" *ngIf="!loadedAudio && !showLoader" (click)="loadAudio()"></div>
-    <!-- <img [src]="defaultUrl" *ngIf="!loadedAudio && !showLoader" (click)="loadAudio()"> -->
-    <audio [src]="audioSrc" controls *ngIf="loadedAudio" #audio (play)="toggleAudio()"></audio>
-    <div class="loader-resource" *ngIf="showLoader">
-      <div class="loader"></div>
-    </div>
+  <div class="audio-preview" *ngIf="hasAudio && !loadedAudio && !showLoader" (click)="loadAudio()"></div>
+  <img [src]="defaultUrl" *ngIf="!hasAudio && !loadedAudio && !showLoader" (click)="loadAudio()">
+  <audio [src]="audioSrc" controls *ngIf="loadedAudio" #audio (play)="toggleAudio()"></audio>
+  <div class="loader-resource" *ngIf="showLoader">
+    <div class="loader"></div>
+  </div>
 </div>

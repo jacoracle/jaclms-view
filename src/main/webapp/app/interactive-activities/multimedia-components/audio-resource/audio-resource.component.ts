@@ -15,6 +15,9 @@ export class AudioResourceComponent implements OnDestroy {
   @Input()
   set path(path: string | undefined) {
     this._path = path;
+    if(this.path && this.path !== '') {
+      this.hasAudio = true;
+    }
   }
   get path(): string | undefined {
     return this._path;
@@ -23,6 +26,7 @@ export class AudioResourceComponent implements OnDestroy {
   audioSrc?: SafeUrl;
   subscription?: Subscription;
   showLoader = false;
+  hasAudio = false;
   loadedAudio = false;
   @ViewChild('audio') audio?: ElementRef;
   active = false;
