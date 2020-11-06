@@ -47,7 +47,7 @@
         </div>
     </div>
     <div class="row-btn-activity-score-vs" *ngIf="!calificada">
-      <button class="main-btn"  (click)="score(activity)">Calificar</button>
+      <button class="main-btn" *ngIf="!pendingAnswers" (click)="score()">Calificar</button>
     </div>
 
     <div class="row-score-vs" *ngIf="calificada">

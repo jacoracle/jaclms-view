@@ -21,6 +21,7 @@ export class QuestionComponent implements OnInit {
   }
   calificada = false;
   activityScore = 0;
+  pendingAnswers = true;
 
   constructor() { }
 
@@ -52,15 +53,16 @@ export class QuestionComponent implements OnInit {
       }
     }
     pregunta.marcada = marcada;
+    this.isPendingAnswer();
   }
 
-  score(activity: any): void {
+  score(): void {
     let sum = 0;
-    if(!this.isPendingAnswer(activity)) {
-      for(let i = 0; i < activity.contenido.preguntas.length; i++) {
-        sum += this.scoreQuestion(activity.contenido.preguntas[i]);
+    if(this.activity && !this.isPendingAnswer()) {
+      for(let i = 0; i < this.activity.contenido.preguntas.length; i++) {
+        sum += this.scoreQuestion(this.activity.contenido.preguntas[i]);
       }
-      this.activityScore = parseFloat(((sum * 10) / (activity.contenido.preguntas.length * 10)).toFixed(1));
+      this.activityScore = parseFloat(((sum * 10) / (this.activity.contenido.preguntas.length * 10)).toFixed(1));
       this.calificada = true;
     }
   }
@@ -76,15 +78,17 @@ export class QuestionComponent implements OnInit {
     return score;
   }
 
-  isPendingAnswer(activity: any): boolean {
-    let pending = false;
-    for(let i = 0; i < activity.contenido.preguntas.length; i++) {
-      if(activity.contenido.preguntas[i].marcada === false) {
-        pending = true;
-        break;
+  isPendingAnswer(): boolean {
+    this.pendingAnswers = false;
+    if(this.activity) {
+      for(let i = 0; i < this.activity.contenido.preguntas.length; i++) {
+        if(this.activity.contenido.preguntas[i].marcada === false) {
+          this.pendingAnswers = true;
+          break;
+        }
       }
     }
-    return pending;
+    return this.pendingAnswers;
   }
 
   mixOptions(): void {
