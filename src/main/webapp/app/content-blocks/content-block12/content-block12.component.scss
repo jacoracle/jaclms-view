@@ -1,4 +1,5 @@
-.row-accordion-vs {
+@import '../../../content/scss/variables.scss';
+.row-cb12-accordion {
   position: relative;
   width: 90%;
   height: auto;
@@ -12,4 +13,7 @@
   background-position: 100% 0%;
   background-repeat: no-repeat;
   background-size: 400px;
+  @include smartphone {
+    width: 96%;
+  }
 }

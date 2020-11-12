@@ -10,9 +10,7 @@
   top: 4%;
   box-shadow: 0 20px 30px rgba(16, 18, 51, 0.1), 0 6px 18px rgba(16, 18, 51, 0.12);
   @include smartphone {
-    width: 360px;
-    min-height: auto;
-    padding-bottom: 15px;
+    width: 96%;
   }
 
   .main-btn {
@@ -71,7 +69,7 @@
       align-items: center;
       justify-content: center;
       @include smartphone {
-        width: 84%;
+        width: 94%;
       }
 
       .col-form-pdf {

@@ -37,4 +37,27 @@
   left: -44px;
   z-index: 2;
   width: 170px;
+  @include smartphone {
+    top: 92px;
+  }
+}
+
+
+img {
+  position: relative;
+  width: 60px;
+  height: 60px;
+  @include smartphone {
+    width: 40px;
+    height: 40px;
+  }
+}
+audio {
+  position: relative;
+  top: 96px;
+  z-index: 10;
+  filter: invert(1);
+  @include smartphone {
+    top: 77px;
+  }
 }
