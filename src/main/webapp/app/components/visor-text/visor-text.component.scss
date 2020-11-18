@@ -1,0 +1,114 @@
+@import '../../../content/scss/variables.scss';
+// Listas desordenadas
+.final-block-row {
+  ul {
+    position: relative;
+    width: 100%;
+    height: auto;
+    list-style: none;
+    text-align: left;
+    padding-left: 30px;
+
+    li {
+      position: relative;
+      margin-top: 15px;
+      line-height: 30px;
+      color: #5e5e5e;
+      &:before {
+        position: absolute;
+        margin-top: 5px;
+        left: -30px;
+        width: 22px;
+        height: 22px;
+        content: "";
+        background-image: url("../../../content/images/ul.svg");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 100%;
+      }
+    }
+    li.ql-indent-1 {
+      color: #5e5e5e;
+      margin-left: 25px;
+      &:before {
+        background-image: url("../../../content/images/ul_1.svg");
+      }
+    }
+    li.ql-indent-2 {
+      color: #5e5e5e;
+      margin-left: 50px;
+      &:before {
+        background-image: url("../../../content/images/ul_2.svg");
+      }
+    }
+    li.ql-indent-3 {
+      color: #5e5e5e;
+      margin-left: 75px;
+      &:before {
+        background-image: url("../../../content/images/ul_2.svg");
+      }
+    }
+    li.ql-indent-4 {
+      margin-left: 100px;
+      &:before {
+        background-image: url("../../../content/images/ul_2.svg");
+      }
+    }
+  }
+}
+// Listas ordenadas
+.final-block-row {
+  ol {
+    list-style: none;
+    text-align: left;
+    padding-left: 45px;
+    width: 100%;
+    height: auto;
+    li {
+      position: relative;
+      margin-top: 18px;
+      counter-increment: step-counter;
+      line-height: 35px;
+      font-weight: 400;
+      font-style: normal;
+      color: #5e5e5e;
+      &:before {
+        position: absolute;
+        margin-top: 0px;
+        left: -46px;
+        width: 36px;
+        height: 36px;
+        text-align: center !important;
+        line-height: 36px;
+        content: counter(step-counter, decimal);
+        background-image: url("../../../content/images/ol.svg");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 100%;
+        font-family: "Open Sans", sans-serif;
+        font-size: 18px;
+        font-weight: 700;
+        font-style: normal;
+        color: white;
+      }
+    }
+    li.ql-indent-1 {
+      margin-left: 25px;
+      counter-increment: chapter;
+      &:before {
+        content: counter(chapter, upper-alpha);
+        background-image: url("../../../content/images/ol_2.svg");
+      }
+    }
+    li.ql-indent-2 {
+      margin-left: 50px;
+      counter-increment: chapter;
+      &:before {
+        content: counter(chapter, upper-roman);
+        background-image: url("../../../content/images/ol_3.svg");
+        // color: #19588a;
+        color: $blue-nimbus-dark;
+      }
+    }
+  }
+}
