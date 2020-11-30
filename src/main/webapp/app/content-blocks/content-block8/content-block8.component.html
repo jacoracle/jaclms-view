@@ -1,12 +1,14 @@
 <!-- Bloque de contenido: Subtitulo-->
 <!-- Bloque 8: PDF -->
-<div class="col-cb-pdf" *ngIf="contentBlock && contentBlock.bloqueComponentes">
+<div class="row-cb8-pdf" *ngIf="contentBlock && contentBlock.bloqueComponentes">
     <div class="b-pdf" *ngFor="let component of contentBlock.bloqueComponentes.componentes!; let index = index;">
+
         <div *ngIf="contentBlock.bloqueComponentes.tipoBloqueComponentes" class="pdf-img">
             <jhi-visor-pdf [component]="component"></jhi-visor-pdf>
         </div>
+
         <div class="pdf-text-row">
-          <h4>Título de PDF</h4>
+          <h4>PDF</h4>
           <!-- <div class="main-btn"><i class="icon ni-view"></i>Ver</div> -->
         </div>
     </div>

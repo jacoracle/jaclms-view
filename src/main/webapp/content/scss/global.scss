@@ -74,6 +74,14 @@ h1 {
   font-weight: 600;
   font-style: normal;
   color: #283d8e;
+  @include smartphone {
+    font-size: 30px;
+  }
+  span {
+    @include smartphone {
+      font-size: 32px !important;
+    }
+  }
 }
 h2 {
   font-size: 34px;
@@ -112,6 +120,10 @@ p {
     font-size: 18px;
     color: #212529;
     line-height: 1.72em;
+    @include smartphone {
+      font-size: 16px;
+      line-height: 1.6em;
+    }
   }
 }
 strong {
@@ -794,21 +806,21 @@ jhi-login-modal {
   }
 }
 // Audio
-.row-audio-circle {
-  jhi-visor-audio {
-    img {
-      position: relative;
-      width: 65px;
-      height: 65px;
-    }
-    audio {
-      position: relative;
-      top: 96px;
-      z-index: 10;
-      filter: invert(1);
-    }
-  }
-}
+// .row-audio-circle {
+//   jhi-visor-audio {
+//     img {
+//       position: relative;
+//       width: 65px;
+//       height: 65px;
+//     }
+//     audio {
+//       position: relative;
+//       top: 96px;
+//       z-index: 10;
+//       filter: invert(1);
+//     }
+//   }
+// }
 .col-cb1-text {
   jhi-visor-text {
     .final-block-row {

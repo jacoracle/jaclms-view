@@ -2,7 +2,7 @@
 <img [src]="defaultSrc" alt="" *ngIf="audioSrc === ''">
 <audio [src]="audioSrc" *ngIf="audioSrc !== ''" controls #audio (play)="toggleAudio()"></audio>
 
-<div class="secondary-btn" (click)="loadAudio()"><i class="icon ni-play"></i>Abrir reproductor</div>
+<div class="secondary-btn" (click)="loadAudio()"><i class="icon ni-play"></i>Reproducir</div>
 
 <div [hidden]="!showLoader" class="loader-audio">
   <div class="loader2"></div>
